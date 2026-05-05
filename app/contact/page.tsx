@@ -10,6 +10,7 @@ import {
 } from "lucide-react"
 import { PageHeader } from "@/components/site/page-header"
 import { ContactForm } from "@/components/site/contact-form"
+import { CommentForm } from "@/components/site/comment-form"
 import { Reveal } from "@/components/site/reveal"
 
 export const metadata: Metadata = {
@@ -157,6 +158,45 @@ export default function ContactPage() {
           <Reveal delay={0.15} className="md:col-span-3">
             <ContactForm />
           </Reveal>
+        </div>
+      </section>
+
+      <section className="border-t border-border bg-muted/30">
+        <div className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
+          <div className="grid gap-12 md:grid-cols-5 md:gap-16">
+            <Reveal className="md:col-span-2">
+              <span className="text-xs font-medium uppercase tracking-widest text-secondary">
+                Feedback
+              </span>
+              <h2 className="mt-3 text-balance text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+                Have a quick comment for us?
+              </h2>
+              <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
+                We genuinely read every note. Share feedback on our work,
+                suggest a topic, or just say hello — anonymously if you prefer.
+              </p>
+              <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span
+                    aria-hidden
+                    className="mt-2 inline-block h-1 w-1 rounded-full bg-secondary"
+                  />
+                  Email is optional — anonymous feedback is welcome.
+                </li>
+                <li className="flex items-start gap-2">
+                  <span
+                    aria-hidden
+                    className="mt-2 inline-block h-1 w-1 rounded-full bg-secondary"
+                  />
+                  Routed securely to our team via Formbricks.
+                </li>
+              </ul>
+            </Reveal>
+
+            <Reveal delay={0.15} className="md:col-span-3">
+              <CommentForm />
+            </Reveal>
+          </div>
         </div>
       </section>
     </>
