@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Linkedin, Mail, Phone } from "lucide-react"
+import { Instagram, Linkedin, Mail, Phone, Send, Youtube } from "lucide-react"
 import { Logo } from "./logo"
 
 const FOOTER_LINKS = [
@@ -7,6 +7,29 @@ const FOOTER_LINKS = [
   { href: "/services", label: "Services" },
   { href: "/projects", label: "Projects" },
   { href: "/contact", label: "Contact" },
+]
+
+const SOCIALS = [
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/company/cordnutrition",
+    Icon: Linkedin,
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@CORDConsultancy",
+    Icon: Youtube,
+  },
+  {
+    label: "Telegram",
+    href: "https://t.me/CORDNutrition_PLC",
+    Icon: Send,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/cord_consultancy/",
+    Icon: Instagram,
+  },
 ]
 
 export function Footer() {
@@ -25,6 +48,21 @@ export function Footer() {
             <p className="mt-4 text-xs italic text-muted-foreground">
               Center for Alliance & Coalition for Professional Excellence.
             </p>
+
+            <div className="mt-6 flex items-center gap-2">
+              {SOCIALS.map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label={label}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+                >
+                  <Icon className="h-4 w-4" strokeWidth={1.75} />
+                </a>
+              ))}
+            </div>
           </div>
 
           <div className="md:col-span-3">
@@ -67,17 +105,6 @@ export function Footer() {
                   +251 942 461 146
                 </a>
               </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/girma-goshime-cordnutrition"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  <Linkedin className="h-3.5 w-3.5" />
-                  LinkedIn
-                </a>
-              </li>
             </ul>
             <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
               Akaki-Kaliti, Wereda 13, Tulu Dimtu
@@ -94,7 +121,8 @@ export function Footer() {
           </p>
           <p className="flex items-center gap-2">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-secondary" />
-            USAID partner · Global Nutrition Report member · Share-Net Netherlands
+            USAID partner · Global Nutrition Report member · Share-Net
+            Netherlands
           </p>
         </div>
       </div>

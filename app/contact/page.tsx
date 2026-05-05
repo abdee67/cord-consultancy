@@ -1,5 +1,13 @@
 import type { Metadata } from "next"
-import { Mail, MapPin, Phone, Linkedin } from "lucide-react"
+import {
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+  Youtube,
+} from "lucide-react"
 import { PageHeader } from "@/components/site/page-header"
 import { ContactForm } from "@/components/site/contact-form"
 
@@ -12,15 +20,9 @@ export const metadata: Metadata = {
 const DETAILS = [
   {
     Icon: Mail,
-    label: "Email",
+    label: "Managing Director",
     value: "info.cordnutrition@gmail.com",
     href: "mailto:info.cordnutrition@gmail.com",
-  },
-  {
-    Icon: Mail,
-    label: "Director",
-    value: "girma@cordnutrition.com",
-    href: "mailto:girma@cordnutrition.com",
   },
   {
     Icon: Phone,
@@ -29,16 +31,37 @@ const DETAILS = [
     href: "tel:+251942461146",
   },
   {
-    Icon: Linkedin,
-    label: "LinkedIn",
-    value: "linkedin.com/in/girma-goshime-cordnutrition",
-    href: "https://www.linkedin.com/in/girma-goshime-cordnutrition",
-  },
-  {
     Icon: MapPin,
     label: "Office",
     value:
       "Akaki-Kaliti, Wereda 13, Tulu Dimtu · Amakor Building, Office G007, Addis Ababa",
+  },
+]
+
+const SOCIALS = [
+  {
+    label: "LinkedIn",
+    handle: "linkedin.com/company/cordnutrition",
+    href: "https://linkedin.com/company/cordnutrition",
+    Icon: Linkedin,
+  },
+  {
+    label: "YouTube",
+    handle: "@CORDConsultancy",
+    href: "https://www.youtube.com/@CORDConsultancy",
+    Icon: Youtube,
+  },
+  {
+    label: "Telegram",
+    handle: "t.me/CORDNutrition_PLC",
+    href: "https://t.me/CORDNutrition_PLC",
+    Icon: Send,
+  },
+  {
+    label: "Instagram",
+    handle: "@cord_consultancy",
+    href: "https://www.instagram.com/cord_consultancy/",
+    Icon: Instagram,
   },
 ]
 
@@ -75,12 +98,6 @@ export default function ContactPage() {
                     {href ? (
                       <a
                         href={href}
-                        target={href.startsWith("http") ? "_blank" : undefined}
-                        rel={
-                          href.startsWith("http")
-                            ? "noreferrer noopener"
-                            : undefined
-                        }
                         className="mt-0.5 block text-sm font-medium text-foreground transition-colors hover:text-primary"
                       >
                         {value}
@@ -95,7 +112,37 @@ export default function ContactPage() {
               ))}
             </ul>
 
-            <div className="mt-10 rounded-2xl border border-border bg-muted/40 p-5">
+            <div className="mt-8">
+              <div className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
+                Follow us
+              </div>
+              <ul className="mt-4 grid grid-cols-2 gap-2.5">
+                {SOCIALS.map(({ label, handle, href, Icon }) => (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="group flex items-center gap-3 rounded-xl border border-border bg-card px-3 py-2.5 transition-colors hover:border-primary/40"
+                    >
+                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                        <Icon className="h-4 w-4" strokeWidth={1.75} />
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-xs font-semibold tracking-tight text-foreground">
+                          {label}
+                        </span>
+                        <span className="block truncate text-[11px] text-muted-foreground">
+                          {handle}
+                        </span>
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-8 rounded-2xl border border-border bg-muted/40 p-5">
               <div className="text-xs font-medium uppercase tracking-widest text-secondary">
                 Office hours
               </div>

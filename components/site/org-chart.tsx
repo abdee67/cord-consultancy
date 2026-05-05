@@ -1,28 +1,49 @@
-const DOMAINS = [
+/**
+ * CORD Nutrition and Health Trading PLC — Organogram.
+ *
+ * Hierarchy:
+ *   Board
+ *    └─ Managing Director
+ *         ├─ Strategic & Legal Advisor (side branch)
+ *         └─ Communication & Partnership Deputy Director
+ *              ├─ Administration & Finance Manager
+ *              │     ├─ Admin & Human Resources Assistant
+ *              │     ├─ Finance Officer
+ *              │     └─ Cash and Accounting Assistant
+ *              ├─ Program Manager
+ *              │     ├─ Health & Nutrition Consultancy Officer
+ *              │     ├─ Social Affairs Consultancy Officer
+ *              │     ├─ Hotel and Tourism Consultancy Officer
+ *              │     └─ Management Consultancy Officer
+ *              └─ MEARL Manager
+ *                    ├─ Research, Knowledge Management & Learning Officer
+ *                    └─ Monitoring, Reporting & Evaluation Officer
+ */
+
+const COLUMNS = [
   {
-    name: "Health",
-    description:
-      "Health system strengthening, SRHR, maternal & adolescent health.",
+    manager: "Administration & Finance Manager",
+    reports: [
+      "Admin & Human Resources Assistant",
+      "Finance Officer",
+      "Cash and Accounting Assistant",
+    ],
   },
   {
-    name: "Nutrition",
-    description:
-      "Programming, BCC, school & community nutrition, GMP guidance.",
+    manager: "Program Manager",
+    reports: [
+      "Health & Nutrition Consultancy Officer",
+      "Social Affairs Consultancy Officer",
+      "Hotel and Tourism Consultancy Officer",
+      "Management Consultancy Officer",
+    ],
   },
   {
-    name: "Social Affairs",
-    description:
-      "Social protection, gender & youth empowerment, community engagement.",
-  },
-  {
-    name: "Management",
-    description:
-      "Strategy, governance, organizational development, PMO setup.",
-  },
-  {
-    name: "Hotel & Tourism",
-    description:
-      "Feasibility, hospitality operations, brand & guest experience.",
+    manager: "MEARL Manager",
+    reports: [
+      "Research, Knowledge Management & Learning Officer",
+      "Monitoring, Reporting & Evaluation Officer",
+    ],
   },
 ]
 
@@ -33,92 +54,127 @@ export function OrgChart() {
         Organizational structure
       </div>
       <h2 className="text-balance text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
-        A senior core team supported by roving specialists.
+        Organogram — CORD Nutrition and Health Trading PLC
       </h2>
       <p className="mt-5 max-w-2xl text-pretty leading-relaxed text-muted-foreground md:text-lg">
-        Governed as a private limited company with an executive leadership team,
-        a strategic advisory board, and a robust risk-management framework.
-        Female representation across leadership is{" "}
-        <span className="font-medium text-foreground">67%</span>.
+        Governed as a private limited company with a Board, Managing Director,
+        and three operating verticals — Administration & Finance, Program, and
+        Monitoring, Evaluation, Accountability, Research & Learning (MEARL).
       </p>
 
-      <div className="mt-12">
-        {/* Top: Leadership */}
-        <div className="mx-auto max-w-md">
+      <div className="mt-12 rounded-3xl border border-border bg-primary/[0.04] p-6 md:p-10">
+        {/* Board */}
+        <div className="mx-auto flex max-w-[220px] justify-center">
+          <Node label="Board" tone="primary" />
+        </div>
+
+        <Connector />
+
+        {/* Managing Director */}
+        <div className="mx-auto flex max-w-[260px] justify-center">
+          <Node label="Managing Director" tone="primary" />
+        </div>
+
+        {/* MD → Strategic Advisor (side) + Deputy Director (down) */}
+        <div className="mx-auto mt-4 grid max-w-3xl items-start gap-4 md:grid-cols-[1fr_auto_1fr]">
+          {/* left: Strategic Advisor */}
+          <div className="flex justify-center md:justify-end">
+            <div className="flex items-center gap-3">
+              <Node label="Strategic & Legal Advisor" tone="muted" />
+              <span className="hidden h-px w-8 bg-border md:block" />
+            </div>
+          </div>
+
+          {/* center: vertical line */}
+          <span className="mx-auto hidden h-full w-px bg-border md:block" />
+
+          {/* right: spacer for symmetry */}
+          <div className="hidden md:block" />
+        </div>
+
+        <Connector compact />
+
+        {/* Communication & Partnership Deputy Director */}
+        <div className="mx-auto flex max-w-sm justify-center">
           <Node
-            label="Executive Leadership"
-            sub="CEO · Strategic Advisory Board"
+            label="Communication & Partnership Deputy Director"
             tone="primary"
           />
         </div>
 
-        {/* Connectors */}
-        <div className="relative mx-auto mt-6 hidden h-10 max-w-5xl md:block">
-          <div className="absolute left-1/2 top-0 h-5 w-px -translate-x-1/2 bg-border" />
-          <div className="absolute left-[10%] right-[10%] top-5 h-px bg-border" />
-          <div className="absolute left-[10%] top-5 h-5 w-px bg-border" />
-          <div className="absolute left-[30%] top-5 h-5 w-px bg-border" />
-          <div className="absolute left-1/2 top-5 h-5 w-px -translate-x-1/2 bg-border" />
-          <div className="absolute left-[70%] top-5 h-5 w-px bg-border" />
-          <div className="absolute right-[10%] top-5 h-5 w-px bg-border" />
-        </div>
+        <Connector />
 
-        {/* Domains */}
-        <div className="mt-6 grid gap-3 md:grid-cols-5 md:gap-4">
-          {DOMAINS.map((d) => (
-            <Node key={d.name} label={d.name} sub={d.description} />
+        {/* Three managers */}
+        <div className="grid gap-6 md:grid-cols-3 md:gap-6">
+          {COLUMNS.map((col) => (
+            <div key={col.manager} className="flex flex-col items-stretch">
+              <Node label={col.manager} tone="secondary" />
+              {/* vertical line linking manager to first report */}
+              <span className="mx-auto h-4 w-px bg-border" />
+              <ul className="flex flex-col gap-2.5">
+                {col.reports.map((report, i) => (
+                  <li key={report} className="relative">
+                    {/* connector tick */}
+                    {i > 0 && (
+                      <span className="absolute -top-2.5 left-1/2 h-2.5 w-px -translate-x-1/2 bg-border" />
+                    )}
+                    <Node label={report} small />
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </div>
-
-        {/* Connectors */}
-        <div className="relative mx-auto mt-6 hidden h-10 max-w-5xl md:block">
-          <div className="absolute left-[10%] top-0 h-5 w-px bg-border" />
-          <div className="absolute left-[30%] top-0 h-5 w-px bg-border" />
-          <div className="absolute left-1/2 top-0 h-5 w-px -translate-x-1/2 bg-border" />
-          <div className="absolute left-[70%] top-0 h-5 w-px bg-border" />
-          <div className="absolute right-[10%] top-0 h-5 w-px bg-border" />
-          <div className="absolute left-[10%] right-[10%] top-5 h-px bg-border" />
-          <div className="absolute left-1/2 top-5 h-5 w-px -translate-x-1/2 bg-border" />
-        </div>
-
-        {/* Shared services */}
-        <div className="mx-auto mt-6 max-w-xl">
-          <Node
-            label="Roving specialists & shared services"
-            sub="Monitoring & Evaluation · Training & Curriculum · Digital Platforms"
-            tone="secondary"
-          />
         </div>
       </div>
     </div>
   )
 }
 
+function Connector({ compact = false }: { compact?: boolean }) {
+  return (
+    <div
+      aria-hidden="true"
+      className={[
+        "mx-auto w-px bg-border",
+        compact ? "h-4" : "h-6",
+      ].join(" ")}
+    />
+  )
+}
+
 function Node({
   label,
-  sub,
   tone,
+  small = false,
 }: {
   label: string
-  sub: string
-  tone?: "primary" | "secondary"
+  tone?: "primary" | "secondary" | "muted"
+  small?: boolean
 }) {
+  const toneClasses =
+    tone === "primary"
+      ? "border-primary/30 bg-primary/10 text-primary-foreground/0"
+      : tone === "secondary"
+        ? "border-secondary/40 bg-secondary/10"
+        : tone === "muted"
+          ? "border-border bg-card"
+          : "border-border bg-card"
+
   return (
     <div
       className={[
-        "rounded-2xl border bg-card p-5 text-center transition-colors",
-        tone === "primary"
-          ? "border-primary/30 bg-primary/5"
-          : tone === "secondary"
-            ? "border-secondary/30 bg-secondary/5"
-            : "border-border hover:border-primary/30",
+        "w-full rounded-xl border text-center transition-colors",
+        small ? "px-3 py-2.5" : "px-4 py-3.5",
+        toneClasses,
       ].join(" ")}
     >
-      <div className="text-sm font-semibold tracking-tight text-foreground">
+      <div
+        className={[
+          "font-semibold tracking-tight text-foreground",
+          small ? "text-[12.5px] leading-snug" : "text-sm leading-snug",
+        ].join(" ")}
+      >
         {label}
-      </div>
-      <div className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
-        {sub}
       </div>
     </div>
   )
