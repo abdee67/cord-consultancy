@@ -9,7 +9,7 @@ import {
   Youtube,
 } from "lucide-react"
 import { PageHeader } from "@/components/site/page-header"
-import { ContactForm } from "@/components/site/contact-form"
+import { AdminCommentForm } from "@/components/site/admin-comment-form"
 import { Reveal } from "@/components/site/reveal"
 
 export const metadata: Metadata = {
@@ -82,8 +82,9 @@ export default function ContactPage() {
               Let&apos;s talk.
             </h2>
             <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
-              Whether you have a defined brief or just an early signal, we
-              would love to hear it. Use the form, or reach us directly.
+              Whether you have a defined brief, quick feedback, or just an
+              early signal, we&apos;d love to hear it. Use the form, or reach
+              us directly.
             </p>
 
             <ul className="mt-8 space-y-4">
@@ -155,7 +156,7 @@ export default function ContactPage() {
           </Reveal>
 
           <Reveal delay={0.15} className="md:col-span-3">
-            <ContactForm />
+            <AdminCommentForm />
           </Reveal>
         </div>
       </section>

@@ -5,6 +5,7 @@ import "./globals.css"
 
 import { Navbar } from "@/components/site/navbar"
 import { Footer } from "@/components/site/footer"
+import { FormbricksInit } from "@/components/site/formbricks-init"
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -50,6 +51,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} bg-background`}
     >
       <body className="min-h-dvh font-sans antialiased">
+        <FormbricksInit />
         <Navbar />
         <main>{children}</main>
         <Footer />
