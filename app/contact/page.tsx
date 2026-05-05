@@ -1,5 +1,8 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import {
+  ArrowUpRight,
+  ClipboardList,
   Instagram,
   Linkedin,
   Mail,
@@ -197,6 +200,44 @@ export default function ContactPage() {
               <CommentForm />
             </Reveal>
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-24">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-8 md:p-12">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -z-10 brand-gradient opacity-40"
+              />
+              <div className="grid items-center gap-8 md:grid-cols-12">
+                <div className="md:col-span-8">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-3 py-1 text-xs font-medium uppercase tracking-widest text-muted-foreground backdrop-blur">
+                    <ClipboardList className="h-3.5 w-3.5 text-secondary" />
+                    Client feedback survey
+                  </span>
+                  <h2 className="mt-4 text-balance text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+                    Worked with us recently? Share your experience.
+                  </h2>
+                  <p className="mt-3 max-w-2xl text-pretty leading-relaxed text-muted-foreground">
+                    A few focused questions help us understand what worked,
+                    what didn&apos;t, and where to invest next. It takes just a
+                    few minutes and goes straight to our leadership team.
+                  </p>
+                </div>
+                <div className="flex md:col-span-4 md:justify-end">
+                  <Link
+                    href="/feedback"
+                    className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
+                  >
+                    Take the survey
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>
