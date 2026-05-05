@@ -127,3 +127,25 @@
   background-clip: text;
   color: transparent;
 }
+
+/* Infinite horizontal marquee — CSS-only, GPU-accelerated.
+   The track contains two identical halves; translating by -50%
+   produces a seamless loop without any visible jump. */
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee 45s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}

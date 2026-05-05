@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/site/page-header"
 import { ProjectCard } from "@/components/site/project-card"
 import { PROJECTS } from "@/components/site/projects-data"
 import { FinalCTA } from "@/components/site/final-cta"
+import { Reveal } from "@/components/site/reveal"
 
 export const metadata: Metadata = {
   title: "Projects — CORD Consultancy",
@@ -23,35 +24,40 @@ export default function ProjectsPage() {
       />
 
       <section className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
-        {/* Filter chips (visual grouping) */}
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs font-semibold uppercase tracking-widest text-foreground">
-            Categories
-          </span>
-          {categories.map((c) => (
-            <span
-              key={c}
-              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/60 px-3 py-1 text-xs font-medium text-muted-foreground"
-            >
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-secondary" />
-              {c}
+        <Reveal>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-xs font-semibold uppercase tracking-widest text-foreground">
+              Categories
             </span>
-          ))}
-        </div>
+            {categories.map((c) => (
+              <span
+                key={c}
+                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/60 px-3 py-1 text-xs font-medium text-muted-foreground"
+              >
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-secondary" />
+                {c}
+              </span>
+            ))}
+          </div>
+        </Reveal>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS.map((project) => (
-            <ProjectCard key={project.title} project={project} />
+          {PROJECTS.map((project, i) => (
+            <Reveal key={project.title} delay={(i % 3) * 0.08}>
+              <ProjectCard project={project} />
+            </Reveal>
           ))}
         </div>
 
-        <p className="mt-10 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          Engagements completed in collaboration with partners including FGAE,
-          SOS Children&apos;s Village Ethiopia, OICE, SCOPUS, Aleph Medical &
-          Health Trading PLC, Fetan Transport and Logistics Share Company, Life
-          Addis Internal Medicine & Surgical Specialty Center, and the Addis
-          Ababa Health Bureau.
-        </p>
+        <Reveal>
+          <p className="mt-10 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            Engagements completed in collaboration with partners including
+            FGAE, SOS Children&apos;s Village Ethiopia, OICE, SCOPUS, Aleph
+            Medical & Health Trading PLC, Fetan Transport and Logistics Share
+            Company, Life Addis Internal Medicine & Surgical Specialty Center,
+            and the Addis Ababa Health Bureau.
+          </p>
+        </Reveal>
       </section>
 
       <FinalCTA />

@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/site/page-header"
 import { ServiceCard } from "@/components/site/service-card"
 import { SERVICES } from "@/components/site/services-data"
 import { FinalCTA } from "@/components/site/final-cta"
+import { Reveal } from "@/components/site/reveal"
 
 export const metadata: Metadata = {
   title: "Services — CORD Consultancy",
@@ -16,32 +17,36 @@ export default function ServicesPage() {
       <PageHeader
         eyebrow="Services"
         title="Five domains. Integrated, evidence-based, and outcome-driven."
-        description="Each engagement is scoped to a clear outcome and led end-to-end by senior practitioners. Pick a starting point — we&apos;ll shape the rest with you."
+        description="Each engagement is scoped to a clear outcome and led end-to-end by senior practitioners. Pick a starting point — we'll shape the rest with you."
       />
 
       <section className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((service) => (
-            <ServiceCard key={service.slug} service={service} detailed />
+          {SERVICES.map((service, i) => (
+            <Reveal key={service.slug} delay={(i % 3) * 0.08}>
+              <ServiceCard service={service} detailed />
+            </Reveal>
           ))}
         </div>
 
-        <div className="mt-16 rounded-2xl border border-border bg-muted/40 p-8 md:p-10">
-          <div className="grid gap-6 md:grid-cols-3 md:gap-10">
-            <Item
-              title="Hybrid delivery"
-              body="On-site engagements, remote advisory, and scalable digital toolkits — co-created with you."
-            />
-            <Item
-              title="Senior-led"
-              body="The people you meet are the people who do the work. No bait-and-switch staffing."
-            />
-            <Item
-              title="Outcome accountability"
-              body="We scope to outcomes and tie our success to yours — not to hours or activity."
-            />
+        <Reveal>
+          <div className="mt-16 rounded-2xl border border-border bg-muted/40 p-8 md:p-10">
+            <div className="grid gap-6 md:grid-cols-3 md:gap-10">
+              <Item
+                title="Hybrid delivery"
+                body="On-site engagements, remote advisory, and scalable digital toolkits — co-created with you."
+              />
+              <Item
+                title="Senior-led"
+                body="The people you meet are the people who do the work. No bait-and-switch staffing."
+              />
+              <Item
+                title="Outcome accountability"
+                body="We scope to outcomes and tie our success to yours — not to hours or activity."
+              />
+            </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <FinalCTA />
