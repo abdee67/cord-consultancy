@@ -10,6 +10,7 @@ import {
 } from "lucide-react"
 import { PageHeader } from "@/components/site/page-header"
 import { ContactForm } from "@/components/site/contact-form"
+import { Reveal } from "@/components/site/reveal"
 
 export const metadata: Metadata = {
   title: "Contact — CORD Consultancy",
@@ -76,7 +77,7 @@ export default function ContactPage() {
 
       <section className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
         <div className="grid gap-12 md:grid-cols-5 md:gap-16">
-          <div className="md:col-span-2">
+          <Reveal className="md:col-span-2">
             <h2 className="text-balance text-2xl font-semibold tracking-tight text-foreground">
               Let&apos;s talk.
             </h2>
@@ -86,8 +87,8 @@ export default function ContactPage() {
             </p>
 
             <ul className="mt-8 space-y-4">
-              {DETAILS.map(({ Icon, label, value, href }) => (
-                <li key={label} className="flex items-start gap-4">
+              {DETAILS.map(({ Icon, label, value, href }, i) => (
+                <Reveal as="li" key={label} delay={0.05 + i * 0.06} className="flex items-start gap-4">
                   <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                     <Icon className="h-4 w-4" strokeWidth={1.75} />
                   </span>
@@ -108,7 +109,7 @@ export default function ContactPage() {
                       </p>
                     )}
                   </div>
-                </li>
+                </Reveal>
               ))}
             </ul>
 
@@ -117,8 +118,8 @@ export default function ContactPage() {
                 Follow us
               </div>
               <ul className="mt-4 grid grid-cols-2 gap-2.5">
-                {SOCIALS.map(({ label, handle, href, Icon }) => (
-                  <li key={label}>
+                {SOCIALS.map(({ label, handle, href, Icon }, i) => (
+                  <Reveal as="li" key={label} delay={0.1 + i * 0.06}>
                     <a
                       href={href}
                       target="_blank"
@@ -137,7 +138,7 @@ export default function ContactPage() {
                         </span>
                       </span>
                     </a>
-                  </li>
+                  </Reveal>
                 ))}
               </ul>
             </div>
@@ -151,11 +152,11 @@ export default function ContactPage() {
                 a time that works for your timezone.
               </p>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="md:col-span-3">
+          <Reveal delay={0.15} className="md:col-span-3">
             <ContactForm />
-          </div>
+          </Reveal>
         </div>
       </section>
     </>

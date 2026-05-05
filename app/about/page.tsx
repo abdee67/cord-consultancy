@@ -6,6 +6,7 @@ import { Recognition } from "@/components/site/recognition"
 import { OrgChart } from "@/components/site/org-chart"
 import { Gallery } from "@/components/site/gallery"
 import { FinalCTA } from "@/components/site/final-cta"
+import { Reveal } from "@/components/site/reveal"
 
 export const metadata: Metadata = {
   title: "About — CORD Consultancy",
@@ -24,29 +25,31 @@ export default function AboutPage() {
 
       {/* Overview */}
       <section className="mx-auto max-w-3xl px-6 py-20 md:px-10 md:py-24">
-        <div className="mb-3 text-xs font-medium uppercase tracking-widest text-primary">
-          Overview
-        </div>
-        <h2 className="text-balance text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
-          Independent. Senior. Locally rooted.
-        </h2>
-        <div className="mt-5 space-y-4 text-pretty leading-relaxed text-muted-foreground md:text-lg">
-          <p>
-            CORD Nutrition and Health Trading PLC — operating as CORD
-            Consultancy — was re-registered in 2026 under Ethiopia&apos;s new
-            trade laws and directives. We are a private limited company
-            delivering integrated consultancy, training, and capacity-building
-            services across five core domains.
-          </p>
-          <p>
-            Our team brings together specialists in public health, nutrition,
-            food science, reproductive health, and management — combining the
-            rigor of evidence-based practice with the agility of the private
-            sector. We are committed to women and youth empowerment,
-            sustainable value chains, and market-driven health and nutrition
-            solutions.
-          </p>
-        </div>
+        <Reveal>
+          <div className="mb-3 text-xs font-medium uppercase tracking-widest text-primary">
+            Overview
+          </div>
+          <h2 className="text-balance text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+            Independent. Senior. Locally rooted.
+          </h2>
+          <div className="mt-5 space-y-4 text-pretty leading-relaxed text-muted-foreground md:text-lg">
+            <p>
+              CORD Nutrition and Health Trading PLC — operating as CORD
+              Consultancy — was re-registered in 2026 under Ethiopia&apos;s new
+              trade laws and directives. We are a private limited company
+              delivering integrated consultancy, training, and capacity-building
+              services across five core domains.
+            </p>
+            <p>
+              Our team brings together specialists in public health, nutrition,
+              food science, reproductive health, and management — combining the
+              rigor of evidence-based practice with the agility of the private
+              sector. We are committed to women and youth empowerment,
+              sustainable value chains, and market-driven health and nutrition
+              solutions.
+            </p>
+          </div>
+        </Reveal>
       </section>
 
       {/* Story / CORD meaning */}
@@ -59,16 +62,20 @@ export default function AboutPage() {
       {/* Mission & Vision */}
       <section className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
         <div className="grid gap-8 md:grid-cols-2">
-          <MissionVision
-            label="Mission"
-            title="Catalyze coalitions. Deliver impact."
-            body="To catalyze public-private coalitions, deliver high-impact consultancy and training services, and drive measurable improvements in nutrition, health outcomes, and socio-economic development."
-          />
-          <MissionVision
-            label="Vision"
-            title="A premier center of alliance."
-            body="To be a premier Center for Alliance and Coalition for Nutrition, Health, and Development — delivering innovative, sustainable private-sector solutions that improve health, nutrition, and livelihoods."
-          />
+          <Reveal>
+            <MissionVision
+              label="Mission"
+              title="Catalyze coalitions. Deliver impact."
+              body="To catalyze public-private coalitions, deliver high-impact consultancy and training services, and drive measurable improvements in nutrition, health outcomes, and socio-economic development."
+            />
+          </Reveal>
+          <Reveal delay={0.1}>
+            <MissionVision
+              label="Vision"
+              title="A premier center of alliance."
+              body="To be a premier Center for Alliance and Coalition for Nutrition, Health, and Development — delivering innovative, sustainable private-sector solutions that improve health, nutrition, and livelihoods."
+            />
+          </Reveal>
         </div>
       </section>
 
@@ -111,7 +118,7 @@ function MissionVision({
   body: string
 }) {
   return (
-    <div className="rounded-3xl border border-border bg-card p-8 md:p-10">
+    <div className="h-full rounded-3xl border border-border bg-card p-8 md:p-10">
       <div className="mb-3 text-xs font-medium uppercase tracking-widest text-secondary">
         {label}
       </div>
