@@ -23,11 +23,12 @@ export function FinalCTA() {
 
           <div className="relative mx-auto max-w-2xl text-center">
             <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-              Ready to bring clarity to your next chapter?
+              Let&apos;s build a coalition for your next initiative.
             </h2>
             <p className="mt-4 text-pretty leading-relaxed text-muted-foreground md:text-lg">
-              Tell us where you&apos;re headed. We&apos;ll respond within one
-              business day with a focused proposal — no obligation.
+              Tell us about your program, your community, or your venture. We
+              respond within one business day with a focused proposal — no
+              obligation.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button
@@ -46,7 +47,7 @@ export function FinalCTA() {
                 size="lg"
                 className="h-12 rounded-full border-border bg-background/80 px-6 text-foreground backdrop-blur hover:bg-background"
               >
-                <Link href="/services">See how we work</Link>
+                <Link href="/projects">See our work</Link>
               </Button>
             </div>
           </div>

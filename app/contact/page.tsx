@@ -1,31 +1,44 @@
 import type { Metadata } from "next"
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Mail, MapPin, Phone, Linkedin } from "lucide-react"
 import { PageHeader } from "@/components/site/page-header"
 import { ContactForm } from "@/components/site/contact-form"
 
 export const metadata: Metadata = {
-  title: "Contact — Northveil Consulting",
+  title: "Contact — CORD Consultancy",
   description:
-    "Get in touch with Northveil. We respond within one business day.",
+    "Get in touch with CORD Consultancy in Addis Ababa. We respond within one business day.",
 }
 
 const DETAILS = [
   {
     Icon: Mail,
     label: "Email",
-    value: "hello@northveil.co",
-    href: "mailto:hello@northveil.co",
+    value: "info.cordnutrition@gmail.com",
+    href: "mailto:info.cordnutrition@gmail.com",
+  },
+  {
+    Icon: Mail,
+    label: "Director",
+    value: "girma@cordnutrition.com",
+    href: "mailto:girma@cordnutrition.com",
   },
   {
     Icon: Phone,
     label: "Phone",
-    value: "+1 (415) 555-0142",
-    href: "tel:+14155550142",
+    value: "+251 942 461 146 · +251 911 182 168",
+    href: "tel:+251942461146",
+  },
+  {
+    Icon: Linkedin,
+    label: "LinkedIn",
+    value: "linkedin.com/in/girma-goshime-cordnutrition",
+    href: "https://www.linkedin.com/in/girma-goshime-cordnutrition",
   },
   {
     Icon: MapPin,
     label: "Office",
-    value: "548 Market St, San Francisco, CA",
+    value:
+      "Akaki-Kaliti, Wereda 13, Tulu Dimtu · Amakor Building, Office G007, Addis Ababa",
   },
 ]
 
@@ -45,8 +58,8 @@ export default function ContactPage() {
               Let&apos;s talk.
             </h2>
             <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
-              Whether you have a defined brief or just an early signal, we&apos;d
-              love to hear it. Use the form, or reach us directly.
+              Whether you have a defined brief or just an early signal, we
+              would love to hear it. Use the form, or reach us directly.
             </p>
 
             <ul className="mt-8 space-y-4">
@@ -62,6 +75,12 @@ export default function ContactPage() {
                     {href ? (
                       <a
                         href={href}
+                        target={href.startsWith("http") ? "_blank" : undefined}
+                        rel={
+                          href.startsWith("http")
+                            ? "noreferrer noopener"
+                            : undefined
+                        }
                         className="mt-0.5 block text-sm font-medium text-foreground transition-colors hover:text-primary"
                       >
                         {value}
@@ -81,9 +100,8 @@ export default function ContactPage() {
                 Office hours
               </div>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Monday – Friday · 9:00 to 18:00 PT. Asynchronous communication
-                preferred — we&apos;ll always confirm a time that works for
-                you.
+                Monday – Saturday · 8:30 to 17:30 EAT. We are happy to confirm
+                a time that works for your timezone.
               </p>
             </div>
           </div>

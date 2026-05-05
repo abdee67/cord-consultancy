@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/projects", label: "Projects" },
   { href: "/contact", label: "Contact" },
 ]
 
@@ -44,14 +45,14 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:px-10">
         <Link
           href="/"
-          aria-label="Northveil Consulting home"
+          aria-label="CORD Consultancy home"
           className="flex items-center"
         >
           <Logo />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {NAV_LINKS.map((link) => {
             const active =
               link.href === "/"
@@ -80,12 +81,12 @@ export function Navbar() {
           })}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Button
             asChild
             className="rounded-full bg-primary px-5 text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
           >
-            <Link href="/contact">Book a call</Link>
+            <Link href="/contact">Get in touch</Link>
           </Button>
         </div>
 
@@ -95,7 +96,7 @@ export function Navbar() {
           aria-label="Toggle navigation"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-muted md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-muted lg:hidden"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -104,8 +105,8 @@ export function Navbar() {
       {/* Mobile menu */}
       <div
         className={cn(
-          "overflow-hidden border-t border-border/60 bg-background/95 backdrop-blur-md transition-[max-height,opacity] duration-300 md:hidden",
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0",
+          "overflow-hidden border-t border-border/60 bg-background/95 backdrop-blur-md transition-[max-height,opacity] duration-300 lg:hidden",
+          open ? "max-h-[28rem] opacity-100" : "max-h-0 opacity-0",
         )}
       >
         <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
@@ -133,7 +134,7 @@ export function Navbar() {
             asChild
             className="mt-2 w-full rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
           >
-            <Link href="/contact">Book a call</Link>
+            <Link href="/contact">Get in touch</Link>
           </Button>
         </nav>
       </div>

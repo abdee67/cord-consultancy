@@ -1,11 +1,16 @@
 import type { Metadata } from "next"
 import { PageHeader } from "@/components/site/page-header"
+import { OurStory } from "@/components/site/our-story"
+import { Pillars } from "@/components/site/pillars"
+import { Recognition } from "@/components/site/recognition"
+import { OrgChart } from "@/components/site/org-chart"
+import { Gallery } from "@/components/site/gallery"
 import { FinalCTA } from "@/components/site/final-cta"
 
 export const metadata: Metadata = {
-  title: "About — Northveil Consulting",
+  title: "About — CORD Consultancy",
   description:
-    "A senior-led consultancy helping leaders turn ambition into clear strategy and durable execution.",
+    "CORD Nutrition and Health Trading PLC: a private-sector-led consultancy hub for health, nutrition, social affairs, management, and hotel & tourism advisory.",
 }
 
 export default function AboutPage() {
@@ -13,70 +18,82 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="About"
-        title="Senior-led consulting, built for the way teams actually work."
-        description="We&apos;re a small group of strategists and operators who&apos;ve led at the companies we now advise. We bring the same rigor — without the overhead of a traditional firm."
+        title="A coalition for nutrition, health, and development."
+        description="CORD Consultancy is a private-sector-led consultancy hub combining public health expertise with private-sector agility — driving evidence-based impact across Ethiopia and beyond."
       />
 
-      <section className="mx-auto max-w-3xl px-6 py-20 md:px-10 md:py-28">
-        <div className="space-y-14">
-          <Block
-            label="Overview"
-            title="Independent. Senior. Embedded."
-          >
-            <p>
-              Northveil was founded on a simple idea: leadership teams deserve
-              partners who think clearly, move quickly, and stay accountable to
-              outcomes. We&apos;ve spent careers inside operating roles —
-              shipping products, restructuring teams, leading turnarounds — and
-              we bring that perspective to every engagement.
-            </p>
-            <p>
-              We work with a small number of clients at any given time. That
-              constraint is intentional: it&apos;s how we stay close to the
-              work, close to the people, and close to the outcome.
-            </p>
-          </Block>
-
-          <Block label="Mission" title="Help leaders make better decisions, faster.">
-            <p>
-              Our mission is to give leadership teams a sharper edge in
-              moments that matter — strategic inflection points, market
-              entries, restructurings, and growth phases where clarity is the
-              difference between momentum and drift.
-            </p>
-            <p>
-              We measure ourselves by one thing: did our work meaningfully
-              change what you decided, built, or shipped?
-            </p>
-          </Block>
-
-          <Block label="Vision" title="A new standard for advisory work.">
-            <p>
-              We believe the next generation of consulting is smaller, more
-              senior, and more accountable. Less theater, more substance. Fewer
-              decks, more decisions. We&apos;re building Northveil to be the
-              firm we always wished we could hire.
-            </p>
-          </Block>
-
-          <Block label="Principles" title="How we work.">
-            <ul className="grid gap-3 sm:grid-cols-2">
-              {PRINCIPLES.map((p) => (
-                <li
-                  key={p.title}
-                  className="rounded-xl border border-border bg-card p-5"
-                >
-                  <h3 className="text-sm font-semibold text-foreground">
-                    {p.title}
-                  </h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                    {p.description}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </Block>
+      {/* Overview */}
+      <section className="mx-auto max-w-3xl px-6 py-20 md:px-10 md:py-24">
+        <div className="mb-3 text-xs font-medium uppercase tracking-widest text-primary">
+          Overview
         </div>
+        <h2 className="text-balance text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+          Independent. Senior. Locally rooted.
+        </h2>
+        <div className="mt-5 space-y-4 text-pretty leading-relaxed text-muted-foreground md:text-lg">
+          <p>
+            CORD Nutrition and Health Trading PLC — operating as CORD
+            Consultancy — was re-registered in 2026 under Ethiopia&apos;s new
+            trade laws and directives. We are a private limited company
+            delivering integrated consultancy, training, and capacity-building
+            services across five core domains.
+          </p>
+          <p>
+            Our team brings together specialists in public health, nutrition,
+            food science, reproductive health, and management — combining the
+            rigor of evidence-based practice with the agility of the private
+            sector. We are committed to women and youth empowerment,
+            sustainable value chains, and market-driven health and nutrition
+            solutions.
+          </p>
+        </div>
+      </section>
+
+      {/* Story / CORD meaning */}
+      <section className="border-y border-border/60 bg-muted/40">
+        <div className="mx-auto max-w-5xl px-6 py-20 md:px-10 md:py-28">
+          <OurStory />
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
+        <div className="grid gap-8 md:grid-cols-2">
+          <MissionVision
+            label="Mission"
+            title="Catalyze coalitions. Deliver impact."
+            body="To catalyze public-private coalitions, deliver high-impact consultancy and training services, and drive measurable improvements in nutrition, health outcomes, and socio-economic development."
+          />
+          <MissionVision
+            label="Vision"
+            title="A premier center of alliance."
+            body="To be a premier Center for Alliance and Coalition for Nutrition, Health, and Development — delivering innovative, sustainable private-sector solutions that improve health, nutrition, and livelihoods."
+          />
+        </div>
+      </section>
+
+      {/* Pillars */}
+      <section className="border-t border-border/60 bg-muted/40">
+        <div className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
+          <Pillars />
+        </div>
+      </section>
+
+      {/* Recognition */}
+      <section className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
+        <Recognition />
+      </section>
+
+      {/* Org chart */}
+      <section className="border-t border-border/60 bg-muted/40">
+        <div className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
+          <OrgChart />
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
+        <Gallery />
       </section>
 
       <FinalCTA />
@@ -84,49 +101,26 @@ export default function AboutPage() {
   )
 }
 
-const PRINCIPLES = [
-  {
-    title: "Clarity over volume",
-    description:
-      "A short, sharp recommendation beats a 60-page deck. We optimize for the decision, not the deliverable.",
-  },
-  {
-    title: "Senior throughout",
-    description:
-      "The people you meet are the people who do the work. No bait-and-switch staffing.",
-  },
-  {
-    title: "Outcome accountability",
-    description:
-      "We scope to outcomes and tie our success to yours — not to hours or activity.",
-  },
-  {
-    title: "Honest counsel",
-    description:
-      "We'll tell you what we actually think. That's the whole reason to hire an outside partner.",
-  },
-]
-
-function Block({
+function MissionVision({
   label,
   title,
-  children,
+  body,
 }: {
   label: string
   title: string
-  children: React.ReactNode
+  body: string
 }) {
   return (
-    <div>
-      <div className="mb-3 text-xs font-medium uppercase tracking-widest text-primary">
+    <div className="rounded-3xl border border-border bg-card p-8 md:p-10">
+      <div className="mb-3 text-xs font-medium uppercase tracking-widest text-secondary">
         {label}
       </div>
-      <h2 className="text-balance text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+      <h3 className="text-balance text-2xl font-semibold tracking-tight text-foreground">
         {title}
-      </h2>
-      <div className="mt-5 space-y-4 text-pretty leading-relaxed text-muted-foreground md:text-lg">
-        {children}
-      </div>
+      </h3>
+      <p className="mt-4 text-pretty leading-relaxed text-muted-foreground md:text-lg">
+        {body}
+      </p>
     </div>
   )
 }

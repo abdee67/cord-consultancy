@@ -1,10 +1,11 @@
+import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Check } from "lucide-react"
 
 const POINTS = [
-  "Senior-led engagements — no junior handoffs",
-  "Outcome-based scopes with clear success metrics",
-  "Embedded with your team, accountable to your results",
+  "Public health expertise paired with private-sector agility",
+  "Locally rooted in Ethiopia, with international partnerships",
+  "Evidence-based, results-driven, and ethically governed",
 ]
 
 export function AboutSummary() {
@@ -14,30 +15,24 @@ export function AboutSummary() {
         <div>
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1 text-xs font-medium tracking-wide text-muted-foreground uppercase">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
-            About us
+            About CORD
           </div>
           <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-            A consultancy built for the way{" "}
-            <span className="brand-text-gradient">decisions are made today</span>
-            .
+            A{" "}
+            <span className="brand-text-gradient">
+              Center for Alliance & Coalition
+            </span>{" "}
+            for Professional Excellence.
           </h2>
           <p className="mt-5 text-pretty leading-relaxed text-muted-foreground md:text-lg">
-            We&apos;re a small, senior team of strategists and operators. We
-            partner with leaders who need sharp thinking, calm execution, and a
-            real point of view — not another deck.
+            CORD Consultancy is a private limited company re-registered in 2026
+            as CORD Nutrition and Health Trading PLC. We bring together
+            specialists in nutrition, health, and development to deliver
+            integrated consultancy, training, and capacity-building services to
+            ambitious organizations.
           </p>
 
-          <Link
-            href="/about"
-            className="group mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
-          >
-            More about Northveil
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          </Link>
-        </div>
-
-        <div className="flex flex-col justify-center gap-4">
-          <ul className="space-y-3">
+          <ul className="mt-8 space-y-3">
             {POINTS.map((p) => (
               <li
                 key={p}
@@ -53,10 +48,32 @@ export function AboutSummary() {
             ))}
           </ul>
 
-          <div className="mt-2 grid grid-cols-3 gap-4 rounded-xl border border-border bg-background p-5">
-            <Stat value="120+" label="Engagements" />
-            <Stat value="12" label="Countries" />
-            <Stat value="94%" label="Repeat clients" />
+          <Link
+            href="/about"
+            className="group mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+          >
+            Learn our story
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          </Link>
+        </div>
+
+        <div className="relative">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border bg-background">
+            <Image
+              src="/images/strategy-session.jpg"
+              alt="CORD consultants in a strategy session"
+              fill
+              sizes="(min-width: 768px) 45vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+
+          <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-border bg-background/95 p-5 shadow-sm backdrop-blur">
+            <div className="grid grid-cols-3 gap-3">
+              <Stat value="13+" label="Engagements" />
+              <Stat value="5" label="Domains" />
+              <Stat value="67%" label="Female-led" />
+            </div>
           </div>
         </div>
       </div>

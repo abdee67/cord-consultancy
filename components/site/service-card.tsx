@@ -1,11 +1,13 @@
+import { Check } from "lucide-react"
 import type { Service } from "./services-data"
 
 interface ServiceCardProps {
   service: Service
+  detailed?: boolean
 }
 
-export function ServiceCard({ service }: ServiceCardProps) {
-  const { title, description, Icon } = service
+export function ServiceCard({ service, detailed = false }: ServiceCardProps) {
+  const { title, short, description, highlights, Icon } = service
   return (
     <div className="group relative flex h-full flex-col rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[0_8px_30px_-12px_rgba(56,170,212,0.25)]">
       {/* Icon tile */}
@@ -17,8 +19,25 @@ export function ServiceCard({ service }: ServiceCardProps) {
         {title}
       </h3>
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-        {description}
+        {detailed ? description : short}
       </p>
+
+      {detailed && (
+        <ul className="mt-5 space-y-2">
+          {highlights.map((h) => (
+            <li
+              key={h}
+              className="flex items-start gap-2 text-sm leading-relaxed text-foreground/80"
+            >
+              <Check
+                className="mt-0.5 h-3.5 w-3.5 shrink-0 text-secondary"
+                strokeWidth={3}
+              />
+              {h}
+            </li>
+          ))}
+        </ul>
+      )}
 
       {/* Subtle bottom accent on hover */}
       <span
