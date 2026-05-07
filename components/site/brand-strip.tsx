@@ -53,7 +53,8 @@ const PARTNERS: Partner[] = [
   { 
     name: "Commercial Bank of Ethiopia", 
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cbe.jfif-w05ovLZVulOD2y5kg6KXC4GDdIsA0W.jpeg",
-    alt: "Commercial Bank of Ethiopia logo"
+    alt: "Commercial Bank of Ethiopia logo",
+    circular: true,
   },
   { 
     name: "alignAfrica", 
