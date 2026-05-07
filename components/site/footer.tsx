@@ -1,13 +1,16 @@
+"use client"
+
 import Link from "next/link"
-import { Instagram, Linkedin, Mail, Phone, Send, Youtube } from "lucide-react"
+import { Instagram, Linkedin, Mail, MapPin, Phone, Send, Youtube } from "lucide-react"
 import { Logo } from "./logo"
+import { useEffect, useRef, useState } from "react"
+import { cn } from "@/lib/utils"
 
 const FOOTER_LINKS = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/projects", label: "Projects" },
-  { href: "/feedback", label: "Feedback" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Contact & Feedback" },
 ]
 
 const SOCIALS = [
@@ -34,37 +37,78 @@ const SOCIALS = [
 ]
 
 export function Footer() {
+  const ref = useRef<HTMLElement>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <footer className="bg-gradient-to-r from-[#4DC8E8] via-[#2BBFB0] to-[#2ECC8A]">
-      <div className="mx-auto max-w-7xl px-6 py-12 md:px-10 md:py-16">
-        <div className="grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-5">
-            <div className="flex items-center gap-2.5">
-              <Logo showWordmark={false} size={40} />
-              <span className="flex items-baseline gap-1.5 text-[17px] font-bold tracking-tight text-white">
-                CORD
-                <span className="font-light text-white/80">Consultancy</span>
+    <footer
+      ref={ref}
+      className="bg-gradient-to-r from-[#4DC8E8] via-[#2BBFB0] to-[#2ECC8A]"
+    >
+      <div className="mx-auto max-w-7xl px-6 py-14 md:px-10 md:py-20">
+        <div className="grid gap-12 md:grid-cols-12">
+
+          {/* Brand column */}
+          <div
+            className={cn(
+              "md:col-span-5 transition-all duration-700",
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
+            )}
+          >
+            <Link href="/" className="inline-flex items-center gap-3 group">
+              <div className="transition-transform duration-300 group-hover:scale-105">
+                <Logo showWordmark={false} size={52} />
+              </div>
+              <span className="flex flex-col leading-none">
+                <span className="text-[20px] font-bold tracking-tight text-white drop-shadow-sm">
+                  CORD
+                </span>
+                <span className="text-[12px] font-light tracking-wide text-white/90">
+                  Consultancy
+                </span>
               </span>
-            </div>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/80">
-              CORD Nutrition and Health Trading PLC. A private-sector-led
+            </Link>
+            <p className="mt-5 max-w-sm text-[15px] font-medium leading-relaxed text-white">
+              CORD Nutrition and Health Trading PLC — a private-sector-led
               consultancy hub for health, nutrition, social development,
-              management, and hospitality — driving evidence-based impact across
-              Ethiopia and beyond.
+              management, and hospitality.
             </p>
-            <p className="mt-4 text-xs italic text-white/60">
-              Center for Alliance & Coalition for Professional Excellence.
+            <p className="mt-3 text-sm font-medium italic text-white/90">
+              Driving evidence-based impact across Ethiopia and beyond.
+            </p>
+            <p className="mt-2 text-sm text-white/80 italic">
+              Center for Alliance &amp; Coalition for Professional Excellence.
             </p>
 
-            <div className="mt-6 flex items-center gap-2">
-              {SOCIALS.map(({ label, href, Icon }) => (
+            <div className="mt-7 flex items-center gap-2.5">
+              {SOCIALS.map(({ label, href, Icon }, i) => (
                 <a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label={label}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-white/80 transition-colors hover:bg-white/20 hover:text-white"
+                  style={{ transitionDelay: visible ? `${200 + i * 60}ms` : "0ms" }}
+                  className={cn(
+                    "inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-white/40 bg-white/10 text-white transition-all duration-300 hover:bg-white hover:text-[#2BBFB0] hover:scale-110 hover:border-white",
+                    visible ? "opacity-100 scale-100" : "opacity-0 scale-75",
+                  )}
                 >
                   <Icon className="h-4 w-4" strokeWidth={1.75} />
                 </a>
@@ -72,64 +116,98 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="md:col-span-3">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-white">
+          {/* Explore column */}
+          <div
+            className={cn(
+              "md:col-span-3 transition-all duration-700 delay-150",
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
+            )}
+          >
+            <h3 className="text-[11px] font-bold uppercase tracking-[0.18em] text-white">
               Explore
             </h3>
-            <nav className="mt-4 flex flex-col gap-2.5" aria-label="Footer">
-              {FOOTER_LINKS.map((link) => (
+            <div className="mt-1 h-0.5 w-8 rounded-full bg-white/50" />
+            <nav className="mt-5 flex flex-col gap-3" aria-label="Footer navigation">
+              {FOOTER_LINKS.map((link, i) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-white/75 transition-colors hover:text-white"
+                  style={{ transitionDelay: visible ? `${250 + i * 50}ms` : "0ms" }}
+                  className={cn(
+                    "group inline-flex items-center gap-2 text-[15px] font-medium text-white transition-all duration-200 hover:translate-x-1",
+                    visible ? "opacity-100" : "opacity-0",
+                  )}
                 >
+                  <span className="inline-block h-1 w-1 rounded-full bg-white/60 transition-all duration-200 group-hover:w-3 group-hover:bg-white" />
                   {link.label}
                 </Link>
               ))}
             </nav>
           </div>
 
-          <div className="md:col-span-4">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-white">
+          {/* Contact column */}
+          <div
+            className={cn(
+              "md:col-span-4 transition-all duration-700 delay-300",
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
+            )}
+          >
+            <h3 className="text-[11px] font-bold uppercase tracking-[0.18em] text-white">
               Get in touch
             </h3>
-            <ul className="mt-4 space-y-2.5 text-sm">
+            <div className="mt-1 h-0.5 w-8 rounded-full bg-white/50" />
+            <ul className="mt-5 space-y-4">
               <li>
                 <a
                   href="mailto:info.cordnutrition@gmail.com"
-                  className="inline-flex items-center gap-2 text-white/75 transition-colors hover:text-white"
+                  className="group flex items-start gap-3 text-[15px] font-medium text-white transition-colors hover:text-white/80"
                 >
-                  <Mail className="h-3.5 w-3.5" />
+                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/20 text-white transition-colors group-hover:bg-white group-hover:text-[#2BBFB0]">
+                    <Mail className="h-4 w-4" strokeWidth={1.75} />
+                  </span>
                   info.cordnutrition@gmail.com
                 </a>
               </li>
               <li>
                 <a
                   href="tel:+251942461146"
-                  className="inline-flex items-center gap-2 text-white/75 transition-colors hover:text-white"
+                  className="group flex items-start gap-3 text-[15px] font-medium text-white transition-colors hover:text-white/80"
                 >
-                  <Phone className="h-3.5 w-3.5" />
+                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/20 text-white transition-colors group-hover:bg-white group-hover:text-[#2BBFB0]">
+                    <Phone className="h-4 w-4" strokeWidth={1.75} />
+                  </span>
                   +251 942 461 146
                 </a>
               </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/20 text-white">
+                  <MapPin className="h-4 w-4" strokeWidth={1.75} />
+                </span>
+                <p className="text-[14px] font-medium leading-relaxed text-white">
+                  Akaki-Kaliti, Wereda 13, Tulu Dimtu
+                  <br />
+                  Amakor Building, Office G007
+                  <br />
+                  Addis Ababa, Ethiopia
+                </p>
+              </li>
             </ul>
-            <p className="mt-4 text-xs leading-relaxed text-white/60">
-              Akaki-Kaliti, Wereda 13, Tulu Dimtu
-              <br />
-              Amakor Building, Office G007, Addis Ababa
-            </p>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/20 pt-6 text-xs text-white/60 md:flex-row md:items-center">
-          <p>
-            &copy; {new Date().getFullYear()} CORD Nutrition and Health Trading
-            PLC. All rights reserved.
+        {/* Bottom bar */}
+        <div
+          className={cn(
+            "mt-12 flex flex-col items-start justify-between gap-3 border-t border-white/30 pt-7 md:flex-row md:items-center transition-all duration-700 delay-500",
+            visible ? "opacity-100" : "opacity-0",
+          )}
+        >
+          <p className="text-[13px] font-medium text-white">
+            &copy; {new Date().getFullYear()} CORD Nutrition and Health Trading PLC. All rights reserved.
           </p>
-          <p className="flex items-center gap-2">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-white/50" />
-            USAID partner · Global Nutrition Report member · Share-Net
-            Netherlands
+          <p className="flex items-center gap-2 text-[13px] font-medium text-white">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-white/70" />
+            USAID partner &middot; Global Nutrition Report member &middot; Share-Net Netherlands
           </p>
         </div>
       </div>
