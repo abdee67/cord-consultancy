@@ -2,10 +2,12 @@
 
 import Image from 'next/image'
 
-const PARTNERS = [
+type Partner = { name: string; logo: string; alt: string; circular?: boolean }
+
+const PARTNERS: Partner[] = [
   { 
     name: "USAID", 
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/usaid-CA7Ug5mqCGEL8nIBP3uTZXyroaWdpa.png",
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/USAID.jfif-QUD7cXL2fwHou7Ve2HyVNgzmrXsVDk.jpeg",
     alt: "USAID logo"
   },
   { 
@@ -35,7 +37,7 @@ const PARTNERS = [
   },
   { 
     name: "SCOPUS", 
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SCOPUS.jfif-p6rgMGvzMhOv4cFMY9xz.jpeg",
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SCOPUS.jfif-p6rgMTvG9LlOgoMGvzMhOv4cFMY9xz.jpeg",
     alt: "SCOPUS logo"
   },
   { 
@@ -50,7 +52,7 @@ const PARTNERS = [
   },
   { 
     name: "Commercial Bank of Ethiopia", 
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cbe.jfif-w05ovLZVulOD2y5kg6GKXC4GDdIsA0W.jpeg",
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cbe.jfif-w05ovLZVulOD2y5kg6KXC4GDdIsA0W.jpeg",
     alt: "Commercial Bank of Ethiopia logo"
   },
   { 
@@ -66,10 +68,11 @@ const PARTNERS = [
   { 
     name: "Ethio Medical Training PLC", 
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ethio-Medical-Qan40tS7qwiz9z2QKHcaT8XrWaqh1J.jpg",
-    alt: "Ethio Medical Training PLC logo"
+    alt: "Ethio Medical Training PLC logo",
+    circular: true,
   },
   { 
-    name: "Fetan", 
+    name: "Fetan Logistics", 
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fetan.jpg-zfSjjJFv69t4IaIYqw39Ap9hKYNwNG.png",
     alt: "Fetan logo"
   },
@@ -123,13 +126,19 @@ function BrandRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
           key={`${p.name}-${i}-${ariaHidden ? "b" : "a"}`}
           className="flex shrink-0 items-center justify-center"
         >
-          <div className="relative h-16 w-32 transition-transform duration-300 hover:scale-110 md:h-20 md:w-40">
+          <div
+            className={`relative transition-transform duration-300 hover:scale-110 ${
+              p.circular
+                ? "h-20 w-20 overflow-hidden rounded-full md:h-24 md:w-24"
+                : "h-16 w-32 md:h-20 md:w-40"
+            }`}
+          >
             <Image
               src={p.logo}
               alt={p.alt}
               fill
-              className="object-contain object-center"
-              sizes="(max-width: 768px) 128px, 160px"
+              className={p.circular ? "object-cover object-center" : "object-contain object-center"}
+              sizes={p.circular ? "96px" : "(max-width: 768px) 128px, 160px"}
               priority={false}
             />
           </div>
