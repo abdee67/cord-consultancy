@@ -35,18 +35,24 @@ const SOCIALS = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/60 bg-background">
+    <footer className="bg-gradient-to-r from-[#4DC8E8] via-[#2BBFB0] to-[#2ECC8A]">
       <div className="mx-auto max-w-7xl px-6 py-12 md:px-10 md:py-16">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
-            <Logo />
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
+            <div className="flex items-center gap-2.5">
+              <Logo showWordmark={false} size={40} />
+              <span className="flex items-baseline gap-1.5 text-[17px] font-bold tracking-tight text-white">
+                CORD
+                <span className="font-light text-white/80">Consultancy</span>
+              </span>
+            </div>
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/80">
               CORD Nutrition and Health Trading PLC. A private-sector-led
               consultancy hub for health, nutrition, social development,
               management, and hospitality — driving evidence-based impact across
               Ethiopia and beyond.
             </p>
-            <p className="mt-4 text-xs italic text-muted-foreground">
+            <p className="mt-4 text-xs italic text-white/60">
               Center for Alliance & Coalition for Professional Excellence.
             </p>
 
@@ -58,7 +64,7 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label={label}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-white/80 transition-colors hover:bg-white/20 hover:text-white"
                 >
                   <Icon className="h-4 w-4" strokeWidth={1.75} />
                 </a>
@@ -67,7 +73,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-3">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-foreground">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-white">
               Explore
             </h3>
             <nav className="mt-4 flex flex-col gap-2.5" aria-label="Footer">
@@ -75,7 +81,7 @@ export function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className="text-sm text-white/75 transition-colors hover:text-white"
                 >
                   {link.label}
                 </Link>
@@ -84,14 +90,14 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-4">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-foreground">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-white">
               Get in touch
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <a
                   href="mailto:info.cordnutrition@gmail.com"
-                  className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+                  className="inline-flex items-center gap-2 text-white/75 transition-colors hover:text-white"
                 >
                   <Mail className="h-3.5 w-3.5" />
                   info.cordnutrition@gmail.com
@@ -100,14 +106,14 @@ export function Footer() {
               <li>
                 <a
                   href="tel:+251942461146"
-                  className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+                  className="inline-flex items-center gap-2 text-white/75 transition-colors hover:text-white"
                 >
                   <Phone className="h-3.5 w-3.5" />
                   +251 942 461 146
                 </a>
               </li>
             </ul>
-            <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-xs leading-relaxed text-white/60">
               Akaki-Kaliti, Wereda 13, Tulu Dimtu
               <br />
               Amakor Building, Office G007, Addis Ababa
@@ -115,13 +121,13 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-border/60 pt-6 text-xs text-muted-foreground md:flex-row md:items-center">
+        <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/20 pt-6 text-xs text-white/60 md:flex-row md:items-center">
           <p>
             &copy; {new Date().getFullYear()} CORD Nutrition and Health Trading
             PLC. All rights reserved.
           </p>
           <p className="flex items-center gap-2">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-secondary" />
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-white/50" />
             USAID partner · Global Nutrition Report member · Share-Net
             Netherlands
           </p>
