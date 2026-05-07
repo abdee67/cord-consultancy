@@ -1,23 +1,85 @@
+'use client'
+
+import Image from 'next/image'
+
 const PARTNERS = [
-  { name: "USAID", mark: "USAID", tone: "primary" as const },
-  { name: "Global Nutrition Report", mark: "GNR", tone: "secondary" as const },
-  { name: "Share-Net Netherlands", mark: "SN", tone: "primary" as const },
-  { name: "FGAE", mark: "FGAE", tone: "secondary" as const },
-  { name: "SOS Children's Villages", mark: "SOS", tone: "primary" as const },
-  { name: "OICE", mark: "OICE", tone: "secondary" as const },
-  { name: "SCOPUS", mark: "SCO", tone: "primary" as const },
-  { name: "Aleph Medical", mark: "AM", tone: "secondary" as const },
-  { name: "Fetan Logistics", mark: "FT", tone: "primary" as const },
-  { name: "Life Addis Specialty", mark: "LA", tone: "secondary" as const },
-  { name: "Addis Ababa Health Bureau", mark: "AAHB", tone: "primary" as const },
-  { name: "Commercial Bank of Ethiopia", mark: "CBE", tone: "secondary" as const },
+  { 
+    name: "USAID", 
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/usaid-CA7Ug5mqCGEL8nIBP3uTZXyroaWdpa.png",
+    alt: "USAID logo"
+  },
+  { 
+    name: "Global Nutrition Report", 
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Global%20nutrition%20report.jfif-tJ4MKMZMriDIklLEdeatDPNURgWE7d.jpeg",
+    alt: "Global Nutrition Report logo"
+  },
+  { 
+    name: "Share-Net Netherlands", 
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Share-Net%20Netherlands-pxFsuBfDHQpQ4qw6fhgquFJkCoKdge.png",
+    alt: "Share-Net Netherlands logo"
+  },
+  { 
+    name: "FGAE", 
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FGAE.jfif-TXxsmtsb7vBRleZCt9onuUD8x6ciyy.jpeg",
+    alt: "FGAE logo"
+  },
+  { 
+    name: "SOS Children's Villages", 
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SOS%20Children%27s%20Villages-IycE3nc36AkafhIUVcBuI4NFxtUJZQ.png",
+    alt: "SOS Children's Villages logo"
+  },
+  { 
+    name: "OICE", 
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/OICE.jfif-NA6vx8LopeYT6QKGKAntQ6iTJZ6IxH.jpeg",
+    alt: "OICE logo"
+  },
+  { 
+    name: "SCOPUS", 
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SCOPUS.jfif-p6rgMGvzMhOv4cFMY9xz.jpeg",
+    alt: "SCOPUS logo"
+  },
+  { 
+    name: "Aleph", 
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aleph-A1IAacWN6UgDpoDa6ZdAnv6aopDYJE.png",
+    alt: "Aleph logo"
+  },
+  { 
+    name: "Addis Ababa Health Bureau", 
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Addis%20Ababa%20Health%20Bureau.jfif-Su5nOI4ZxjTLdr3Vay0DeQuECXxDgM.jpeg",
+    alt: "Addis Ababa Health Bureau logo"
+  },
+  { 
+    name: "Commercial Bank of Ethiopia", 
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cbe.jfif-w05ovLZVulOD2y5kg6GKXC4GDdIsA0W.jpeg",
+    alt: "Commercial Bank of Ethiopia logo"
+  },
+  { 
+    name: "alignAfrica", 
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/alignAfrica%20%28LNGO%29.jfif-iuM8G5RQPSRkyYkqdStp3Vbyop4Qfc.jpeg",
+    alt: "alignAfrica logo"
+  },
+  { 
+    name: "Ethiopian Health Informatics Technology Professionals Association", 
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ethiopian%20Health-Q5SzbYMJQK4GGNibSzQrFgYqHP1DmK.png",
+    alt: "EHITPA logo"
+  },
+  { 
+    name: "Ethio Medical Training PLC", 
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ethio-Medical-Qan40tS7qwiz9z2QKHcaT8XrWaqh1J.jpg",
+    alt: "Ethio Medical Training PLC logo"
+  },
+  { 
+    name: "Fetan", 
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fetan.jpg-zfSjjJFv69t4IaIYqw39Ap9hKYNwNG.png",
+    alt: "Fetan logo"
+  },
 ]
 
 export function BrandStrip() {
   return (
     <section
       aria-labelledby="brand-strip-heading"
-      className="relative border-y border-border/60 bg-muted/40"
+      className="relative border-y border-border/60 bg-gradient-to-b from-background to-muted/20"
     >
       <div className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-20">
         <h2
@@ -32,11 +94,11 @@ export function BrandStrip() {
           {/* Edge fade overlays */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-muted/60 to-transparent md:w-40"
+            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-background to-transparent md:w-40"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-muted/60 to-transparent md:w-40"
+            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-background to-transparent md:w-40"
           />
 
           {/* Track: two identical halves create a seamless 0% → -50% loop */}
@@ -54,59 +116,25 @@ function BrandRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
   return (
     <ul
       aria-hidden={ariaHidden || undefined}
-      className="flex shrink-0 items-start gap-10 pr-10 md:gap-14 md:pr-14"
+      className="flex shrink-0 items-center gap-8 pr-8 md:gap-12 md:pr-12"
     >
       {PARTNERS.map((p, i) => (
         <li
           key={`${p.name}-${i}-${ariaHidden ? "b" : "a"}`}
-          className="flex w-32 shrink-0 flex-col items-center gap-3 md:w-40"
+          className="flex shrink-0 items-center justify-center"
         >
-          <PartnerMark mark={p.mark} tone={p.tone} />
-          <span className="whitespace-nowrap text-center text-[13px] font-semibold tracking-tight text-foreground/85 md:text-sm">
-            {p.name}
-          </span>
+          <div className="relative h-16 w-32 transition-transform duration-300 hover:scale-110 md:h-20 md:w-40">
+            <Image
+              src={p.logo}
+              alt={p.alt}
+              fill
+              className="object-contain object-center"
+              sizes="(max-width: 768px) 128px, 160px"
+              priority={false}
+            />
+          </div>
         </li>
       ))}
     </ul>
-  )
-}
-
-function PartnerMark({
-  mark,
-  tone,
-}: {
-  mark: string
-  tone: "primary" | "secondary"
-}) {
-  // Logo-style monogram tile: rounded square with a subtle brand gradient
-  // and a colored monogram. Visually consistent in lieu of real partner logos.
-  const tint =
-    tone === "primary"
-      ? "from-primary/15 to-primary/5 text-primary ring-primary/20"
-      : "from-secondary/15 to-secondary/5 text-secondary ring-secondary/20"
-
-  // Constrain size — long marks like "AAHB" / "USAID" still fit cleanly.
-  const fontSize =
-    mark.length >= 5 ? "text-[11px]" : mark.length >= 4 ? "text-xs" : "text-sm"
-
-  return (
-    <span
-      aria-hidden="true"
-      className={[
-        "relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br ring-1 md:h-16 md:w-16",
-        tint,
-      ].join(" ")}
-    >
-      {/* Subtle inner highlight */}
-      <span className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-b from-white/50 to-transparent opacity-60" />
-      <span
-        className={[
-          "relative font-bold uppercase tracking-tight",
-          fontSize,
-        ].join(" ")}
-      >
-        {mark}
-      </span>
-    </span>
   )
 }
