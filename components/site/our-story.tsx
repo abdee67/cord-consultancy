@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Reveal } from "@/components/site/reveal"
 
 const TIMELINE = [
@@ -29,47 +30,98 @@ const TIMELINE = [
 
 export function OurStory() {
   return (
-    <div>
-      <Reveal>
-        <div className="mb-3 text-xs font-medium uppercase tracking-widest text-primary">
-          Our story
+    <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+      {/* Left side - Image collage */}
+      <Reveal className="order-2 lg:order-1">
+        <div className="relative">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-4">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5936127106884504542_121-685VqWxbIIt91ZhAS8Jlog7e2wjQux.jpg"
+                  alt="CORD training session"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative aspect-square overflow-hidden rounded-2xl">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fruit-AYEAzt5fgf12Gi5iG4HLGromD5TOUE.jpg"
+                  alt="Nutrition education"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <div className="space-y-4 pt-8">
+              <div className="relative aspect-square overflow-hidden rounded-2xl">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5884210066192713498_121-pxyl7UeyIsuiRJRfYm9aNcWXZ13kAw.jpg"
+                  alt="Strategic meeting"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5888793921578976875_121-h8mD0lekkeYTiNeuhIzRS83UjPNNY8.jpg"
+                  alt="Healthcare training"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          {/* Floating badge */}
+          <div className="absolute -bottom-4 -right-4 rounded-xl bg-gradient-to-r from-[#4DC8E8] to-[#2ECC8A] p-4 text-white shadow-xl">
+            <div className="text-3xl font-bold">13+</div>
+            <div className="text-xs font-medium uppercase tracking-wider">Projects Delivered</div>
+          </div>
         </div>
-        <h2 className="text-balance text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
-          The meaning of <span className="brand-text-gradient">CORD</span>.
-        </h2>
-        <p className="mt-5 max-w-2xl text-pretty leading-relaxed text-muted-foreground md:text-lg">
-          Our name is both an acronym and a metaphor. As an acronym, CORD stands
-          for our defining promise:{" "}
-          <span className="font-medium text-foreground">
-            Center for Alliance &amp; Coalition for Professional Excellence
-          </span>
-          . As a metaphor, the cord — like the spinal cord — is what connects
-          body to mind, person to community, decision to outcome.
-        </p>
       </Reveal>
 
-      <ol className="mt-10 space-y-8 border-l border-border pl-6 md:pl-8">
-        {TIMELINE.map((item, i) => (
-          <Reveal as="li" key={item.year} delay={i * 0.1} className="relative">
-            <span
-              aria-hidden="true"
-              className="absolute -left-8 top-1.5 inline-flex h-4 w-4 items-center justify-center md:-left-10"
-            >
-              <span className="absolute inset-0 rounded-full bg-primary/15" />
-              <span className="relative h-2 w-2 rounded-full bg-primary" />
-            </span>
-            <div className="text-xs font-medium uppercase tracking-widest text-secondary">
-              {item.year}
-            </div>
-            <h3 className="mt-1 text-lg font-semibold tracking-tight text-foreground">
-              {item.title}
-            </h3>
-            <p className="mt-2 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground md:text-base">
-              {item.description}
+      {/* Right side - Content */}
+      <div className="order-1 lg:order-2">
+        <Reveal>
+          <div className="mb-3 text-xs font-medium uppercase tracking-widest text-primary">
+            Our story
+          </div>
+          <h2 className="text-balance text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+            Building a Coalition for Professional Excellence
+          </h2>
+          <div className="mt-5 space-y-4 text-pretty leading-relaxed text-muted-foreground md:text-lg">
+            <p>
+              CORD Consultancy is a purpose-driven organization that combines public health expertise with private-sector agility. Our team of experienced professionals specializes in nutrition, health, and development initiatives, taking a results-driven approach to every project.
             </p>
-          </Reveal>
-        ))}
-      </ol>
+            <p>
+              We envision ourselves as a <span className="font-semibold text-foreground">Center of Alliance and Coalition for Professional Excellence</span> — a collaborative space where stakeholders and partners come together to advance meaningful outcomes in health, nutrition, and sustainable development.
+            </p>
+          </div>
+        </Reveal>
+
+        <ol className="mt-10 space-y-6 border-l-2 border-primary/20 pl-6 md:pl-8">
+          {TIMELINE.map((item, i) => (
+            <Reveal as="li" key={item.year} delay={i * 0.1} className="relative">
+              <span
+                aria-hidden="true"
+                className="absolute -left-[29px] top-1 inline-flex h-4 w-4 items-center justify-center md:-left-[33px]"
+              >
+                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#4DC8E8] to-[#2ECC8A]" />
+                <span className="relative h-2 w-2 rounded-full bg-white" />
+              </span>
+              <div className="text-xs font-bold uppercase tracking-widest text-[#2BBFB0]">
+                {item.year}
+              </div>
+              <h3 className="mt-1 text-base font-semibold tracking-tight text-foreground">
+                {item.title}
+              </h3>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                {item.description}
+              </p>
+            </Reveal>
+          ))}
+        </ol>
+      </div>
     </div>
   )
 }

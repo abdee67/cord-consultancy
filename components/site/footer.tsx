@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Instagram, Linkedin, Mail, MapPin, Phone, Send, Youtube } from "lucide-react"
 import { Logo } from "./logo"
 import { useEffect, useRef, useState } from "react"
@@ -59,9 +60,22 @@ export function Footer() {
   return (
     <footer
       ref={ref}
-      className="bg-gradient-to-r from-[#4DC8E8] via-[#2BBFB0] to-[#2ECC8A]"
+      className="relative overflow-hidden bg-gradient-to-r from-[#4DC8E8] via-[#2BBFB0] to-[#2ECC8A]"
     >
-      <div className="mx-auto max-w-7xl px-6 py-14 md:px-10 md:py-20">
+      {/* Logo watermark background */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="relative w-[600px] h-[600px] opacity-[0.08]">
+          <Image
+            src="/images/cord-logo.png"
+            alt=""
+            fill
+            className="object-contain"
+            aria-hidden="true"
+          />
+        </div>
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-14 md:px-10 md:py-20">
         <div className="grid gap-12 md:grid-cols-12">
 
           {/* Brand column */}
