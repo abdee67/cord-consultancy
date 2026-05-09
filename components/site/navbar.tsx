@@ -57,7 +57,7 @@ export function Navbar() {
           <div
             className="transition-transform duration-300 hover:scale-110 hover:rotate-3"
           >
-            <Logo showWordmark={false} size={72} />
+            <Logo showWordmark={false} size={100} />
           </div>
           <span className="flex flex-col leading-none">
             <span className="text-[26px] font-extrabold tracking-tight text-white drop-shadow-md">

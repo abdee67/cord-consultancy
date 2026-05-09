@@ -87,7 +87,7 @@ export function Footer() {
           >
             <Link href="/" className="inline-flex items-center gap-4 group">
               <div className="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                <Logo showWordmark={false} size={80} />
+                <Logo showWordmark={false} size={150} />
               </div>
               <span className="flex flex-col leading-none">
                 <span className="text-[28px] font-extrabold tracking-tight text-white drop-shadow-md">
