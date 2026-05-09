@@ -131,7 +131,7 @@ export function Hero() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#2ECC8A]/80" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-[#2ECC8A]" />
                 </span>
-                USAID-registered partner &middot; Global Nutrition Report member
+                Internationally Accredited &middot; Global Nutrition Report Member
               </div>
 
               {/* Subtitle */}
@@ -210,7 +210,7 @@ export function Hero() {
                   isTransitioning ? "opacity-0" : "opacity-100"
                 )}
               >
-                <span>USAID Partner</span>
+                <span>Internationally Accredited</span>
                 <span className="hidden h-1 w-1 rounded-full bg-white/50 sm:inline-block" />
                 <span>Global Nutrition Report</span>
                 <span className="hidden h-1 w-1 rounded-full bg-white/50 sm:inline-block" />

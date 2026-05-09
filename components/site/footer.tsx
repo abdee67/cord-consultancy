@@ -19,21 +19,25 @@ const SOCIALS = [
     label: "LinkedIn",
     href: "https://linkedin.com/company/cordnutrition",
     Icon: Linkedin,
+    brandColor: "#0A66C2",
   },
   {
     label: "YouTube",
     href: "https://www.youtube.com/@CORDConsultancy",
     Icon: Youtube,
+    brandColor: "#FF0000",
   },
   {
     label: "Telegram",
     href: "https://t.me/CORDNutrition_PLC",
     Icon: Send,
+    brandColor: "#2AABEE",
   },
   {
     label: "Instagram",
     href: "https://www.instagram.com/cord_consultancy/",
     Icon: Instagram,
+    brandColor: "#E1306C",
   },
 ]
 
@@ -110,8 +114,8 @@ export function Footer() {
               Center for Alliance &amp; Coalition for Professional Excellence.
             </p>
 
-            <div className="mt-7 flex items-center gap-2.5">
-              {SOCIALS.map(({ label, href, Icon }, i) => (
+            <div className="mt-7 flex items-center gap-3">
+              {SOCIALS.map(({ label, href, Icon, brandColor }, i) => (
                 <a
                   key={label}
                   href={href}
@@ -120,11 +124,15 @@ export function Footer() {
                   aria-label={label}
                   style={{ transitionDelay: visible ? `${200 + i * 60}ms` : "0ms" }}
                   className={cn(
-                    "inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-white/40 bg-white/10 text-white transition-all duration-300 hover:bg-white hover:text-[#2BBFB0] hover:scale-110 hover:border-white",
+                    "group inline-flex h-11 w-11 items-center justify-center rounded-full border-2 border-white/20 bg-white/95 transition-all duration-300 hover:scale-110 hover:shadow-lg",
                     visible ? "opacity-100 scale-100" : "opacity-0 scale-75",
                   )}
                 >
-                  <Icon className="h-4 w-4" strokeWidth={1.75} />
+                  <Icon
+                    className="h-5 w-5 transition-transform duration-300 group-hover:scale-110"
+                    strokeWidth={1.75}
+                    style={{ color: brandColor }}
+                  />
                 </a>
               ))}
             </div>
@@ -176,7 +184,7 @@ export function Footer() {
                   href="mailto:info.cordnutrition@gmail.com"
                   className="group flex items-start gap-3 text-[15px] font-medium text-white transition-colors hover:text-white/80"
                 >
-                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/20 text-white transition-colors group-hover:bg-white group-hover:text-[#2BBFB0]">
+                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white text-[#EA4335] transition-all group-hover:scale-110 group-hover:shadow-md">
                     <Mail className="h-4 w-4" strokeWidth={1.75} />
                   </span>
                   info.cordnutrition@gmail.com
@@ -187,14 +195,14 @@ export function Footer() {
                   href="tel:+251942461146"
                   className="group flex items-start gap-3 text-[15px] font-medium text-white transition-colors hover:text-white/80"
                 >
-                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/20 text-white transition-colors group-hover:bg-white group-hover:text-[#2BBFB0]">
+                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white text-[#25D366] transition-all group-hover:scale-110 group-hover:shadow-md">
                     <Phone className="h-4 w-4" strokeWidth={1.75} />
                   </span>
                   +251 942 461 146
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/20 text-white">
+                <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white text-[#4285F4]">
                   <MapPin className="h-4 w-4" strokeWidth={1.75} />
                 </span>
                 <p className="text-[14px] font-medium leading-relaxed text-white">

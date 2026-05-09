@@ -27,24 +27,28 @@ const DETAILS = [
     label: "Email",
     value: "info.cordnutrition@gmail.com",
     href: "mailto:info.cordnutrition@gmail.com",
+    iconColor: "#EA4335",
   },
   {
     Icon: Phone,
     label: "Phone",
     value: "+251 942 461 146",
     href: "tel:+251942461146",
+    iconColor: "#25D366",
   },
   {
     Icon: Phone,
     label: "Alternate",
     value: "+251 911 182 168",
     href: "tel:+251911182168",
+    iconColor: "#25D366",
   },
   {
     Icon: MapPin,
     label: "Office",
     value: "Amakor Building, Office G007\nAkaki-Kaliti, Wereda 13, Tulu Dimtu\nAddis Ababa, Ethiopia",
     href: undefined,
+    iconColor: "#4285F4",
   },
 ]
 
@@ -110,9 +114,12 @@ export default function ContactPage() {
 
               {/* Contact details */}
               <div className="divide-y divide-border">
-                {DETAILS.map(({ Icon, label, value, href }) => (
+                {DETAILS.map(({ Icon, label, value, href, iconColor }) => (
                   <div key={label} className="flex items-start gap-4 px-6 py-4">
-                    <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <span
+                      className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm border border-border"
+                      style={{ color: iconColor }}
+                    >
                       <Icon className="h-4 w-4" strokeWidth={1.75} />
                     </span>
                     <div className="min-w-0">

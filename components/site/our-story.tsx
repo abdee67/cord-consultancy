@@ -24,7 +24,7 @@ const TIMELINE = [
     year: "Today",
     title: "An international footprint",
     description:
-      "Recognized as a USAID partner, member of the Global Nutrition Report, and active participant in Share-Net Netherlands — a credible voice on the global stage.",
+      "Internationally accredited, member of the Global Nutrition Report, and active participant in Share-Net Netherlands — a credible voice on the global stage.",
   },
 ]
 

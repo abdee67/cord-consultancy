@@ -4,9 +4,9 @@ import { Reveal } from "@/components/site/reveal"
 const ITEMS = [
   {
     Icon: Award,
-    title: "USAID Partner",
+    title: "International Accreditation",
     description:
-      "Accepted and registered as a USAID partner, listed in the official USAID partner directory.",
+      "Recognized and listed in international partner directories, affirming our commitment to global standards of excellence in health and nutrition consultancy.",
   },
   {
     Icon: Globe2,
