@@ -6,7 +6,7 @@ const ITEMS = [
     Icon: Award,
     title: "International Accreditation",
     description:
-      "Recognized and listed in international partner directories, affirming our commitment to global standards of excellence in health and nutrition consultancy.",
+      "Recognized and listed in international partner directories, affr commitment to global standards of excellence in health and nutrition consultancy.",
   },
   {
     Icon: Globe2,
