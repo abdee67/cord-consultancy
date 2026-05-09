@@ -1,65 +1,118 @@
+'use client'
+
 import Image from "next/image"
+import { useEffect, useState } from "react"
 import { Reveal } from "@/components/site/reveal"
 
-const IMAGES = [
+interface GalleryImage {
+  src: string
+  alt: string
+  title: string
+  description: string
+}
+
+const GALLERY_IMAGES: GalleryImage[] = [
   {
-    src: "/images/training-facilitation.jpg",
-    alt: "CORD-led training facilitation session in Ethiopia",
-    caption: "Training facilitation",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5902267182450674529_121-eNFQegoEvAP1jvAY3dJXoswVdAWeVq.jpg",
+    alt: "CORD team workshop session with participants",
+    title: "Interactive Workshop",
+    description: "Collaborative knowledge-sharing session"
   },
   {
-    src: "/images/community-nutrition.jpg",
-    alt: "Community nutrition outreach with mothers and children",
-    caption: "Community outreach",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5888793921578976886_121-8h0YxjuSbyFd7Z7rxkBpQMI7bQEdrR.jpg",
+    alt: "CORD capacity building session",
+    title: "Capacity Building",
+    description: "Training and professional development"
   },
   {
-    src: "/images/conference-addis.jpg",
-    alt: "International conference in Addis Ababa",
-    caption: "Conferences & forums",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5884210066192713498_121-pxyl7UeyIsuiRJRfYm9aNcWXZ13kAw.jpg",
+    alt: "CORD board meeting with leadership",
+    title: "Leadership Meeting",
+    description: "Strategic planning and governance"
   },
   {
-    src: "/images/strategy-session.jpg",
-    alt: "CORD consultants in a strategy session",
-    caption: "Advisory engagements",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5902267182450674535_121-nomatzHnk1y60y0ZAAWoC4h04qk56M.jpg",
+    alt: "CORD consultation event",
+    title: "Stakeholder Consultation",
+    description: "Community engagement and dialogue"
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5884210066192713496_121-gRaEGABQwSJEB1dM74Yl2cmvXchOos.jpg",
+    alt: "CORD training presentation",
+    title: "Expert Presentation",
+    description: "Knowledge transfer and learning"
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5936127106884504542_121-685VqWxbIIt91ZhAS8Jlog7e2wjQux.jpg",
+    alt: "CORD conference hall session",
+    title: "Conference Event",
+    description: "Large-scale professional gathering"
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5888793921578976875_121-h8mD0lekkeYTiNeuhIzRS83UjPNNY8.jpg",
+    alt: "CORD nutrition workshop with healthcare professionals",
+    title: "Nutrition Consultation",
+    description: "Health and nutrition initiative"
   },
 ]
 
 export function Gallery() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
   return (
     <div>
       <Reveal>
         <div className="mb-3 text-xs font-medium uppercase tracking-widest text-primary">
           In the field
         </div>
-        <h2 className="text-balance text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
-          Where our work happens.
+        <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+          Our Impact in Action
         </h2>
+        <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
+          See our team collaborating, learning, and driving positive change across health, nutrition, and social development initiatives.
+        </p>
       </Reveal>
 
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
-        {IMAGES.map((img, i) => (
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[280px]">
+        {GALLERY_IMAGES.map((image, index) => (
           <Reveal
-            key={img.src}
-            delay={i * 0.08}
+            key={index}
+            delay={index * 0.08}
             className={[
-              i === 0 ? "sm:col-span-2 md:col-span-2" : "",
-              i === 3 ? "md:col-span-2" : "",
+              index === 0 ? "lg:col-span-2 lg:row-span-2 auto-rows-auto" : "",
+              index === 3 ? "lg:col-span-2" : "",
             ].join(" ")}
           >
-            <figure className="group relative overflow-hidden rounded-2xl border border-border bg-muted">
-              <div className="relative aspect-[4/3]">
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  sizes="(min-width: 1024px) 50vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                />
+            <div
+              className={`group relative overflow-hidden rounded-2xl bg-muted transition-all duration-500 hover:shadow-2xl cursor-pointer h-full ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{
+                transitionDelay: `${index * 50}ms`,
+              }}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                loading="lazy"
+              />
+              
+              {/* Dark overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              
+              {/* Text overlay */}
+              <div className="absolute inset-0 flex flex-col items-start justify-end p-6 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <h3 className="text-lg font-semibold mb-1">{image.title}</h3>
+                <p className="text-sm text-white/90">{image.description}</p>
               </div>
-              <figcaption className="absolute bottom-3 left-3 rounded-full border border-border/60 bg-background/85 px-3 py-1 text-xs font-medium text-foreground backdrop-blur">
-                {img.caption}
-              </figcaption>
-            </figure>
+            </div>
           </Reveal>
         ))}
       </div>
