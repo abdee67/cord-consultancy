@@ -52,10 +52,8 @@ export default function ProjectsPage() {
         <Reveal>
           <p className="mt-10 max-w-2xl text-sm leading-relaxed text-muted-foreground">
             Engagements completed in collaboration with partners including
-            FGAE, SOS Children&apos;s Village Ethiopia, OICE, SCOPUS, Aleph
-            Medical & Health Trading PLC, Fetan Transport and Logistics Share
-            Company, Life Addis Internal Medicine & Surgical Specialty Center,
-            and the Addis Ababa Health Bureau.
+            SOS Children&apos;s Village Ethiopia, Aleph Medical &amp; Health Trading PLC,
+            alignAfrica, and Ethio-Medical Training PLC.
           </p>
         </Reveal>
       </section>

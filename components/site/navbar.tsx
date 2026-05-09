@@ -44,26 +44,26 @@ export function Navbar() {
           : "shadow-sm",
       )}
     >
-      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 md:px-10">
+      <div className="mx-auto flex h-28 max-w-7xl items-center justify-between px-6 md:px-10">
         {/* Logo */}
         <Link
           href="/"
           aria-label="CORD Consultancy home"
           className={cn(
-            "flex items-center gap-3 transition-all duration-300",
+            "flex items-center gap-4 transition-all duration-300",
             mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2",
           )}
         >
           <div
-            className="transition-transform duration-300 hover:scale-105"
+            className="transition-transform duration-300 hover:scale-110 hover:rotate-3"
           >
-            <Logo showWordmark={false} size={56} />
+            <Logo showWordmark={false} size={72} />
           </div>
           <span className="flex flex-col leading-none">
-            <span className="text-[21px] font-bold tracking-tight text-white drop-shadow-sm">
+            <span className="text-[26px] font-extrabold tracking-tight text-white drop-shadow-md">
               CORD
             </span>
-            <span className="text-[13px] font-light tracking-wide text-white/80">
+            <span className="text-[14px] font-medium tracking-wide text-white/90">
               Consultancy
             </span>
           </span>

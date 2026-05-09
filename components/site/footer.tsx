@@ -85,15 +85,15 @@ export function Footer() {
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
             )}
           >
-            <Link href="/" className="inline-flex items-center gap-3 group">
-              <div className="transition-transform duration-300 group-hover:scale-105">
-                <Logo showWordmark={false} size={52} />
+            <Link href="/" className="inline-flex items-center gap-4 group">
+              <div className="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                <Logo showWordmark={false} size={80} />
               </div>
               <span className="flex flex-col leading-none">
-                <span className="text-[20px] font-bold tracking-tight text-white drop-shadow-sm">
+                <span className="text-[28px] font-extrabold tracking-tight text-white drop-shadow-md">
                   CORD
                 </span>
-                <span className="text-[12px] font-light tracking-wide text-white/90">
+                <span className="text-[14px] font-medium tracking-wide text-white/95">
                   Consultancy
                 </span>
               </span>
@@ -221,7 +221,7 @@ export function Footer() {
           </p>
           <p className="flex items-center gap-2 text-[13px] font-medium text-white">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-white/70" />
-            USAID partner &middot; Global Nutrition Report member &middot; Share-Net Netherlands
+            Global Nutrition Report member &middot; Share-Net Netherlands partner
           </p>
         </div>
       </div>

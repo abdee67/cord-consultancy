@@ -19,6 +19,7 @@ export type Service = {
   color: string
   bgColor: string
   gradient: string
+  borderColor: string
   image: string
 }
 
@@ -49,9 +50,10 @@ export const SERVICES: Service[] = [
       "Supportive supervision frameworks",
     ],
     Icon: HeartPulse,
-    color: "text-[#E74C3C]",
-    bgColor: "bg-[#E74C3C]",
-    gradient: "from-[#E74C3C] to-[#C0392B]",
+    color: "#FFFFFF",
+    bgColor: "#FFFFFF",
+    gradient: "from-[#F8F9FA] to-[#FFFFFF]",
+    borderColor: "#E5E7EB",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5884210066192713496_121-gRaEGABQwSJEB1dM74Yl2cmvXchOos.jpg",
   },
   {
@@ -80,9 +82,10 @@ export const SERVICES: Service[] = [
       "Digital nutrition education platforms",
     ],
     Icon: Salad,
-    color: "text-[#2ECC8A]",
-    bgColor: "bg-[#2ECC8A]",
+    color: "#2ECC8A",
+    bgColor: "#2ECC8A",
     gradient: "from-[#2ECC8A] to-[#27AE60]",
+    borderColor: "#2ECC8A",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fruit-AYEAzt5fgf12Gi5iG4HLGromD5TOUE.jpg",
   },
   {
@@ -111,9 +114,10 @@ export const SERVICES: Service[] = [
       "E-government and digital transformation",
     ],
     Icon: Users,
-    color: "text-[#4DC8E8]",
-    bgColor: "bg-[#4DC8E8]",
+    color: "#4DC8E8",
+    bgColor: "#4DC8E8",
     gradient: "from-[#4DC8E8] to-[#3498DB]",
+    borderColor: "#4DC8E8",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5902267182450674529_121-eNFQegoEvAP1jvAY3dJXoswVdAWeVq.jpg",
   },
   {
@@ -142,9 +146,10 @@ export const SERVICES: Service[] = [
       "Training needs assessments",
     ],
     Icon: Briefcase,
-    color: "text-[#8B5CF6]",
-    bgColor: "bg-[#8B5CF6]",
+    color: "#8B5CF6",
+    bgColor: "#8B5CF6",
     gradient: "from-[#8B5CF6] to-[#7C3AED]",
+    borderColor: "#8B5CF6",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5884210066192713498_121-pxyl7UeyIsuiRJRfYm9aNcWXZ13kAw.jpg",
   },
   {
@@ -173,9 +178,10 @@ export const SERVICES: Service[] = [
       "Staff training and development",
     ],
     Icon: Hotel,
-    color: "text-[#F59E0B]",
-    bgColor: "bg-[#F59E0B]",
+    color: "#F59E0B",
+    bgColor: "#F59E0B",
     gradient: "from-[#F59E0B] to-[#D97706]",
+    borderColor: "#F59E0B",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5936127106884504542_121-685VqWxbIIt91ZhAS8Jlog7e2wjQux.jpg",
   },
 ]

@@ -6,11 +6,6 @@ type Partner = { name: string; logo: string; alt: string; circular?: boolean }
 
 const PARTNERS: Partner[] = [
   { 
-    name: "USAID", 
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/USAID.jfif-QUD7cXL2fwHou7Ve2HyVNgzmrXsVDk.jpeg",
-    alt: "USAID logo"
-  },
-  { 
     name: "Global Nutrition Report", 
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Global%20nutrition%20report.jfif-tJ4MKMZMriDIklLEdeatDPNURgWE7d.jpeg",
     alt: "Global Nutrition Report logo"
@@ -21,24 +16,9 @@ const PARTNERS: Partner[] = [
     alt: "Share-Net Netherlands logo"
   },
   { 
-    name: "FGAE", 
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FGAE.jfif-TXxsmtsb7vBRleZCt9onuUD8x6ciyy.jpeg",
-    alt: "FGAE logo"
-  },
-  { 
     name: "SOS Children's Villages", 
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SOS%20Children%27s%20Villages-IycE3nc36AkafhIUVcBuI4NFxtUJZQ.png",
     alt: "SOS Children's Villages logo"
-  },
-  { 
-    name: "OICE", 
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/OICE.jfif-NA6vx8LopeYT6QKGKAntQ6iTJZ6IxH.jpeg",
-    alt: "OICE logo"
-  },
-  { 
-    name: "SCOPUS", 
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SCOPUS.jfif-p6rgMTvG9LlOgoMGvzMhOv4cFMY9xz.jpeg",
-    alt: "SCOPUS logo"
   },
   { 
     name: "Aleph", 
@@ -46,36 +26,15 @@ const PARTNERS: Partner[] = [
     alt: "Aleph logo"
   },
   { 
-    name: "Addis Ababa Health Bureau", 
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Addis%20Ababa%20Health%20Bureau.jfif-Su5nOI4ZxjTLdr3Vay0DeQuECXxDgM.jpeg",
-    alt: "Addis Ababa Health Bureau logo"
-  },
-  { 
-    name: "Commercial Bank of Ethiopia", 
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cbe.jfif-w05ovLZVulOD2y5kg6KXC4GDdIsA0W.jpeg",
-    alt: "Commercial Bank of Ethiopia logo",
-    circular: true,
-  },
-  { 
     name: "alignAfrica", 
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/alignAfrica%20%28LNGO%29.jfif-iuM8G5RQPSRkyYkqdStp3Vbyop4Qfc.jpeg",
     alt: "alignAfrica logo"
-  },
-  { 
-    name: "Ethiopian Health Informatics Technology Professionals Association", 
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ethiopian%20Health-Q5SzbYMJQK4GGNibSzQrFgYqHP1DmK.png",
-    alt: "EHITPA logo"
   },
   { 
     name: "Ethio Medical Training PLC", 
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ethio-Medical-Qan40tS7qwiz9z2QKHcaT8XrWaqh1J.jpg",
     alt: "Ethio Medical Training PLC logo",
     circular: true,
-  },
-  { 
-    name: "Fetan Logistics", 
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fetan.jpg-zfSjjJFv69t4IaIYqw39Ap9hKYNwNG.png",
-    alt: "Fetan logo"
   },
 ]
 
