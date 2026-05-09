@@ -9,11 +9,11 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <BrandStrip />
       <ServicesPreview />
       <FeaturedProjects />
       <AboutSummary />
       <FinalCTA />
+      <BrandStrip />
     </>
   )
 }
