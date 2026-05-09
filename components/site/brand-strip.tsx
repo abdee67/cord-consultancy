@@ -41,6 +41,7 @@ const PARTNERS: Partner[] = [
 
 export function BrandStrip() {
   const [paused, setPaused] = useState(false)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
     <section
@@ -55,21 +56,35 @@ export function BrandStrip() {
           Trusted by partners across the public, private, and development sectors
         </h2>
 
-        {/* Marquee viewport — overflow-visible so tooltips above logos are never clipped */}
-        <div className="relative overflow-hidden">
+        {/* Marquee viewport with top padding to show tooltips */}
+        <div className="pt-16 pb-4">
           {/* Edge fade overlays */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-background to-transparent md:w-48"
+            className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-background to-transparent md:w-48"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-background to-transparent md:w-48"
+            className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-background to-transparent md:w-48"
           />
 
-          <div className="flex w-max items-center will-change-transform motion-reduce:animate-none">
-            <BrandRow paused={paused} setPaused={setPaused} />
-            <BrandRow paused={paused} setPaused={setPaused} ariaHidden />
+          {/* Marquee container */}
+          <div className="relative overflow-hidden">
+            <div className="flex w-max items-center will-change-transform motion-reduce:animate-none">
+              <BrandRow
+                paused={paused}
+                setPaused={setPaused}
+                hoveredIndex={hoveredIndex}
+                setHoveredIndex={setHoveredIndex}
+              />
+              <BrandRow
+                paused={paused}
+                setPaused={setPaused}
+                hoveredIndex={hoveredIndex}
+                setHoveredIndex={setHoveredIndex}
+                ariaHidden
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -91,13 +106,15 @@ function BrandRow({
   ariaHidden = false,
   paused,
   setPaused,
+  hoveredIndex,
+  setHoveredIndex,
 }: {
   ariaHidden?: boolean
   paused: boolean
   setPaused: (v: boolean) => void
+  hoveredIndex: number | null
+  setHoveredIndex: (i: number | null) => void
 }) {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-
   return (
     <ul
       aria-hidden={ariaHidden || undefined}
@@ -110,27 +127,28 @@ function BrandRow({
         return (
           <li
             key={`${p.name}-${i}-${ariaHidden ? 'b' : 'a'}`}
-            className="relative flex shrink-0 flex-col items-center justify-center"
-            onMouseEnter={() => { setHoveredIndex(i); setPaused(true) }}
-            onMouseLeave={() => { setHoveredIndex(null); setPaused(false) }}
+            className="relative flex shrink-0 flex-col items-center justify-center pt-12"
+            onMouseEnter={() => {
+              setHoveredIndex(i)
+              setPaused(true)
+            }}
+            onMouseLeave={() => {
+              setHoveredIndex(null)
+              setPaused(false)
+            }}
           >
-            {/* Name tooltip — appears ABOVE the logo to avoid overflow-hidden clipping */}
+            {/* Name tooltip — positioned above logo */}
             <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -top-12 left-1/2 z-20 -translate-x-1/2 transition-all duration-300"
+              className="absolute left-1/2 top-0 z-20 -translate-x-1/2 whitespace-nowrap"
               style={{
                 opacity: isHovered ? 1 : 0,
-                transform: `translateX(-50%) translateY(${isHovered ? 0 : 6}px)`,
+                pointerEvents: 'none',
+                transition: 'opacity 200ms ease-out',
               }}
             >
-              <span className="whitespace-nowrap rounded-full bg-foreground px-4 py-2 text-[12px] font-semibold tracking-wide text-background shadow-xl">
+              <span className="inline-block rounded-full bg-foreground px-4 py-2 text-[12px] font-semibold tracking-wide text-background shadow-xl">
                 {p.name}
               </span>
-              {/* Arrow pointing down */}
-              <span
-                className="mx-auto mt-1.5 block h-2 w-2 rotate-45 bg-foreground"
-                style={{ clipPath: 'polygon(0 100%, 50% 0, 100% 100%)' }}
-              />
             </div>
 
             {/* Logo */}
@@ -141,8 +159,8 @@ function BrandRow({
                   : 'h-20 w-40 md:h-24 md:w-48'
               }`}
               style={{
-                transform: isHovered ? 'scale(1.12) translateY(-4px)' : 'scale(1) translateY(0)',
-                filter: isHovered ? 'drop-shadow(0 8px 16px rgba(0,0,0,0.18))' : 'none',
+                transform: isHovered ? 'scale(1.12) translateY(-6px)' : 'scale(1) translateY(0)',
+                filter: isHovered ? 'drop-shadow(0 8px 16px rgba(0,0,0,0.2))' : 'none',
               }}
             >
               <Image
