@@ -13,6 +13,30 @@ interface GalleryImage {
 
 const GALLERY_IMAGES: GalleryImage[] = [
   {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/youth%20engagement%203-dsYKazB5qJckp1gInra4e51OpxOMNM.jpg",
+    alt: "CORD team welcoming youth to Yegna Ethio Family Wellness Hub Summer Camp",
+    title: "Yegna Ethio Summer Camp",
+    description: "Family wellness hub welcoming youth"
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/community%20engagement-W63ynFkiZyqrdsx6IWGTcLVcOHtCz8.jpg",
+    alt: "CORD team conducting a community engagement field interview",
+    title: "Community Engagement",
+    description: "Field-based household assessment"
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/youth%20engagement%201-4rYOvYjMiveFvAan2eGE6YXrknS69c.jpg",
+    alt: "CORD mentors with youth in a computer training lab",
+    title: "Youth Digital Skills",
+    description: "Computer training and mentorship"
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/youth%20engagement%202-CuaNTDdnGq1gEbOjglnM7IAgTNZajQ.jpg",
+    alt: "Computer lab session with students and instructor",
+    title: "Hands-on Learning",
+    description: "Active classroom training"
+  },
+  {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5902267182450674529_121-eNFQegoEvAP1jvAY3dJXoswVdAWeVq.jpg",
     alt: "CORD team workshop session with participants",
     title: "Interactive Workshop",
