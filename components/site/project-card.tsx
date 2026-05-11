@@ -3,7 +3,7 @@ import type { Project, ProjectCategory } from "./projects-data"
 
 // Each category keeps its identity through an accent color used on the
 // title, category pill, role/outcome labels and the bottom accent bar.
-// All cards share a soft off-white surface so colored titles read clearly.
+// All cards share a darker off-white surface so colored titles read clearly.
 // Palette is restricted to brand deep-blue and brand green.
 const CATEGORY_ACCENTS: Record<ProjectCategory, string> = {
   "Health": "#0E4FA8",
@@ -14,19 +14,19 @@ const CATEGORY_ACCENTS: Record<ProjectCategory, string> = {
 }
 
 export function ProjectCard({ project }: { project: Project }) {
-  const { title, client, category, role, outcome } = project
+  const { title, category, role, outcome } = project
   const accent = CATEGORY_ACCENTS[category]
 
   return (
     <article
       className="group relative flex h-full flex-col rounded-2xl p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden border-2 border-border/60"
-      style={{ backgroundColor: "#F1F5F9" }}
+      style={{ backgroundColor: "#E2E8F0" }}
     >
       {/* Soft tinted hover overlay in the category accent */}
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
-          background: `linear-gradient(135deg, ${accent}0D 0%, ${accent}05 100%)`,
+          background: `linear-gradient(135deg, ${accent}14 0%, ${accent}08 100%)`,
         }}
       />
 
@@ -51,9 +51,6 @@ export function ProjectCard({ project }: { project: Project }) {
       >
         {title}
       </h3>
-      <p className="relative mt-1 text-xs font-semibold uppercase tracking-widest text-foreground/60">
-        {client}
-      </p>
 
       <div className="relative mt-5 space-y-4 text-sm leading-relaxed flex-grow">
         <div>
@@ -61,18 +58,18 @@ export function ProjectCard({ project }: { project: Project }) {
             className="text-[11px] font-bold uppercase tracking-widest"
             style={{ color: accent }}
           >
-            Our role
+            Activities Accomplished
           </div>
-          <p className="mt-1 text-foreground/75">{role}</p>
+          <p className="mt-1 text-slate-800">{role}</p>
         </div>
         <div>
           <div
             className="text-[11px] font-bold uppercase tracking-widest"
             style={{ color: accent }}
           >
-            Outcome
+            Progress &amp; Outcome
           </div>
-          <p className="mt-1 text-foreground/85">{outcome}</p>
+          <p className="mt-1 text-slate-900 font-medium">{outcome}</p>
         </div>
       </div>
 

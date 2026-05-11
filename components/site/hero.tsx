@@ -9,6 +9,8 @@ import { cn } from "@/lib/utils"
 
 const BRAND_BLUE = "#0E4FA8"
 
+// Slide accents alternate between brand green (#2ECC8A) and brand deep blue
+// (#0E4FA8) only — no other hues are used across the project palette.
 const HERO_SLIDES = [
   {
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/youth%20engagement%203-dsYKazB5qJckp1gInra4e51OpxOMNM.jpg",
@@ -22,21 +24,21 @@ const HERO_SLIDES = [
     title: "Community at the Heart",
     subtitle: "Listening, Learning, Leading",
     description: "Field-based assessments and household engagement that ensure every intervention is grounded in lived community realities.",
-    accent: "#F59E0B",
+    accent: "#0E4FA8",
   },
   {
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/youth%20engagement%201-4rYOvYjMiveFvAan2eGE6YXrknS69c.jpg",
     title: "Digital Skills for Youth",
     subtitle: "Empowering Tomorrow's Innovators",
     description: "Hands-on computer training and mentorship that opens doors to the digital economy for Ethiopian youth.",
-    accent: "#4DC8E8",
+    accent: "#2ECC8A",
   },
   {
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/youth%20engagement%202-CuaNTDdnGq1gEbOjglnM7IAgTNZajQ.jpg",
     title: "Classrooms That Inspire",
     subtitle: "Practical Skills Development",
     description: "Modern training labs where theory meets practice, building real-world capabilities for the next generation.",
-    accent: "#8B5CF6",
+    accent: "#0E4FA8",
   },
   {
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5936127106884504542_121-685VqWxbIIt91ZhAS8Jlog7e2wjQux.jpg",
@@ -50,14 +52,14 @@ const HERO_SLIDES = [
     title: "Coalition for Impact",
     subtitle: "Empowering Communities Together",
     description: "Bringing stakeholders together to create lasting change in health and nutrition outcomes.",
-    accent: "#4DC8E8",
+    accent: "#0E4FA8",
   },
   {
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5884210066192713498_121-pxyl7UeyIsuiRJRfYm9aNcWXZ13kAw.jpg",
     title: "Strategic Partnerships",
     subtitle: "Collaboration Drives Results",
     description: "Working with government bodies, NGOs, and private sector leaders to advance development goals.",
-    accent: "#F59E0B",
+    accent: "#2ECC8A",
   },
 ]
 
@@ -166,9 +168,9 @@ export function Hero() {
         />
         <div
           aria-hidden="true"
-          className="absolute top-[40%] right-[30%] h-48 w-48 rounded-full opacity-20 blur-3xl animate-float"
+          className="absolute top-[40%] right-[30%] h-48 w-48 rounded-full opacity-25 blur-3xl animate-float"
           style={{
-            backgroundColor: "#4DC8E8",
+            backgroundColor: "#0E4FA8",
             transform: `translate(${(mousePos.x - 0.5) * -20}px, ${(mousePos.y - 0.5) * -20}px)`,
             transition: "transform 0.6s ease-out",
           }}

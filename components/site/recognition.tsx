@@ -40,21 +40,35 @@ export function Recognition() {
       </Reveal>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-3">
-        {ITEMS.map(({ Icon, title, description }, i) => (
-          <Reveal key={title} delay={i * 0.08}>
-            <div className="h-full rounded-2xl border border-border bg-card p-6">
-              <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/12 text-secondary">
-                <Icon className="h-5 w-5" strokeWidth={1.75} />
+        {ITEMS.map(({ Icon, title, description }, i) => {
+          // Alternate blue / green / blue across the three cards
+          const accent = i === 1 ? "#1E9E68" : "#0E4FA8"
+          const tint = i === 1 ? "#2ECC8A" : "#0E4FA8"
+          return (
+            <Reveal key={title} delay={i * 0.08}>
+              <div
+                className="h-full rounded-2xl border-2 border-border/60 p-6 transition-all hover:shadow-md"
+                style={{ backgroundColor: "#E2E8F0" }}
+              >
+                <div
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-xl"
+                  style={{ backgroundColor: `${tint}1F`, color: accent }}
+                >
+                  <Icon className="h-5 w-5" strokeWidth={1.75} />
+                </div>
+                <h3
+                  className="mt-5 text-base font-bold tracking-tight"
+                  style={{ color: accent }}
+                >
+                  {title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-800">
+                  {description}
+                </p>
               </div>
-              <h3 className="mt-5 text-base font-semibold tracking-tight text-foreground">
-                {title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {description}
-              </p>
-            </div>
-          </Reveal>
-        ))}
+            </Reveal>
+          )
+        })}
       </div>
     </div>
   )

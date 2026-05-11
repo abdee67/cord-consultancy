@@ -19,13 +19,13 @@ export function ServiceCard({ service, detailed = false, isLink = false }: Servi
   const content = (
     <div
       className="group relative flex h-full flex-col rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border-2 border-border/60 overflow-hidden"
-      style={{ backgroundColor: "#F1F5F9" }}
+      style={{ backgroundColor: "#E2E8F0" }}
     >
       {/* Soft tinted hover overlay */}
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
-          background: `linear-gradient(135deg, ${accentColor}0D 0%, ${accentColor}05 100%)`,
+          background: `linear-gradient(135deg, ${accentColor}14 0%, ${accentColor}08 100%)`,
         }}
       />
 
@@ -45,7 +45,7 @@ export function ServiceCard({ service, detailed = false, isLink = false }: Servi
         {title}
       </h3>
 
-      <p className="relative mt-3 text-sm leading-relaxed text-foreground/70 flex-grow">
+      <p className="relative mt-3 text-sm leading-relaxed text-slate-700 flex-grow">
         {detailed ? description : short}
       </p>
 
@@ -54,7 +54,7 @@ export function ServiceCard({ service, detailed = false, isLink = false }: Servi
           {highlights.map((h) => (
             <li
               key={h}
-              className="flex items-start gap-2 text-sm leading-relaxed text-foreground/85"
+              className="flex items-start gap-2 text-sm leading-relaxed text-slate-800"
             >
               <Check
                 className="mt-0.5 h-4 w-4 shrink-0 flex-none"
