@@ -61,7 +61,10 @@ export function Pillars() {
       <div className="mt-10 grid gap-6 md:grid-cols-2">
         {PILLARS.map(({ title, description, color, bgColor, textColor, image }, i) => (
           <Reveal key={title} delay={i * 0.1}>
-            <div className="group relative h-full overflow-hidden rounded-3xl border border-border bg-card transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+            <div
+              className="group relative h-full overflow-hidden rounded-3xl border-2 border-border/60 transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
+              style={{ backgroundColor: "#E2E8F0" }}
+            >
               {/* Image header */}
               <div className="relative h-48 overflow-hidden">
                 <Image
@@ -88,7 +91,7 @@ export function Pillars() {
                 <h3 className={cn("text-lg font-bold tracking-tight", textColor)}>
                   {title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-3 text-sm leading-relaxed text-slate-800">
                   {description}
                 </p>
               </div>

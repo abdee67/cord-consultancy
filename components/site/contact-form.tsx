@@ -26,12 +26,12 @@ export function ContactForm() {
       noValidate
     >
       <div className="grid gap-5">
-        <Field id="name" label="Name" type="text" placeholder="Jane Doe" required />
+        <Field id="name" label="Name" type="text" placeholder="Your Full Name" required />
         <Field
           id="email"
           label="Email"
           type="email"
-          placeholder="jane@company.com"
+          placeholder="[EMAIL_ADDRESS]"
           required
         />
 
