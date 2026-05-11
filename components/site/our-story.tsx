@@ -73,7 +73,7 @@ export function OurStory() {
             </div>
           </div>
           {/* Floating badge */}
-          <div className="absolute -bottom-4 -right-4 rounded-xl bg-gradient-to-r from-[#4DC8E8] to-[#2ECC8A] p-4 text-white shadow-xl">
+          <div className="absolute -bottom-4 -right-4 rounded-xl bg-gradient-to-r from-[#0E4FA8] to-[#2ECC8A] p-4 text-white shadow-xl">
             <div className="text-3xl font-bold">13+</div>
             <div className="text-xs font-medium uppercase tracking-wider">Projects Delivered</div>
           </div>
@@ -106,10 +106,10 @@ export function OurStory() {
                 aria-hidden="true"
                 className="absolute -left-[29px] top-1 inline-flex h-4 w-4 items-center justify-center md:-left-[33px]"
               >
-                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#4DC8E8] to-[#2ECC8A]" />
+                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#0E4FA8] to-[#2ECC8A]" />
                 <span className="relative h-2 w-2 rounded-full bg-white" />
               </span>
-              <div className="text-xs font-bold uppercase tracking-widest text-[#2BBFB0]">
+              <div className="text-xs font-bold uppercase tracking-widest text-[#0E4FA8]">
                 {item.year}
               </div>
               <h3 className="mt-1 text-base font-semibold tracking-tight text-foreground">
