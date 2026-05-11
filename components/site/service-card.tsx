@@ -9,47 +9,48 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({ service, detailed = false, isLink = false }: ServiceCardProps) {
-  const { title, short, description, highlights, Icon, color, bgColor, borderColor, slug } = service
-  
-  // White cards need dark text, colored cards need white text
-  const isWhiteCard = bgColor === "#FFFFFF"
-  const textColor = isWhiteCard ? "#1F2937" : "#FFFFFF"
-  const iconBg = isWhiteCard ? "#4DC8E8" : bgColor
-  const accentColor = isWhiteCard ? "#4DC8E8" : "#FFFFFF"
-  
+  const { title, short, description, highlights, Icon, bgColor, slug } = service
+
+  // All cards now use white background — the service's brand color is used only as an accent
+  // (title, icon tile, check marks, hover border, bottom bar). For services that were
+  // previously "white" we fall back to the brand light-blue so the accent still reads.
+  const accentColor = bgColor === "#FFFFFF" ? "#4DC8E8" : bgColor
+
   const content = (
-    <div 
-      className="group relative flex h-full flex-col rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border-2 overflow-hidden"
-      style={{
-        backgroundColor: bgColor,
-        borderColor: borderColor,
-      }}
+    <div
+      className="group relative flex h-full flex-col rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border-2 border-border bg-white overflow-hidden"
+      style={
+        {
+          // Animate the border color toward the accent on hover via CSS variable
+          ["--accent" as string]: accentColor,
+        } as React.CSSProperties
+      }
     >
-      {/* Decorative gradient overlay */}
-      <div 
+      {/* Soft tinted hover overlay */}
+      <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
-          background: isWhiteCard 
-            ? "linear-gradient(135deg, rgba(77, 200, 232, 0.05) 0%, rgba(46, 204, 138, 0.05) 100%)"
-            : "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%)"
+          background: `linear-gradient(135deg, ${accentColor}0D 0%, ${accentColor}05 100%)`,
         }}
       />
-      
-      {/* Icon tile with theme color */}
+
+      {/* Icon tile in the service's accent color */}
       <div
         className="relative mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-lg"
-        style={{ backgroundColor: iconBg }}
+        style={{ backgroundColor: accentColor }}
       >
         <Icon className="h-7 w-7 text-white" strokeWidth={1.75} />
       </div>
 
-      <h3 className="relative text-xl font-bold tracking-tight" style={{ color: textColor }}>
+      {/* Colored title */}
+      <h3
+        className="relative text-xl font-bold tracking-tight"
+        style={{ color: accentColor }}
+      >
         {title}
       </h3>
-      <p 
-        className="relative mt-3 text-sm leading-relaxed flex-grow"
-        style={{ color: isWhiteCard ? "#6B7280" : "rgba(255,255,255,0.9)" }}
-      >
+
+      <p className="relative mt-3 text-sm leading-relaxed text-foreground/70 flex-grow">
         {detailed ? description : short}
       </p>
 
@@ -58,8 +59,7 @@ export function ServiceCard({ service, detailed = false, isLink = false }: Servi
           {highlights.map((h) => (
             <li
               key={h}
-              className="flex items-start gap-2 text-sm leading-relaxed"
-              style={{ color: isWhiteCard ? "#374151" : "rgba(255,255,255,0.95)" }}
+              className="flex items-start gap-2 text-sm leading-relaxed text-foreground/85"
             >
               <Check
                 className="mt-0.5 h-4 w-4 shrink-0 flex-none"
@@ -73,7 +73,7 @@ export function ServiceCard({ service, detailed = false, isLink = false }: Servi
       )}
 
       {isLink && (
-        <div 
+        <div
           className="relative mt-6 flex items-center gap-2 text-sm font-semibold"
           style={{ color: accentColor }}
         >
@@ -81,6 +81,13 @@ export function ServiceCard({ service, detailed = false, isLink = false }: Servi
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2" />
         </div>
       )}
+
+      {/* Hover border accent */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 rounded-2xl border-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        style={{ borderColor: accentColor }}
+      />
 
       {/* Bottom accent bar */}
       <span
