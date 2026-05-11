@@ -347,9 +347,9 @@ export function Footer() {
               className="inline-block h-2 w-2 rounded-full animate-pulse"
               style={{ backgroundColor: BRAND_GREEN }}
             />
-            <span className="font-semibold text-white">Global Nutrition Report</span>
+            <span className="font-semibold text-white">Internationally Accredited</span>
             <span className="text-white/50">&middot;</span>
-            <span className="font-semibold text-white">Share-Net Netherlands</span>
+            <span className="font-semibold text-white">Evidence-Based Consultancy</span>
           </p>
         </div>
       </div>

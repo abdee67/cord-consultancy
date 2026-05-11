@@ -64,10 +64,10 @@ const HERO_SLIDES = [
   },
   {
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5884210066192713498_121-pxyl7UeyIsuiRJRfYm9aNcWXZ13kAw.jpg",
-    title: "Trusted by USAID, GNR & Share-Net",
+    title: "Coalitions That Scale Impact",
     subtitle: "Strategic Partnerships",
     description:
-      "As a USAID-registered partner, Global Nutrition Report contributor and Share-Net Netherlands member, we collaborate with government bodies, NGOs and the private sector to scale impact across Ethiopia and beyond.",
+      "We work with government bodies, development partners and the private sector to design, implement and scale evidence-based programs across Ethiopia and the wider region.",
     accent: "#2ECC8A",
   },
 ]
@@ -235,7 +235,7 @@ export function Hero() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#2ECC8A]/80" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-[#2ECC8A]" />
                 </span>
-                Internationally Accredited &middot; Global Nutrition Report Member
+                Internationally Accredited &middot; Evidence-Based Consultancy
               </div>
 
               {/* Subtitle with sliding accent line */}
@@ -338,9 +338,9 @@ export function Hero() {
               >
                 <span>Internationally Accredited</span>
                 <span className="hidden h-1 w-1 rounded-full bg-[#2ECC8A] sm:inline-block" />
-                <span>Global Nutrition Report</span>
+                <span>Evidence-Based Consultancy</span>
                 <span className="hidden h-1 w-1 rounded-full bg-[#2ECC8A] sm:inline-block" />
-                <span>Share-Net Netherlands</span>
+                <span>Private-Sector-Led</span>
               </div>
             </div>
           </div>

@@ -6,19 +6,19 @@ const ITEMS = [
     Icon: Award,
     title: "International Accreditation",
     description:
-      "Recognized and listed in international partner directories, affr commitment to global standards of excellence in health and nutrition consultancy.",
+      "Recognized and listed in international partner directories, affirming our commitment to global standards of excellence in health and nutrition consultancy.",
   },
   {
     Icon: Globe2,
-    title: "Global Nutrition Report",
+    title: "Global Nutrition Network",
     description:
-      "Active member of the world's leading independent assessment of the state of global nutrition.",
+      "Active contributor to the leading independent assessment of the state of global nutrition, helping shape evidence-based dialogue and accountability.",
   },
   {
     Icon: Network,
-    title: "Share-Net Netherlands",
+    title: "SRHR Knowledge Platform",
     description:
-      "Like-minded member of the Dutch knowledge platform for Sexual and Reproductive Health and Rights.",
+      "Engaged member of a leading international knowledge platform for Sexual and Reproductive Health and Rights, sharing practice across the global community.",
   },
 ]
 
