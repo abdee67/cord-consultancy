@@ -1,41 +1,59 @@
 import { ArrowUpRight } from "lucide-react"
 import type { Project, ProjectCategory } from "./projects-data"
 
-// Each category keeps its identity through an accent color used on the
-// title, category pill, role/outcome labels and the bottom accent bar.
-// All cards share a darker off-white surface so colored titles read clearly.
-// Palette is restricted to brand deep-blue and brand green.
-const CATEGORY_ACCENTS: Record<ProjectCategory, string> = {
-  "Health": "#0E4FA8",
-  "Nutrition": "#2ECC8A",
-  "Social Affairs": "#0E4FA8",
-  "Management": "#2ECC8A",
-  "Capacity Building": "#2ECC8A",
-}
+// Brand rule:
+//   - Health (and related) → WHITE text on a deep-blue surface
+//   - Nutrition (and related) → GREEN text on an off-white surface
+//   - All other categories → BLUE text on an off-white surface
+const HEALTH_CATEGORIES: ProjectCategory[] = ["Health"]
+const NUTRITION_CATEGORIES: ProjectCategory[] = ["Nutrition"]
+
+const BRAND_BLUE = "#0E4FA8"
+const BRAND_GREEN = "#1E9E68"
+const OFF_WHITE = "#E2E8F0"
 
 export function ProjectCard({ project }: { project: Project }) {
   const { title, category, role, outcome } = project
-  const accent = CATEGORY_ACCENTS[category]
+
+  const healthMode = HEALTH_CATEGORIES.includes(category)
+  const nutritionMode = NUTRITION_CATEGORIES.includes(category)
+
+  // Surface + accent driven by the category mode
+  const surface = healthMode ? BRAND_BLUE : OFF_WHITE
+  const accent = healthMode ? "#FFFFFF" : nutritionMode ? BRAND_GREEN : BRAND_BLUE
+  const bodyText = healthMode ? "text-white/85" : "text-slate-800"
+  const outcomeText = healthMode ? "text-white" : "text-slate-900"
+  const borderTone = healthMode ? "border-white/15" : "border-border/60"
+
+  // Category pill — inverted on health so it pops against the blue surface
+  const pillBg = healthMode ? "#FFFFFF" : accent
+  const pillText = healthMode ? BRAND_BLUE : "#FFFFFF"
+  const pillDot = healthMode ? BRAND_BLUE : "#FFFFFF"
 
   return (
     <article
-      className="group relative flex h-full flex-col rounded-2xl p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden border-2 border-border/60"
-      style={{ backgroundColor: "#E2E8F0" }}
+      className={`group relative flex h-full flex-col rounded-2xl p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden border-2 ${borderTone}`}
+      style={{ backgroundColor: surface }}
     >
-      {/* Soft tinted hover overlay in the category accent */}
+      {/* Soft tinted hover overlay */}
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
-          background: `linear-gradient(135deg, ${accent}14 0%, ${accent}08 100%)`,
+          background: healthMode
+            ? "linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)"
+            : `linear-gradient(135deg, ${accent}14 0%, ${accent}08 100%)`,
         }}
       />
 
       <div className="relative flex items-center justify-between">
         <span
-          className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-white"
-          style={{ backgroundColor: accent }}
+          className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider"
+          style={{ backgroundColor: pillBg, color: pillText }}
         >
-          <span className="inline-block h-2 w-2 rounded-full bg-white animate-pulse" />
+          <span
+            className="inline-block h-2 w-2 rounded-full animate-pulse"
+            style={{ backgroundColor: pillDot }}
+          />
           {category}
         </span>
         <ArrowUpRight
@@ -44,7 +62,7 @@ export function ProjectCard({ project }: { project: Project }) {
         />
       </div>
 
-      {/* Colored title */}
+      {/* Title in the rule-driven accent color */}
       <h3
         className="relative mt-5 text-xl font-bold tracking-tight"
         style={{ color: accent }}
@@ -60,7 +78,7 @@ export function ProjectCard({ project }: { project: Project }) {
           >
             Activities Accomplished
           </div>
-          <p className="mt-1 text-slate-800">{role}</p>
+          <p className={`mt-1 ${bodyText}`}>{role}</p>
         </div>
         <div>
           <div
@@ -69,7 +87,7 @@ export function ProjectCard({ project }: { project: Project }) {
           >
             Progress &amp; Outcome
           </div>
-          <p className="mt-1 text-slate-900 font-medium">{outcome}</p>
+          <p className={`mt-1 font-medium ${outcomeText}`}>{outcome}</p>
         </div>
       </div>
 

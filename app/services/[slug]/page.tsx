@@ -20,6 +20,15 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
     notFound()
   }
 
+  // Brand rule: health slug renders with a deep-blue surface and white text;
+  // nutrition keeps green accents on off-white; all others use blue on off-white.
+  const isHealth = service.slug === "health"
+  const highlightSurface = isHealth ? "#0E4FA8" : "#E2E8F0"
+  const highlightBorder = isHealth ? "rgba(255,255,255,0.18)" : `${service.color}33`
+  const highlightTextClass = isHealth ? "text-white" : "text-slate-900"
+  const highlightTickBg = isHealth ? "#FFFFFF" : service.color
+  const highlightTickFg = isHealth ? "#0E4FA8" : "#FFFFFF"
+
   // Get related services (other services)
   const relatedServices = SERVICES.filter(s => s.slug !== slug).slice(0, 3)
 
@@ -68,16 +77,23 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               <h2 className="text-2xl font-bold mb-6">Key Components</h2>
               <div className="grid gap-4">
                 {service.highlights.map((highlight, i) => (
-                  <div key={i} className="flex gap-4 p-4 rounded-lg border-2 transition-all hover:shadow-md" style={{ borderColor: `${service.color}30` }}>
+                  <div
+                    key={i}
+                    className="flex gap-4 p-4 rounded-lg border-2 transition-all hover:shadow-md"
+                    style={{ backgroundColor: highlightSurface, borderColor: highlightBorder }}
+                  >
                     <div className="flex-shrink-0 flex items-start justify-center">
-                      <div className="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-md text-white" style={{ backgroundColor: service.color }}>
+                      <div
+                        className="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-md"
+                        style={{ backgroundColor: highlightTickBg, color: highlightTickFg }}
+                      >
                         <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       </div>
                     </div>
                     <div>
-                      <p className="text-base font-medium text-foreground">
+                      <p className={`text-base font-semibold ${highlightTextClass}`}>
                         {highlight}
                       </p>
                     </div>
