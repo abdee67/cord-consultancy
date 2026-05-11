@@ -1,4 +1,5 @@
 import { Hero } from "@/components/site/hero"
+import { BrandStrip } from "@/components/site/brand-strip"
 import { ServicesPreview } from "@/components/site/services-preview"
 import { FeaturedProjects } from "@/components/site/featured-projects"
 import { AboutSummary } from "@/components/site/about-summary"
@@ -12,6 +13,7 @@ export default function HomePage() {
       <FeaturedProjects />
       <AboutSummary />
       <FinalCTA />
+      <BrandStrip />
     </>
   )
 }

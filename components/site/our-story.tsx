@@ -24,7 +24,7 @@ const TIMELINE = [
     year: "Today",
     title: "An international footprint",
     description:
-      "Internationally accredited and engaged in global nutrition and SRHR knowledge platforms — a credible voice on the international stage, grounded in Ethiopian practice.",
+      "Internationally accredited, member of the Global Nutrition Report, and active participant in Share-Net Netherlands — a credible voice on the global stage.",
   },
 ]
 
