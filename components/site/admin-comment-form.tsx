@@ -45,7 +45,9 @@ export function AdminCommentForm() {
 
       // Tag the user with their email so the admin can reply directly
       // from the Formbricks dashboard.
-      if (typeof formbricks.identify === "function") {
+      if (typeof formbricks.setEmail === "function") {
+        await formbricks.setEmail(email)
+      } else if (typeof formbricks.identify === "function") {
         await formbricks.identify(email)
       } else if (typeof formbricks.setUserId === "function") {
         await formbricks.setUserId(email)
