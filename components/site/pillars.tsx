@@ -9,9 +9,9 @@ const PILLARS = [
     title: "Trust in the CORD of Connection",
     description:
       "Just as the spinal cord connects our body and mind, we trust in the power of nutrition to connect us emotionally, spiritually, and physically. CORD Nutrition is committed to providing scientifically backed, holistic solutions that support enduring health across generations.",
-    color: "from-[#4DC8E8] to-[#3BA8D4]",
-    bgColor: "bg-[#4DC8E8]/10",
-    textColor: "text-[#4DC8E8]",
+    color: "from-[#0E4FA8] to-[#0A3D85]",
+    bgColor: "bg-[#0E4FA8]/10",
+    textColor: "text-[#0E4FA8]",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5884210066192713496_121-gRaEGABQwSJEB1dM74Yl2cmvXchOos.jpg",
   },
   {
@@ -27,18 +27,18 @@ const PILLARS = [
     title: "Interconnectedness of Life",
     description:
       "At CORD Nutrition, we believe that health begins at the roots — our body's interconnected systems. Nutrition is the foundation of life itself, nurturing every aspect of our being to foster harmony and balance from conception to age.",
-    color: "from-[#F59E0B] to-[#D97706]",
-    bgColor: "bg-[#F59E0B]/10",
-    textColor: "text-[#F59E0B]",
+    color: "from-[#0E4FA8] to-[#0A3D85]",
+    bgColor: "bg-[#0E4FA8]/10",
+    textColor: "text-[#0E4FA8]",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5888793921578976886_121-8h0YxjuSbyFd7Z7rxkBpQMI7bQEdrR.jpg",
   },
   {
     title: "Commitment to Development & Sustainability",
     description:
       "We are dedicated to advancing human development through personalized, compassionate health solutions rooted in trust and interconnectedness. Our mission is to foster sustainable growth empowering individuals and communities to thrive.",
-    color: "from-[#8B5CF6] to-[#7C3AED]",
-    bgColor: "bg-[#8B5CF6]/10",
-    textColor: "text-[#8B5CF6]",
+    color: "from-[#2ECC8A] to-[#25B077]",
+    bgColor: "bg-[#2ECC8A]/10",
+    textColor: "text-[#2ECC8A]",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5902267182450674535_121-nomatzHnk1y60y0ZAAWoC4h04qk56M.jpg",
   },
 ]

@@ -73,14 +73,14 @@ export default function AboutPage() {
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
           <Reveal>
-            <div className="group relative h-full overflow-hidden rounded-3xl bg-gradient-to-br from-[#4DC8E8] via-[#3BA8D4] to-[#2BBFB0] p-1 shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]">
+            <div className="group relative h-full overflow-hidden rounded-3xl bg-gradient-to-br from-[#0E4FA8] via-[#0A3D85] to-[#072E66] p-1 shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]">
               <div className="h-full rounded-[22px] bg-white/95 dark:bg-gray-900/95 p-8 backdrop-blur">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#4DC8E8] to-[#2BBFB0] text-white shadow-lg">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0E4FA8] to-[#0A3D85] text-white shadow-lg">
                     <Target className="h-7 w-7" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-widest text-[#2BBFB0]">
+                    <div className="text-xs font-bold uppercase tracking-widest text-[#0E4FA8]">
                       Mission
                     </div>
                     <h3 className="mt-1 text-xl font-bold tracking-tight text-foreground">
@@ -93,7 +93,7 @@ export default function AboutPage() {
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {["Coalitions", "Training", "Impact", "Development"].map((tag) => (
-                    <span key={tag} className="rounded-full bg-[#4DC8E8]/10 px-3 py-1 text-xs font-medium text-[#2BBFB0]">
+                    <span key={tag} className="rounded-full bg-[#0E4FA8]/10 px-3 py-1 text-xs font-medium text-[#0E4FA8]">
                       {tag}
                     </span>
                   ))}
@@ -137,7 +137,7 @@ export default function AboutPage() {
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           <Reveal delay={0.2}>
             <div className="flex items-start gap-4 rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-md">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#F59E0B]/10 text-[#F59E0B]">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#0E4FA8]/10 text-[#0E4FA8]">
                 <Sparkles className="h-5 w-5" />
               </div>
               <div>
@@ -151,7 +151,7 @@ export default function AboutPage() {
 
           <Reveal delay={0.3}>
             <div className="flex items-start gap-4 rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-md">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#8B5CF6]/10 text-[#8B5CF6]">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#2ECC8A]/10 text-[#2ECC8A]">
                 <TrendingUp className="h-5 w-5" />
               </div>
               <div>

@@ -100,7 +100,7 @@ export default function ContactPage() {
             <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
 
               {/* Brand header strip */}
-              <div className="bg-gradient-to-r from-[#4DC8E8] via-[#2BBFB0] to-[#2ECC8A] px-6 py-8">
+              <div className="bg-gradient-to-r from-[#0E4FA8] via-[#0A3D85] to-[#2ECC8A] px-6 py-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
                   CORD Consultancy
                 </p>
