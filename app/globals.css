@@ -13,8 +13,8 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.22 0.02 240);
 
-  /* Brand: Light Blue (primary) */
-  --primary: oklch(0.66 0.13 230);
+  /* Brand: Deep Blue (primary) — matches footer/navbar #0E4FA8 */
+  --primary: oklch(0.42 0.16 263);
   --primary-foreground: oklch(1 0 0);
 
   /* Brand: Green (secondary accent) */
@@ -32,25 +32,25 @@
 
   --border: oklch(0.92 0.01 230);
   --input: oklch(0.92 0.01 230);
-  --ring: oklch(0.66 0.13 230);
+  --ring: oklch(0.42 0.16 263);
 
   --radius: 0.75rem;
 
-  /* Charts (kept) */
-  --chart-1: oklch(0.66 0.13 230);
+  /* Charts — restricted to brand deep-blue and brand green */
+  --chart-1: oklch(0.42 0.16 263);
   --chart-2: oklch(0.72 0.16 160);
-  --chart-3: oklch(0.55 0.1 230);
-  --chart-4: oklch(0.8 0.1 160);
-  --chart-5: oklch(0.85 0.05 220);
+  --chart-3: oklch(0.32 0.13 263);
+  --chart-4: oklch(0.55 0.16 160);
+  --chart-5: oklch(0.5 0.15 263);
 
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.22 0.02 240);
-  --sidebar-primary: oklch(0.66 0.13 230);
+  --sidebar-primary: oklch(0.42 0.16 263);
   --sidebar-primary-foreground: oklch(1 0 0);
   --sidebar-accent: oklch(0.96 0.02 200);
   --sidebar-accent-foreground: oklch(0.22 0.02 240);
   --sidebar-border: oklch(0.92 0.01 230);
-  --sidebar-ring: oklch(0.66 0.13 230);
+  --sidebar-ring: oklch(0.42 0.16 263);
 }
 
 @theme inline {
@@ -111,10 +111,10 @@
        set their own background, so they fully cover this pattern. */
     background-color: #ffffff;
     background-image:
-      /* Soft cyan glow top-left */
+      /* Soft deep-blue glow top-left */
       radial-gradient(
         circle at 0% 0%,
-        rgba(77, 200, 232, 0.08) 0%,
+        rgba(14, 79, 168, 0.07) 0%,
         transparent 45%
       ),
       /* Soft green glow bottom-right */

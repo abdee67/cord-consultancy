@@ -2,7 +2,9 @@
 
 import { useEffect } from "react"
 
-const ENVIRONMENT_ID = "cmospnp4q8cjzw801kzo31138"
+const ENVIRONMENT_ID =
+  process.env.NEXT_PUBLIC_FORMBRICKS_ENVIRONMENT_ID ??
+  "cmospnp4q8cjzw801kzo31138"
 const APP_URL = "https://app.formbricks.com"
 
 /**

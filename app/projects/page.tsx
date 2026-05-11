@@ -48,14 +48,6 @@ export default function ProjectsPage() {
             </Reveal>
           ))}
         </div>
-
-        <Reveal>
-          <p className="mt-10 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Engagements completed in collaboration with partners including
-            SOS Children&apos;s Village Ethiopia, Aleph Medical &amp; Health Trading PLC,
-            alignAfrica, and Ethio-Medical Training PLC.
-          </p>
-        </Reveal>
       </section>
 
       <FinalCTA />

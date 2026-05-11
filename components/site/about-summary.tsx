@@ -35,19 +35,26 @@ export function AboutSummary() {
             </p>
 
             <ul className="mt-8 space-y-3">
-              {POINTS.map((p) => (
-                <li
-                  key={p}
-                  className="flex items-start gap-3 rounded-xl border border-border bg-background p-4"
-                >
-                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary/15 text-secondary">
-                    <Check className="h-3.5 w-3.5" strokeWidth={3} />
-                  </span>
-                  <span className="text-sm leading-relaxed text-foreground">
-                    {p}
-                  </span>
-                </li>
-              ))}
+              {POINTS.map((p, i) => {
+                const accent = i % 2 === 0 ? "#0E4FA8" : "#1E9E68"
+                return (
+                  <li
+                    key={p}
+                    className="flex items-start gap-3 rounded-xl border-2 border-border/60 p-4"
+                    style={{ backgroundColor: "#E2E8F0" }}
+                  >
+                    <span
+                      className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
+                      style={{ backgroundColor: `${accent}1F`, color: accent }}
+                    >
+                      <Check className="h-3.5 w-3.5" strokeWidth={3} />
+                    </span>
+                    <span className="text-sm leading-relaxed text-slate-900 font-medium">
+                      {p}
+                    </span>
+                  </li>
+                )
+              })}
             </ul>
 
             <Link
@@ -72,7 +79,10 @@ export function AboutSummary() {
               />
             </div>
 
-            <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-border bg-background/95 p-5 shadow-sm backdrop-blur">
+            <div
+              className="absolute bottom-4 left-4 right-4 rounded-2xl border-2 border-border/60 p-5 shadow-md backdrop-blur"
+              style={{ backgroundColor: "rgba(226, 232, 240, 0.96)" }}
+            >
               <div className="grid grid-cols-3 gap-3">
                 <Stat value="13+" label="Engagements" />
                 <Stat value="5" label="Domains" />
@@ -89,10 +99,10 @@ export function AboutSummary() {
 function Stat({ value, label }: { value: string; label: string }) {
   return (
     <div>
-      <div className="text-2xl font-semibold tracking-tight text-foreground">
+      <div className="text-2xl font-bold tracking-tight text-[#0E4FA8]">
         {value}
       </div>
-      <div className="mt-0.5 text-xs text-muted-foreground">{label}</div>
+      <div className="mt-0.5 text-xs font-medium text-slate-700">{label}</div>
     </div>
   )
 }
