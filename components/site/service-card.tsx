@@ -11,20 +11,15 @@ interface ServiceCardProps {
 export function ServiceCard({ service, detailed = false, isLink = false }: ServiceCardProps) {
   const { title, short, description, highlights, Icon, bgColor, slug } = service
 
-  // All cards now use white background — the service's brand color is used only as an accent
-  // (title, icon tile, check marks, hover border, bottom bar). For services that were
-  // previously "white" we fall back to the brand light-blue so the accent still reads.
-  const accentColor = bgColor === "#FFFFFF" ? "#4DC8E8" : bgColor
+  // All cards share a soft off-white surface so the colored title and icon
+  // read clearly. Each service keeps its identity through the accent color
+  // used on the title, icon tile, checkmarks, hover border and bottom bar.
+  const accentColor = bgColor
 
   const content = (
     <div
-      className="group relative flex h-full flex-col rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border-2 border-border bg-white overflow-hidden"
-      style={
-        {
-          // Animate the border color toward the accent on hover via CSS variable
-          ["--accent" as string]: accentColor,
-        } as React.CSSProperties
-      }
+      className="group relative flex h-full flex-col rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border-2 border-border/60 overflow-hidden"
+      style={{ backgroundColor: "#F1F5F9" }}
     >
       {/* Soft tinted hover overlay */}
       <div
