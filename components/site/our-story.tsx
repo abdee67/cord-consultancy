@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { FloatingMetricBadge } from "@/components/site/animated-metric"
 import { Reveal } from "@/components/site/reveal"
 
 const TIMELINE = [
@@ -18,7 +19,7 @@ const TIMELINE = [
     year: "2026",
     title: "A reinvigorated identity",
     description:
-      "Re-registered as CORD Nutrition and Health Trading PLC under Ethiopia's new trade laws, formalizing our role as a private-sector-led consultancy hub.",
+      "Re-registered as CORD Nutrition and Health Trading PLC under Ethiopia's new trade laws, formalizing our role as a private consultancy hub.",
   },
   {
     year: "Today",
@@ -46,8 +47,8 @@ export function OurStory() {
               </div>
               <div className="relative aspect-square overflow-hidden rounded-2xl">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fruit-AYEAzt5fgf12Gi5iG4HLGromD5TOUE.jpg"
-                  alt="Nutrition education"
+                  src="/images/nutrition-2.jfif"
+                  alt="Nutrition counseling table with fresh foods and planning tools"
                   fill
                   className="object-cover"
                 />
@@ -73,10 +74,15 @@ export function OurStory() {
             </div>
           </div>
           {/* Floating badge */}
-          <div className="absolute -bottom-4 -right-4 rounded-xl bg-gradient-to-r from-[#0E4FA8] to-[#2ECC8A] p-4 text-white shadow-xl">
-            <div className="text-3xl font-bold">13+</div>
-            <div className="text-xs font-medium uppercase tracking-wider">Projects Delivered</div>
-          </div>
+          <FloatingMetricBadge
+            value={13}
+            suffix="+"
+            label="projects"
+            eyebrow="Delivered"
+            accent="#2ECC8A"
+            body="Health, nutrition, ECD, youth, and organizational engagements."
+            className="absolute -bottom-4 -right-4 w-64"
+          />
         </div>
       </Reveal>
 

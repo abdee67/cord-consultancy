@@ -37,6 +37,26 @@ const PARTNERS: Partner[] = [
     alt: "Ethio Medical Training PLC logo",
     circular: true,
   },
+  {
+    name: "Addis Ababa Health Bureau",
+    logo: "/images/addis-ababa-health-bureau.jfif",
+    alt: "Addis Ababa Health Bureau logo",
+  },
+  {
+    name: "Family Guidance Association of Ethiopia",
+    logo: "/images/fgae.jfif",
+    alt: "Family Guidance Association of Ethiopia logo",
+  },
+  {
+    name: "OIC Ethiopia",
+    logo: "/images/oice.jpg",
+    alt: "OIC Ethiopia logo",
+  },
+  {
+    name: "Fetan Transport and Logistics",
+    logo: "/images/fetan-logistics.jpg",
+    alt: "Fetan Transport and Logistics logo",
+  },
 ]
 
 export function BrandStrip() {
@@ -49,12 +69,19 @@ export function BrandStrip() {
       className="relative border-y border-border/60 bg-gradient-to-b from-background to-muted/20"
     >
       <div className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-24">
-        <h2
-          id="brand-strip-heading"
-          className="mb-12 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground md:mb-14"
-        >
-          Trusted by partners across the public, private, and development sectors
-        </h2>
+        <div className="mx-auto mb-12 max-w-4xl text-center md:mb-14">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#0E4FA8]/20 bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-[#0E4FA8] shadow-sm backdrop-blur">
+            <span className="h-2 w-2 rounded-full bg-[#2ECC8A]" />
+            Trusted network
+          </div>
+          <h2
+            id="brand-strip-heading"
+            className="brand-text-gradient text-balance text-2xl font-extrabold tracking-tight md:text-4xl"
+          >
+            Partners across public health, private enterprise, and development sectors
+          </h2>
+          <div className="mx-auto mt-5 h-1 w-28 rounded-full bg-gradient-to-r from-[#0E4FA8] via-[#2ECC8A] to-[#0E4FA8]" />
+        </div>
 
         {/* Marquee viewport with top padding to show tooltips */}
         <div className="pt-16 pb-4">
@@ -171,6 +198,9 @@ function BrandRow({
                 sizes={p.circular ? '112px' : '(max-width: 768px) 160px, 192px'}
                 priority={false}
               />
+            </div>
+            <div className="mt-3 max-w-44 text-center text-xs font-semibold leading-snug text-slate-700 md:max-w-52">
+              {p.name}
             </div>
           </li>
         )

@@ -172,7 +172,7 @@ export function Footer() {
                   className="absolute inset-0 rounded-full opacity-50 blur-xl transition-all duration-500 group-hover:opacity-70 group-hover:blur-2xl"
                   style={{ background: `radial-gradient(circle, ${BRAND_GREEN} 0%, transparent 70%)` }}
                 />
-                <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-white p-2 shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 md:h-28 md:w-28">
+                <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-white p-2 shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 md:h-28 md:w-28 group-hover:rotate-360">
                   <Logo showWordmark={false} size={90} />
                 </div>
               </div>
@@ -180,7 +180,7 @@ export function Footer() {
                 <span className="text-[32px] font-black tracking-tight text-white drop-shadow-lg md:text-[36px]">
                   CORD
                 </span>
-                <span className="mt-1.5 text-[14px] font-semibold tracking-[0.15em] uppercase text-white/80">
+                <span className="mt-1.5 text-[14px] font-semibold tracking-[0.15em]  text-white/80">
                   Consultancy
                 </span>
                 <span
@@ -191,7 +191,7 @@ export function Footer() {
             </Link>
 
             <p className="mt-7 max-w-md text-balance text-[16px] font-medium leading-relaxed text-white/95">
-              CORD Nutrition and Health Trading PLC &mdash; a private-sector-led
+              CORD Nutrition and Health Trading PLC &mdash; a private
               consultancy hub for health, nutrition, social development,
               management, and hospitality.
             </p>

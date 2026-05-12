@@ -6,6 +6,7 @@ import { ArrowRight, ChevronLeft, ChevronRight, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState, useCallback, useRef } from "react"
 import { cn } from "@/lib/utils"
+import { FloatingMetricBadge } from "./animated-metric"
 
 const BRAND_BLUE = "#0E4FA8"
 
@@ -15,11 +16,11 @@ const BRAND_BLUE = "#0E4FA8"
 // (#0E4FA8) only — no other hues are used across the project palette.
 const HERO_SLIDES = [
   {
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/youth%20engagement%203-dsYKazB5qJckp1gInra4e51OpxOMNM.jpg",
-    title: "Healthier Generations, Stronger Communities",
+    image: "/images/hero-background.jpg",
+    title: "Nutrition Roots, Healthier Generations",
     subtitle: "Health & Nutrition Consultancy",
     description:
-      "We design maternal and child health, school nutrition and family wellness programs that translate evidence-based practice into everyday Ethiopian life — from early childhood development to adolescent and youth health.",
+      "We connect nutrition science, food systems, and family wellness into practical programs that improve health outcomes across Ethiopian communities.",
     accent: "#2ECC8A",
   },
   {
@@ -56,7 +57,7 @@ const HERO_SLIDES = [
   },
   {
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5902267182450674529_121-eNFQegoEvAP1jvAY3dJXoswVdAWeVq.jpg",
-    title: "A Center for Alliance & Coalition",
+    title: "Center for Alliance & Coalition",
     subtitle: "Our Mission in Motion",
     description:
       "We catalyze public-private coalitions across health, nutrition, social affairs, management and hospitality — driving measurable improvements in health outcomes, livelihoods and socio-economic development.",
@@ -389,31 +390,18 @@ export function Hero() {
         </div>
 
         {/* Floating stat card */}
-        <div
+        <FloatingMetricBadge
+          value={13}
+          suffix="+"
+          label="projects"
+          eyebrow="Engagements delivered"
+          body="Across SRH, AYH, ECD, nutrition, and healthcare innovation."
+          accent={slide.accent}
           className={cn(
-            "absolute bottom-10 right-6 z-10 hidden w-64 rounded-2xl border border-white/30 bg-white/10 p-5 shadow-2xl backdrop-blur-xl transition-all duration-700 hover:scale-105 hover:bg-white/15 lg:block",
+            "absolute bottom-10 right-6 z-10 hidden w-64 lg:block",
             isTransitioning ? "opacity-0 translate-x-6" : "opacity-100 translate-x-0"
           )}
-        >
-          <div className="flex items-center gap-2">
-            <div
-              className="h-2 w-2 rounded-full animate-pulse"
-              style={{ backgroundColor: slide.accent }}
-            />
-            <div
-              className="text-xs font-bold uppercase tracking-widest transition-colors duration-700"
-              style={{ color: slide.accent }}
-            >
-              Engagements delivered
-            </div>
-          </div>
-          <div className="mt-2 text-3xl font-extrabold tracking-tight text-white">
-            13+ <span className="text-lg font-medium opacity-80">projects</span>
-          </div>
-          <p className="mt-2 text-sm leading-relaxed text-white/85">
-            Across SRH, AYH, ECD, nutrition, and healthcare innovation.
-          </p>
-        </div>
+        />
 
         {/* Slide counter */}
         <div className="absolute bottom-6 left-6 z-20 hidden items-center gap-2 text-xs font-bold tracking-widest text-white/80 md:flex md:bottom-10">
