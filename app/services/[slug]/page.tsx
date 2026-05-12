@@ -1,5 +1,3 @@
-'use client'
-
 import { notFound } from "next/navigation"
 import { SERVICES } from "@/components/site/services-data"
 import { ServiceCard } from "@/components/site/service-card"
@@ -7,6 +5,18 @@ import { FinalCTA } from "@/components/site/final-cta"
 import { Reveal } from "@/components/site/reveal"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
+
+const NUTRITION_DIET_THERAPY_SERVICES = [
+  "Nutrition-focused NCDs management: CVD, DM, HTN, renal, GERD, metabolic syndrome, and related conditions",
+  "Medical Nutrition Therapy (MNT)",
+  "Palliative Nutrition",
+  "Nutrition & Dietetic services",
+  "Weight Management",
+  "Wellness & Sport Nutrition",
+  "Beauty Nutrition",
+  "Child Growth Monitoring",
+  "Hospital Catering & Dietetic services",
+]
 
 interface ServiceDetailPageProps {
   params: Promise<{ slug: string }>
@@ -41,7 +51,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
             <ArrowLeft className="h-4 w-4" />
             Back to Services
           </Link>
-          
+
           <Reveal>
             <div className="space-y-4">
               <div className="inline-flex items-center gap-3 mb-4">
@@ -68,7 +78,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
             <div>
               <h2 className="text-2xl font-bold mb-4">Overview</h2>
               <p className="text-lg leading-relaxed text-foreground/80">
-                {service.description}
+                {service.fullDescription}
               </p>
             </div>
 
@@ -97,6 +107,52 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
                         {highlight}
                       </p>
                     </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {service.slug === "nutrition" && (
+              <div className="overflow-hidden rounded-3xl border border-[#2ECC8A]/30 bg-gradient-to-br from-[#2ECC8A]/12 via-white to-[#0E4FA8]/8 p-6 shadow-[0_24px_70px_-45px_rgba(14,79,168,0.65)] md:p-8">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <div className="text-xs font-bold uppercase tracking-[0.22em] text-[#1E9E68]">
+                      Nutrition Consultancy
+                    </div>
+                    <h2 className="mt-2 text-2xl font-bold tracking-tight text-[#0E4FA8]">
+                      Nutrition and Diet Therapy
+                    </h2>
+                  </div>
+                </div>
+
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {NUTRITION_DIET_THERAPY_SERVICES.map((item, i) => (
+                    <div
+                      key={item}
+                      className="group flex gap-3 rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#2ECC8A]/50 hover:shadow-md"
+                    >
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#2ECC8A] text-xs font-extrabold text-white">
+                        {i + 1}
+                      </span>
+                      <p className="text-sm font-semibold leading-relaxed text-slate-800">
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Expertise */}
+            <div>
+              <h2 className="text-2xl font-bold mb-6">Specialized Expertise</h2>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {service.expertise.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-lg border border-border/70 bg-muted/35 px-4 py-3 text-sm font-medium leading-relaxed text-foreground/85"
+                  >
+                    {item}
                   </div>
                 ))}
               </div>

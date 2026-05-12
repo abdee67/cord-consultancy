@@ -12,7 +12,7 @@ import { Target, Eye, Sparkles, TrendingUp } from "lucide-react"
 export const metadata: Metadata = {
   title: "About — CORD Consultancy",
   description:
-    "CORD Nutrition and Health Trading PLC: a private-sector-led consultancy hub for health, nutrition, social affairs, management, and hotel & tourism advisory.",
+    "CORD Nutrition and Health Trading PLC: a private consultancy hub for health, nutrition, social affairs, management, and hotel & tourism advisory.",
 }
 
 export default function AboutPage() {
@@ -21,7 +21,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About"
         title="A coalition for nutrition, health, and development."
-        description="CORD Consultancy is a private-sector-led consultancy hub combining public health expertise with private-sector agility — driving evidence-based impact across Ethiopia and beyond."
+        description="CORD Consultancy is a private consultancy hub combining public health expertise with private agility — driving evidence-based impact across Ethiopia and beyond."
       />
 
       {/* Overview */}
@@ -38,7 +38,7 @@ export default function AboutPage() {
               CORD Nutrition and Health Trading PLC — operating as CORD
               Consultancy — was re-registered in 2026 under Ethiopia&apos;s new
               trade laws and directives. We are a private limited company
-              delivering integrated consultancy, training, and capacity-building
+              delivering integrated consultancy, training, nutrition and diet therapy, and capacity-building
               services across five core domains.
             </p>
             <p>
@@ -119,7 +119,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <p className="mt-6 text-base leading-relaxed text-slate-800">
-                  To be a premier Center for Alliance and Coalition for Nutrition, Health, and Development — delivering innovative, sustainable private-sector solutions that improve health, nutrition, and livelihoods.
+                  To be a premier Center for Alliance and Coalition for Nutrition, Health, and Development — delivering innovative, sustainable solutions that improve health, nutrition, and livelihoods.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {["Innovation", "Sustainability", "Excellence", "Livelihoods"].map((tag) => (
@@ -146,7 +146,7 @@ export default function AboutPage() {
               <div>
                 <h4 className="font-bold text-[#0E4FA8]">Value Proposition</h4>
                 <p className="mt-1 text-sm text-slate-800">
-                  A private-sector-led, metrics-driven consultancy hub that combines evidence-based knowledge with practical, market-ready strategies.
+                  A private, metrics-driven consultancy hub that combines evidence-based knowledge with practical, market-ready strategies.
                 </p>
               </div>
             </div>
@@ -163,7 +163,7 @@ export default function AboutPage() {
               <div>
                 <h4 className="font-bold text-[#1E9E68]">Strategic Direction</h4>
                 <p className="mt-1 text-sm text-slate-800">
-                  Transform health systems, empower women and youth, integrate digital solutions, and drive private-sector growth with sustainability.
+                  Transform health systems, empower women and youth, integrate digital solutions, and drive growth with sustainability.
                 </p>
               </div>
             </div>
