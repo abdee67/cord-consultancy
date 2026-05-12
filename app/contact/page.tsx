@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Get in touch with CORD Consultancy in Addis Ababa. We respond within one business day.",
 }
 
-const SURVEY_URL = "https://app.formbricks.com/s/cmosrd9w99wwmym01ot3krz0l"
+const SURVEY_URL = "https://app.formbricks.com/s/cmp2seh565ddxtf018eu659t2"
 
 const DETAILS = [
   {
