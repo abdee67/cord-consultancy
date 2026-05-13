@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title:
     "CORD Consultancy — Center for Alliance & Coalition for Professional Excellence",
   description:
-    "CORD Nutrition and Health Trading PLC (CORD Consultancy) — a private-sector-led consultancy hub delivering health, nutrition, social affairs, management, and hotel & tourism advisory across Ethiopia.",
+    "CORD Nutrition and Health Trading PLC (CORD Consultancy) — a private consultancy hub delivering health, nutrition, social affairs, management, and hotel & tourism advisory across Ethiopia.",
   generator: "v0.app",
   icons: {
     icon: [

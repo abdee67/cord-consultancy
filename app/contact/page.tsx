@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Get in touch with CORD Consultancy in Addis Ababa. We respond within one business day.",
 }
 
-const SURVEY_URL = "https://app.formbricks.com/s/cmosrd9w99wwmym01ot3krz0l"
+const SURVEY_URL = "https://app.formbricks.com/s/cmp2seh565ddxtf018eu659t2"
 
 const DETAILS = [
   {
@@ -27,59 +27,60 @@ const DETAILS = [
     label: "Email",
     value: "info.cordnutrition@gmail.com",
     href: "mailto:info.cordnutrition@gmail.com",
-    iconColor: "#EA4335",
+    iconColor: "#0E4FA8",
   },
   {
     Icon: Phone,
     label: "Phone",
     value: "+251 942 461 146",
     href: "tel:+251942461146",
-    iconColor: "#25D366",
+    iconColor: "#1E9E68",
   },
   {
     Icon: Phone,
     label: "Alternate",
     value: "+251 911 182 168",
     href: "tel:+251911182168",
-    iconColor: "#25D366",
+    iconColor: "#1E9E68",
   },
   {
     Icon: MapPin,
     label: "Office",
     value: "Amakor Building, Office G007\nAkaki-Kaliti, Wereda 13, Tulu Dimtu\nAddis Ababa, Ethiopia",
     href: undefined,
-    iconColor: "#4285F4",
+    iconColor: "#0E4FA8",
   },
 ]
 
+// Social tiles alternate between brand deep blue and brand green only
 const SOCIALS = [
   {
     label: "LinkedIn",
     handle: "linkedin.com/company/cordnutrition",
     href: "https://linkedin.com/company/cordnutrition",
     Icon: Linkedin,
-    color: "from-[#0A66C2]/15 to-[#0A66C2]/5 text-[#0A66C2]",
+    color: "from-[#0E4FA8]/20 to-[#0E4FA8]/5 text-[#0E4FA8]",
   },
   {
     label: "YouTube",
     handle: "@CORDConsultancy",
     href: "https://www.youtube.com/@CORDConsultancy",
     Icon: Youtube,
-    color: "from-[#FF0000]/15 to-[#FF0000]/5 text-[#FF0000]",
+    color: "from-[#2ECC8A]/20 to-[#2ECC8A]/5 text-[#1E9E68]",
   },
   {
     label: "Telegram",
     handle: "t.me/CORDNutrition_PLC",
     href: "https://t.me/CORDNutrition_PLC",
     Icon: Send,
-    color: "from-[#2AABEE]/15 to-[#2AABEE]/5 text-[#2AABEE]",
+    color: "from-[#0E4FA8]/20 to-[#0E4FA8]/5 text-[#0E4FA8]",
   },
   {
     label: "Instagram",
     handle: "@cord_consultancy",
     href: "https://www.instagram.com/cord_consultancy/",
     Icon: Instagram,
-    color: "from-[#E1306C]/15 to-[#E1306C]/5 text-[#E1306C]",
+    color: "from-[#2ECC8A]/20 to-[#2ECC8A]/5 text-[#1E9E68]",
   },
 ]
 
@@ -97,10 +98,13 @@ export default function ContactPage() {
 
           {/* Left column — contact info & socials */}
           <Reveal className="lg:col-span-4 lg:sticky lg:top-28">
-            <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
+            <div
+              className="overflow-hidden rounded-3xl border-2 border-border/60 shadow-sm"
+              style={{ backgroundColor: "#E2E8F0" }}
+            >
 
-              {/* Brand header strip */}
-              <div className="bg-gradient-to-r from-[#0E4FA8] via-[#0A3D85] to-[#2ECC8A] px-6 py-8">
+              {/* Brand header strip — deep blue */}
+              <div className="bg-gradient-to-r from-[#0E4FA8] via-[#0A3D85] to-[#072E66] px-6 py-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
                   CORD Consultancy
                 </p>
@@ -201,9 +205,12 @@ export default function ContactPage() {
 
           {/* Right column — embedded survey */}
           <Reveal delay={0.1} className="lg:col-span-8">
-            <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
+            <div
+              className="overflow-hidden rounded-3xl border-2 border-border/60 shadow-sm"
+              style={{ backgroundColor: "#E2E8F0" }}
+            >
               {/* Survey header bar */}
-              <div className="flex items-center justify-between gap-3 border-b border-border bg-muted/40 px-5 py-3.5">
+              <div className="flex items-center justify-between gap-3 border-b border-border/60 bg-[#0E4FA8]/8 px-5 py-3.5">
                 <div className="flex items-center gap-2">
                   <span className="inline-block h-2 w-2 rounded-full bg-secondary" />
                   <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">

@@ -19,30 +19,31 @@ const FOOTER_LINKS = [
   { href: "/contact", label: "Contact & Feedback" },
 ]
 
+// Social icons alternate between brand deep blue and brand green only
 const SOCIALS = [
   {
     label: "LinkedIn",
     href: "https://linkedin.com/company/cordnutrition",
     Icon: Linkedin,
-    brandColor: "#0A66C2",
+    brandColor: "#0E4FA8",
   },
   {
     label: "YouTube",
     href: "https://www.youtube.com/@CORDConsultancy",
     Icon: Youtube,
-    brandColor: "#FF0000",
+    brandColor: "#1E9E68",
   },
   {
     label: "Telegram",
     href: "https://t.me/CORDNutrition_PLC",
     Icon: Send,
-    brandColor: "#2AABEE",
+    brandColor: "#0E4FA8",
   },
   {
     label: "Instagram",
     href: "https://www.instagram.com/cord_consultancy/",
     Icon: Instagram,
-    brandColor: "#E1306C",
+    brandColor: "#1E9E68",
   },
 ]
 
@@ -83,8 +84,8 @@ export function Footer() {
         />
         {/* Gradient orb bottom-left */}
         <div
-          className="absolute -bottom-40 -left-40 h-[28rem] w-[28rem] rounded-full opacity-15 blur-3xl"
-          style={{ background: `radial-gradient(circle, #4DC8E8 0%, transparent 70%)` }}
+          className="absolute -bottom-40 -left-40 h-[28rem] w-[28rem] rounded-full opacity-20 blur-3xl"
+          style={{ background: `radial-gradient(circle, ${BRAND_GREEN} 0%, transparent 70%)` }}
         />
 
         {/* Subtle grid pattern */}
@@ -115,7 +116,7 @@ export function Footer() {
       <div
         className="relative h-1 w-full"
         style={{
-          background: `linear-gradient(to right, ${BRAND_GREEN} 0%, #4DC8E8 50%, ${BRAND_GREEN} 100%)`,
+          background: `linear-gradient(to right, ${BRAND_GREEN} 0%, #FFFFFF 50%, ${BRAND_GREEN} 100%)`,
         }}
       />
 
@@ -131,7 +132,7 @@ export function Footer() {
           <div className="flex items-start gap-4 md:items-center">
             <div
               className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl"
-              style={{ background: `linear-gradient(135deg, ${BRAND_GREEN}, #4DC8E8)` }}
+              style={{ background: `linear-gradient(135deg, ${BRAND_GREEN}, ${BRAND_BLUE})` }}
             >
               <Sparkles className="h-6 w-6 text-white" strokeWidth={2} />
             </div>
@@ -171,7 +172,7 @@ export function Footer() {
                   className="absolute inset-0 rounded-full opacity-50 blur-xl transition-all duration-500 group-hover:opacity-70 group-hover:blur-2xl"
                   style={{ background: `radial-gradient(circle, ${BRAND_GREEN} 0%, transparent 70%)` }}
                 />
-                <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-white p-2 shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 md:h-28 md:w-28">
+                <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-white p-2 shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 md:h-28 md:w-28 group-hover:rotate-360">
                   <Logo showWordmark={false} size={90} />
                 </div>
               </div>
@@ -179,7 +180,7 @@ export function Footer() {
                 <span className="text-[32px] font-black tracking-tight text-white drop-shadow-lg md:text-[36px]">
                   CORD
                 </span>
-                <span className="mt-1.5 text-[14px] font-semibold tracking-[0.15em] uppercase text-white/80">
+                <span className="mt-1.5 text-[14px] font-semibold tracking-[0.15em]  text-white/80">
                   Consultancy
                 </span>
                 <span
@@ -190,7 +191,7 @@ export function Footer() {
             </Link>
 
             <p className="mt-7 max-w-md text-balance text-[16px] font-medium leading-relaxed text-white/95">
-              CORD Nutrition and Health Trading PLC &mdash; a private-sector-led
+              CORD Nutrition and Health Trading PLC &mdash; a private
               consultancy hub for health, nutrition, social development,
               management, and hospitality.
             </p>
@@ -252,7 +253,7 @@ export function Footer() {
             </h3>
             <div
               className="mt-2 h-1 w-10 rounded-full"
-              style={{ background: `linear-gradient(to right, ${BRAND_GREEN}, #4DC8E8)` }}
+              style={{ background: `linear-gradient(to right, ${BRAND_GREEN}, #FFFFFF)` }}
             />
             <nav className="mt-6 flex flex-col gap-3.5" aria-label="Footer navigation">
               {FOOTER_LINKS.map((link, i) => (
@@ -288,7 +289,7 @@ export function Footer() {
             </h3>
             <div
               className="mt-2 h-1 w-10 rounded-full"
-              style={{ background: `linear-gradient(to right, ${BRAND_GREEN}, #4DC8E8)` }}
+              style={{ background: `linear-gradient(to right, ${BRAND_GREEN}, #FFFFFF)` }}
             />
 
             <ul className="mt-6 space-y-4">
@@ -297,7 +298,7 @@ export function Footer() {
                   href="mailto:info.cordnutrition@gmail.com"
                   className="group flex items-start gap-3.5 text-[15px] font-medium text-white/95 transition-colors hover:text-white"
                 >
-                  <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-[#EA4335] shadow-md transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:shadow-xl">
+                  <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-[#0E4FA8] shadow-md transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:shadow-xl">
                     <Mail className="h-[18px] w-[18px]" strokeWidth={2} />
                   </span>
                   <span className="break-all pt-1.5">info.cordnutrition@gmail.com</span>
@@ -308,14 +309,14 @@ export function Footer() {
                   href="tel:+251942461146"
                   className="group flex items-start gap-3.5 text-[15px] font-medium text-white/95 transition-colors hover:text-white"
                 >
-                  <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-[#25D366] shadow-md transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:shadow-xl">
+                  <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-[#1E9E68] shadow-md transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:shadow-xl">
                     <Phone className="h-[18px] w-[18px]" strokeWidth={2} />
                   </span>
                   <span className="pt-1.5">+251 942 461 146</span>
                 </a>
               </li>
               <li className="flex items-start gap-3.5">
-                <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-[#4285F4] shadow-md">
+                <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-[#0E4FA8] shadow-md">
                   <MapPin className="h-[18px] w-[18px]" strokeWidth={2} />
                 </span>
                 <p className="pt-0.5 text-[14px] font-medium leading-relaxed text-white/95">

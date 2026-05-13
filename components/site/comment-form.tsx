@@ -41,7 +41,9 @@ export function CommentForm() {
       const formbricks: any = (mod as any).default ?? mod
 
       if (email) {
-        if (typeof formbricks.identify === "function") {
+        if (typeof formbricks.setEmail === "function") {
+          await formbricks.setEmail(email)
+        } else if (typeof formbricks.identify === "function") {
           await formbricks.identify(email)
         } else if (typeof formbricks.setUserId === "function") {
           await formbricks.setUserId(email)

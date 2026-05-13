@@ -14,69 +14,87 @@ interface GalleryImage {
 const GALLERY_IMAGES: GalleryImage[] = [
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/youth%20engagement%203-dsYKazB5qJckp1gInra4e51OpxOMNM.jpg",
-    alt: "CORD team welcoming youth to Yegna Ethio Family Wellness Hub Summer Camp",
-    title: "Yegna Ethio Summer Camp",
-    description: "Family wellness hub welcoming youth"
+    alt: "Youth participants gathered during a CORD-supported engagement activity",
+    title: "Youth Engagement",
+    description: "Women and youth empowerment through practical development programs"
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/community%20engagement-W63ynFkiZyqrdsx6IWGTcLVcOHtCz8.jpg",
-    alt: "CORD team conducting a community engagement field interview",
-    title: "Community Engagement",
-    description: "Field-based household assessment"
+    alt: "CORD team conducting a community field conversation",
+    title: "Community Assessment",
+    description: "Stakeholder mapping, baseline assessment, and local context review"
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/youth%20engagement%201-4rYOvYjMiveFvAan2eGE6YXrknS69c.jpg",
-    alt: "CORD mentors with youth in a computer training lab",
-    title: "Youth Digital Skills",
-    description: "Computer training and mentorship"
+    alt: "Youth participants learning in a computer lab",
+    title: "Digital Skills",
+    description: "Digital literacy and creative economy integration for young people"
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/youth%20engagement%202-CuaNTDdnGq1gEbOjglnM7IAgTNZajQ.jpg",
-    alt: "Computer lab session with students and instructor",
-    title: "Hands-on Learning",
-    description: "Active classroom training"
+    alt: "Instructor supporting students during a computer-based training session",
+    title: "Capacity Building",
+    description: "Hands-on training designed for practical workplace readiness"
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5902267182450674529_121-eNFQegoEvAP1jvAY3dJXoswVdAWeVq.jpg",
-    alt: "CORD team workshop session with participants",
-    title: "Interactive Workshop",
-    description: "Collaborative knowledge-sharing session"
+    alt: "Workshop participants seated for a CORD-facilitated session",
+    title: "SRHR & AYH Training",
+    description: "Training facilitation for reproductive, adolescent, and youth health"
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5888793921578976886_121-8h0YxjuSbyFd7Z7rxkBpQMI7bQEdrR.jpg",
-    alt: "CORD capacity building session",
-    title: "Capacity Building",
-    description: "Training and professional development"
+    alt: "CORD facilitator leading a professional training session",
+    title: "Professional Training",
+    description: "Competency-based learning for health, nutrition, and food safety teams"
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5884210066192713498_121-pxyl7UeyIsuiRJRfYm9aNcWXZ13kAw.jpg",
-    alt: "CORD board meeting with leadership",
-    title: "Leadership Meeting",
-    description: "Strategic planning and governance"
+    alt: "CORD leadership and partners in a meeting room",
+    title: "Management Advisory",
+    description: "Organizational restructuring, documentation, and project consultation"
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5902267182450674535_121-nomatzHnk1y60y0ZAAWoC4h04qk56M.jpg",
-    alt: "CORD consultation event",
-    title: "Stakeholder Consultation",
-    description: "Community engagement and dialogue"
+    alt: "CORD consultation and stakeholder discussion event",
+    title: "Partner Dialogue",
+    description: "Coalition building with public, private, and development partners"
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5884210066192713496_121-gRaEGABQwSJEB1dM74Yl2cmvXchOos.jpg",
-    alt: "CORD training presentation",
-    title: "Expert Presentation",
-    description: "Knowledge transfer and learning"
+    alt: "CORD presentation for health and service improvement participants",
+    title: "Health Systems Support",
+    description: "Service quality improvement, SOP development, and practical guidance"
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5936127106884504542_121-685VqWxbIIt91ZhAS8Jlog7e2wjQux.jpg",
-    alt: "CORD conference hall session",
-    title: "Conference Event",
-    description: "Large-scale professional gathering"
+    alt: "Conference hall with CORD participants and professional attendees",
+    title: "National Visibility",
+    description: "Participation in high-level business, finance, and climate forums"
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5888793921578976875_121-h8mD0lekkeYTiNeuhIzRS83UjPNNY8.jpg",
-    alt: "CORD nutrition workshop with healthcare professionals",
-    title: "Nutrition Consultation",
-    description: "Health and nutrition initiative"
+    alt: "Healthcare and nutrition professionals in a CORD workshop",
+    title: "Nutrition Training",
+    description: "Nutrition, brain health, and desk performance learning sessions"
+  },
+  {
+    src: "/images/nutrition-1.jfif",
+    alt: "Nutrition counseling desk with fresh food and assessment notes",
+    title: "Diet Therapy",
+    description: "Medical nutrition therapy, dietetic counseling, and wellness planning"
+  },
+  {
+    src: "/images/nutrition-2.jfif",
+    alt: "Fresh foods and a tablet used for nutrition planning",
+    title: "Nutrition Planning",
+    description: "Digital-enabled nutrition education and individualized action plans"
+  },
+  {
+    src: "/images/hero-background.jpg",
+    alt: "Sorghum field representing local food systems and nutrition value chains",
+    title: "Food Systems",
+    description: "Nutrition-sensitive agriculture, food value chains, and prevention work"
   },
 ]
 

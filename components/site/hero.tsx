@@ -6,58 +6,70 @@ import { ArrowRight, ChevronLeft, ChevronRight, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState, useCallback, useRef } from "react"
 import { cn } from "@/lib/utils"
+import { FloatingMetricBadge } from "./animated-metric"
 
 const BRAND_BLUE = "#0E4FA8"
 
+// Slide copy is drawn directly from CORD's mission, vision and the five core
+// consultancy domains in the Capacity Statement and Business Portfolio.
+// Slide accents alternate between brand green (#2ECC8A) and brand deep blue
+// (#0E4FA8) only — no other hues are used across the project palette.
 const HERO_SLIDES = [
   {
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/youth%20engagement%203-dsYKazB5qJckp1gInra4e51OpxOMNM.jpg",
-    title: "Yegna Ethio Wellness Hub",
-    subtitle: "Building Healthier Generations",
-    description: "Family wellness camps and summer programs that nurture joy, growth, and beautiful moments for Ethiopian youth.",
+    image: "/images/hero-background.jpg",
+    title: "Nutrition Roots, Healthier Generations",
+    subtitle: "Health & Nutrition Consultancy",
+    description:
+      "We connect nutrition science, food systems, and family wellness into practical programs that improve health outcomes across Ethiopian communities.",
     accent: "#2ECC8A",
   },
   {
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/community%20engagement-W63ynFkiZyqrdsx6IWGTcLVcOHtCz8.jpg",
-    title: "Community at the Heart",
-    subtitle: "Listening, Learning, Leading",
-    description: "Field-based assessments and household engagement that ensure every intervention is grounded in lived community realities.",
-    accent: "#F59E0B",
+    title: "Coalitions Built Where Life Is Lived",
+    subtitle: "Social Affairs & Community",
+    description:
+      "Field-based assessments, household engagement and stakeholder mapping ground every intervention in the lived realities of communities — the foundation of empowerment frameworks and policy advocacy that actually move the needle.",
+    accent: "#0E4FA8",
   },
   {
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/youth%20engagement%201-4rYOvYjMiveFvAan2eGE6YXrknS69c.jpg",
-    title: "Digital Skills for Youth",
-    subtitle: "Empowering Tomorrow's Innovators",
-    description: "Hands-on computer training and mentorship that opens doors to the digital economy for Ethiopian youth.",
-    accent: "#4DC8E8",
+    title: "Digital Skills, Local Opportunities",
+    subtitle: "Digital & Creative Economy",
+    description:
+      "Through digital-enabled training, e-learning platforms and a growing nutrition tech stack, we equip young Ethiopians — especially young women — to lead in agri-food, health innovation and the creative economy.",
+    accent: "#2ECC8A",
   },
   {
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/youth%20engagement%202-CuaNTDdnGq1gEbOjglnM7IAgTNZajQ.jpg",
-    title: "Classrooms That Inspire",
-    subtitle: "Practical Skills Development",
-    description: "Modern training labs where theory meets practice, building real-world capabilities for the next generation.",
-    accent: "#8B5CF6",
+    title: "Competency-Based Training That Sticks",
+    subtitle: "Curriculum & Capacity Building",
+    description:
+      "From SRHR and adolescent health to GMP-compliant nutrition, food safety, early childhood development and occupational health & safety — we build curricula and deliver high-impact training for the people who deliver services.",
+    accent: "#0E4FA8",
   },
   {
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5936127106884504542_121-685VqWxbIIt91ZhAS8Jlog7e2wjQux.jpg",
-    title: "Evidence-Based Training",
-    subtitle: "Building Capacity for Excellence",
-    description: "Delivering world-class training sessions to professionals across health, nutrition, and development sectors.",
+    title: "Public-Health Rigor, Private-Sector Speed",
+    subtitle: "Evidence-Based Consultancy",
+    description:
+      "Our team blends public health and development expertise with the agility of the private sector to deliver assessments, quality audits and market-ready recommendations — within scope, budget and timeline.",
     accent: "#2ECC8A",
   },
   {
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5902267182450674529_121-eNFQegoEvAP1jvAY3dJXoswVdAWeVq.jpg",
-    title: "Coalition for Impact",
-    subtitle: "Empowering Communities Together",
-    description: "Bringing stakeholders together to create lasting change in health and nutrition outcomes.",
-    accent: "#4DC8E8",
+    title: "Center for Alliance & Coalition",
+    subtitle: "Our Mission in Motion",
+    description:
+      "We catalyze public-private coalitions across health, nutrition, social affairs, management and hospitality — driving measurable improvements in health outcomes, livelihoods and socio-economic development.",
+    accent: "#0E4FA8",
   },
   {
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5884210066192713498_121-pxyl7UeyIsuiRJRfYm9aNcWXZ13kAw.jpg",
-    title: "Strategic Partnerships",
-    subtitle: "Collaboration Drives Results",
-    description: "Working with government bodies, NGOs, and private sector leaders to advance development goals.",
-    accent: "#F59E0B",
+    title: "Trusted by USAID, GNR & Share-Net",
+    subtitle: "Strategic Partnerships",
+    description:
+      "As a USAID-registered partner, Global Nutrition Report contributor and Share-Net Netherlands member, we collaborate with government bodies, NGOs and the private sector to scale impact across Ethiopia and beyond.",
+    accent: "#2ECC8A",
   },
 ]
 
@@ -166,9 +178,9 @@ export function Hero() {
         />
         <div
           aria-hidden="true"
-          className="absolute top-[40%] right-[30%] h-48 w-48 rounded-full opacity-20 blur-3xl animate-float"
+          className="absolute top-[40%] right-[30%] h-48 w-48 rounded-full opacity-25 blur-3xl animate-float"
           style={{
-            backgroundColor: "#4DC8E8",
+            backgroundColor: "#0E4FA8",
             transform: `translate(${(mousePos.x - 0.5) * -20}px, ${(mousePos.y - 0.5) * -20}px)`,
             transition: "transform 0.6s ease-out",
           }}
@@ -378,31 +390,18 @@ export function Hero() {
         </div>
 
         {/* Floating stat card */}
-        <div
+        <FloatingMetricBadge
+          value={13}
+          suffix="+"
+          label="projects"
+          eyebrow="Engagements delivered"
+          body="Across SRH, AYH, ECD, nutrition, and healthcare innovation."
+          accent={slide.accent}
           className={cn(
-            "absolute bottom-10 right-6 z-10 hidden w-64 rounded-2xl border border-white/30 bg-white/10 p-5 shadow-2xl backdrop-blur-xl transition-all duration-700 hover:scale-105 hover:bg-white/15 lg:block",
+            "absolute bottom-10 right-6 z-10 hidden w-64 lg:block",
             isTransitioning ? "opacity-0 translate-x-6" : "opacity-100 translate-x-0"
           )}
-        >
-          <div className="flex items-center gap-2">
-            <div
-              className="h-2 w-2 rounded-full animate-pulse"
-              style={{ backgroundColor: slide.accent }}
-            />
-            <div
-              className="text-xs font-bold uppercase tracking-widest transition-colors duration-700"
-              style={{ color: slide.accent }}
-            >
-              Engagements delivered
-            </div>
-          </div>
-          <div className="mt-2 text-3xl font-extrabold tracking-tight text-white">
-            13+ <span className="text-lg font-medium opacity-80">projects</span>
-          </div>
-          <p className="mt-2 text-sm leading-relaxed text-white/85">
-            Across SRH, AYH, ECD, nutrition, and healthcare innovation.
-          </p>
-        </div>
+        />
 
         {/* Slide counter */}
         <div className="absolute bottom-6 left-6 z-20 hidden items-center gap-2 text-xs font-bold tracking-widest text-white/80 md:flex md:bottom-10">

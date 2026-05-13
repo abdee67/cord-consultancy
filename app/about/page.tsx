@@ -12,7 +12,7 @@ import { Target, Eye, Sparkles, TrendingUp } from "lucide-react"
 export const metadata: Metadata = {
   title: "About — CORD Consultancy",
   description:
-    "CORD Nutrition and Health Trading PLC: a private-sector-led consultancy hub for health, nutrition, social affairs, management, and hotel & tourism advisory.",
+    "CORD Nutrition and Health Trading PLC: a private consultancy hub for health, nutrition, social affairs, management, and hotel & tourism advisory.",
 }
 
 export default function AboutPage() {
@@ -21,7 +21,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About"
         title="A coalition for nutrition, health, and development."
-        description="CORD Consultancy is a private-sector-led consultancy hub combining public health expertise with private-sector agility — driving evidence-based impact across Ethiopia and beyond."
+        description="CORD Consultancy is a private consultancy hub combining public health expertise with private agility — driving evidence-based impact across Ethiopia and beyond."
       />
 
       {/* Overview */}
@@ -38,7 +38,7 @@ export default function AboutPage() {
               CORD Nutrition and Health Trading PLC — operating as CORD
               Consultancy — was re-registered in 2026 under Ethiopia&apos;s new
               trade laws and directives. We are a private limited company
-              delivering integrated consultancy, training, and capacity-building
+              delivering integrated consultancy, training, nutrition and diet therapy, and capacity-building
               services across five core domains.
             </p>
             <p>
@@ -74,7 +74,7 @@ export default function AboutPage() {
         <div className="mt-12 grid gap-8 md:grid-cols-2">
           <Reveal>
             <div className="group relative h-full overflow-hidden rounded-3xl bg-gradient-to-br from-[#0E4FA8] via-[#0A3D85] to-[#072E66] p-1 shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]">
-              <div className="h-full rounded-[22px] bg-white/95 dark:bg-gray-900/95 p-8 backdrop-blur">
+              <div className="h-full rounded-[22px] p-8 backdrop-blur" style={{ backgroundColor: "#E2E8F0" }}>
                 <div className="flex items-start gap-4">
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0E4FA8] to-[#0A3D85] text-white shadow-lg">
                     <Target className="h-7 w-7" />
@@ -83,17 +83,17 @@ export default function AboutPage() {
                     <div className="text-xs font-bold uppercase tracking-widest text-[#0E4FA8]">
                       Mission
                     </div>
-                    <h3 className="mt-1 text-xl font-bold tracking-tight text-foreground">
+                    <h3 className="mt-1 text-xl font-bold tracking-tight text-[#0E4FA8]">
                       Catalyze Coalitions. Deliver Impact.
                     </h3>
                   </div>
                 </div>
-                <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+                <p className="mt-6 text-base leading-relaxed text-slate-800">
                   To catalyze public-private coalitions, deliver high-impact consultancy and training services, and drive measurable improvements in nutrition, health outcomes, and socio-economic development.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {["Coalitions", "Training", "Impact", "Development"].map((tag) => (
-                    <span key={tag} className="rounded-full bg-[#0E4FA8]/10 px-3 py-1 text-xs font-medium text-[#0E4FA8]">
+                    <span key={tag} className="rounded-full bg-[#0E4FA8]/15 px-3 py-1 text-xs font-semibold text-[#0E4FA8]">
                       {tag}
                     </span>
                   ))}
@@ -104,7 +104,7 @@ export default function AboutPage() {
 
           <Reveal delay={0.1}>
             <div className="group relative h-full overflow-hidden rounded-3xl bg-gradient-to-br from-[#2ECC8A] via-[#25B077] to-[#1E9E68] p-1 shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]">
-              <div className="h-full rounded-[22px] bg-white/95 dark:bg-gray-900/95 p-8 backdrop-blur">
+              <div className="h-full rounded-[22px] p-8 backdrop-blur" style={{ backgroundColor: "#E2E8F0" }}>
                 <div className="flex items-start gap-4">
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#2ECC8A] to-[#1E9E68] text-white shadow-lg">
                     <Eye className="h-7 w-7" />
@@ -113,17 +113,17 @@ export default function AboutPage() {
                     <div className="text-xs font-bold uppercase tracking-widest text-[#2ECC8A]">
                       Vision
                     </div>
-                    <h3 className="mt-1 text-xl font-bold tracking-tight text-foreground">
+                    <h3 className="mt-1 text-xl font-bold tracking-tight text-[#1E9E68]">
                       A Premier Center of Alliance.
                     </h3>
                   </div>
                 </div>
-                <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-                  To be a premier Center for Alliance and Coalition for Nutrition, Health, and Development — delivering innovative, sustainable private-sector solutions that improve health, nutrition, and livelihoods.
+                <p className="mt-6 text-base leading-relaxed text-slate-800">
+                  To be a premier Center for Alliance and Coalition for Nutrition, Health, and Development — delivering innovative, sustainable solutions that improve health, nutrition, and livelihoods.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {["Innovation", "Sustainability", "Excellence", "Livelihoods"].map((tag) => (
-                    <span key={tag} className="rounded-full bg-[#2ECC8A]/10 px-3 py-1 text-xs font-medium text-[#2ECC8A]">
+                    <span key={tag} className="rounded-full bg-[#2ECC8A]/15 px-3 py-1 text-xs font-semibold text-[#1E9E68]">
                       {tag}
                     </span>
                   ))}
@@ -136,28 +136,34 @@ export default function AboutPage() {
         {/* Value proposition cards */}
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           <Reveal delay={0.2}>
-            <div className="flex items-start gap-4 rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-md">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#0E4FA8]/10 text-[#0E4FA8]">
+            <div
+              className="flex items-start gap-4 rounded-2xl border-2 border-border/60 p-6 transition-all hover:border-[#0E4FA8]/40 hover:shadow-md"
+              style={{ backgroundColor: "#E2E8F0" }}
+            >
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#0E4FA8]/15 text-[#0E4FA8]">
                 <Sparkles className="h-5 w-5" />
               </div>
               <div>
-                <h4 className="font-semibold text-foreground">Value Proposition</h4>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  A private-sector-led, metrics-driven consultancy hub that combines evidence-based knowledge with practical, market-ready strategies.
+                <h4 className="font-bold text-[#0E4FA8]">Value Proposition</h4>
+                <p className="mt-1 text-sm text-slate-800">
+                  A private, metrics-driven consultancy hub that combines evidence-based knowledge with practical, market-ready strategies.
                 </p>
               </div>
             </div>
           </Reveal>
 
           <Reveal delay={0.3}>
-            <div className="flex items-start gap-4 rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-md">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#2ECC8A]/10 text-[#2ECC8A]">
+            <div
+              className="flex items-start gap-4 rounded-2xl border-2 border-border/60 p-6 transition-all hover:border-[#2ECC8A]/40 hover:shadow-md"
+              style={{ backgroundColor: "#E2E8F0" }}
+            >
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#2ECC8A]/15 text-[#1E9E68]">
                 <TrendingUp className="h-5 w-5" />
               </div>
               <div>
-                <h4 className="font-semibold text-foreground">Strategic Direction</h4>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Transform health systems, empower women and youth, integrate digital solutions, and drive private-sector growth with sustainability.
+                <h4 className="font-bold text-[#1E9E68]">Strategic Direction</h4>
+                <p className="mt-1 text-sm text-slate-800">
+                  Transform health systems, empower women and youth, integrate digital solutions, and drive growth with sustainability.
                 </p>
               </div>
             </div>
