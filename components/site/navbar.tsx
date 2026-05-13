@@ -175,8 +175,8 @@ export function Navbar() {
                       )}
                     </Link>
 
-                    <div className="invisible absolute left-1/2 top-full z-50 mt-3 w-[340px] -translate-x-1/2 translate-y-2 rounded-3xl border border-white/20 bg-white p-3 opacity-0 shadow-2xl shadow-blue-950/20 ring-1 ring-black/5 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-                      <div className="mb-2 px-3 py-2">
+                    <div className="invisible absolute left-1/2 top-full z-50 mt-3 max-h-[min(72vh,36rem)] w-[min(92vw,420px)] -translate-x-1/2 translate-y-2 overflow-hidden rounded-3xl border border-white/20 bg-white p-3 opacity-0 shadow-2xl shadow-blue-950/20 ring-1 ring-black/5 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 lg:w-[380px] xl:w-[420px]">
+                      <div className="sticky top-0 z-10 mb-2 rounded-2xl bg-white/95 px-3 py-2 backdrop-blur">
                         <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#0E4FA8]">
                           Service areas
                         </div>
@@ -185,7 +185,7 @@ export function Navbar() {
                         </p>
                       </div>
 
-                      <div className="grid gap-1">
+                      <div className="grid max-h-[calc(min(72vh,36rem)-5.5rem)] gap-1 overflow-y-auto overscroll-contain pr-1 [scrollbar-width:thin] [scrollbar-color:#0E4FA8_#E2E8F0]">
                         {SERVICES.map((service) => (
                           <Link
                             key={service.slug}
@@ -319,7 +319,7 @@ export function Navbar() {
       {/* Mobile menu — slides in from right */}
       <div
         className={cn(
-          "fixed right-0 top-0 z-50 h-full w-full max-w-sm transform transition-transform duration-500 ease-out lg:hidden",
+          "fixed right-0 top-0 z-50 flex h-full w-full max-w-sm transform flex-col transition-transform duration-500 ease-out lg:hidden",
           open ? "translate-x-0" : "translate-x-full",
         )}
         style={{
@@ -360,7 +360,7 @@ export function Navbar() {
         </div>
 
         {/* Mobile nav links */}
-        <nav className="flex flex-col gap-2 px-6 py-6">
+        <nav className="flex flex-1 flex-col gap-2 overflow-y-auto overscroll-contain px-6 py-6 pb-36 [scrollbar-width:thin] [scrollbar-color:rgba(46,204,138,0.85)_rgba(255,255,255,0.12)]">
           {NAV_LINKS.map((link, i) => {
             const active =
               link.href === "/"
@@ -406,8 +406,8 @@ export function Navbar() {
                 {link.href === "/services" && (
                   <div
                     className={cn(
-                      "ml-8 grid gap-2 overflow-hidden transition-all duration-300",
-                      active ? "max-h-96 pb-2 pt-2 opacity-100" : "max-h-0 opacity-0",
+                      "ml-8 grid gap-2 overflow-y-auto overscroll-contain pr-1 transition-all duration-300 [scrollbar-width:thin]",
+                      active ? "max-h-[52vh] pb-2 pt-2 opacity-100" : "max-h-0 opacity-0",
                     )}
                   >
                     {SERVICES.map((service) => (

@@ -78,24 +78,7 @@ const GALLERY_IMAGES: GalleryImage[] = [
     title: "Nutrition Training",
     description: "Nutrition, brain health, and desk performance learning sessions"
   },
-  {
-    src: "/images/nutrition-1.jfif",
-    alt: "Nutrition counseling desk with fresh food and assessment notes",
-    title: "Diet Therapy",
-    description: "Medical nutrition therapy, dietetic counseling, and wellness planning"
-  },
-  {
-    src: "/images/nutrition-2.jfif",
-    alt: "Fresh foods and a tablet used for nutrition planning",
-    title: "Nutrition Planning",
-    description: "Digital-enabled nutrition education and individualized action plans"
-  },
-  {
-    src: "/images/hero-background.jpg",
-    alt: "Sorghum field representing local food systems and nutrition value chains",
-    title: "Food Systems",
-    description: "Nutrition-sensitive agriculture, food value chains, and prevention work"
-  },
+
 ]
 
 export function Gallery() {
@@ -130,9 +113,8 @@ export function Gallery() {
             ].join(" ")}
           >
             <div
-              className={`group relative overflow-hidden rounded-2xl bg-muted transition-all duration-500 hover:shadow-2xl cursor-pointer h-full ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
+              className={`group relative overflow-hidden rounded-2xl bg-muted transition-all duration-500 hover:shadow-2xl cursor-pointer h-full ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
               style={{
                 transitionDelay: `${index * 50}ms`,
               }}
@@ -145,10 +127,10 @@ export function Gallery() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 loading="lazy"
               />
-              
+
               {/* Dark overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              
+
               {/* Text overlay */}
               <div className="absolute inset-0 flex flex-col items-start justify-end p-6 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <h3 className="text-lg font-semibold mb-1">{image.title}</h3>
