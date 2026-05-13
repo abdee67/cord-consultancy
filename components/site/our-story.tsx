@@ -47,7 +47,7 @@ export function OurStory() {
               </div>
               <div className="relative aspect-square overflow-hidden rounded-2xl">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5886156255945421753_121-Ym80qVq24t8d4221z1V9M1Hj4qC9tE.jpg"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fruit-AYEAzt5fgf12Gi5iG4HLGromD5TOUE.jpg"
                   alt="Nutrition education"
                   fill
                   className="object-cover"
