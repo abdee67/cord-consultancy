@@ -3,9 +3,10 @@
 import { useEffect } from "react"
 
 const ENVIRONMENT_ID =
-  process.env.NEXT_PUBLIC_FORMBRICKS_ENVIRONMENT_ID ??
-  "cmospnp4q8cjzw801kzo31138"
-const APP_URL = "https://app.formbricks.com"
+  process.env.NEXT_PUBLIC_FORMBRICKS_ENVIRONMENT_ID;
+
+const APP_URL = process.env.NEXT_PUBLIC_FORMBRICKS_APP_URL;
+
 
 /**
  * Initializes Formbricks once on app startup (client-side only).

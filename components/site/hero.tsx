@@ -19,6 +19,7 @@ const HERO_SLIDES = [
     image: "/images/hero-background.jpg",
     title: "Nutrition Roots, Healthier Generations",
     subtitle: "Health & Nutrition Consultancy",
+    priority: true,
     description:
       "We connect nutrition science, food systems, and family wellness into practical programs that improve health outcomes across Ethiopian communities.",
     accent: "#2ECC8A",
@@ -27,6 +28,7 @@ const HERO_SLIDES = [
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/community%20engagement-W63ynFkiZyqrdsx6IWGTcLVcOHtCz8.jpg",
     title: "Coalitions Built Where Life Is Lived",
     subtitle: "Social Affairs & Community",
+    priority: true,
     description:
       "Field-based assessments, household engagement and stakeholder mapping ground every intervention in the lived realities of communities — the foundation of empowerment frameworks and policy advocacy that actually move the needle.",
     accent: "#0E4FA8",
@@ -35,6 +37,7 @@ const HERO_SLIDES = [
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/youth%20engagement%201-4rYOvYjMiveFvAan2eGE6YXrknS69c.jpg",
     title: "Digital Skills, Local Opportunities",
     subtitle: "Digital & Creative Economy",
+    priority: true,
     description:
       "Through digital-enabled training, e-learning platforms and a growing nutrition tech stack, we equip young Ethiopians — especially young women — to lead in agri-food, health innovation and the creative economy.",
     accent: "#2ECC8A",
@@ -43,6 +46,7 @@ const HERO_SLIDES = [
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/youth%20engagement%202-CuaNTDdnGq1gEbOjglnM7IAgTNZajQ.jpg",
     title: "Competency-Based Training That Sticks",
     subtitle: "Curriculum & Capacity Building",
+    priority: true,
     description:
       "From SRHR and adolescent health to GMP-compliant nutrition, food safety, early childhood development and occupational health & safety — we build curricula and deliver high-impact training for the people who deliver services.",
     accent: "#0E4FA8",

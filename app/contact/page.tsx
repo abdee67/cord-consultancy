@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Get in touch with CORD Consultancy in Addis Ababa. We respond within one business day.",
 }
 
-const SURVEY_URL = "https://app.formbricks.com/s/cmp2seh565ddxtf018eu659t2"
+const SURVEY_URL = process.env.NEXT_PUBLIC_FORMBRICKS_SURVEY_URL
 
 const DETAILS = [
   {
@@ -27,7 +27,7 @@ const DETAILS = [
     label: "Email",
     value: "info.cordnutrition@gmail.com",
     href: "mailto:info.cordnutrition@gmail.com",
-    iconColor: "#0E4FA8",
+    iconColor: "#FBBC05",
   },
   {
     Icon: Phone,
