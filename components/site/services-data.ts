@@ -70,6 +70,7 @@ export const SERVICES: Service[] = [
       "Weight, wellness, and sport nutrition",
       "Child growth monitoring and family nutrition",
       "Hospital catering and dietetic systems",
+      "Training and capacity building",
     ],
     expertise: [
       "Nutrition-focused NCD management including CVD, DM, HTN, renal, GERD, and metabolic syndrome",

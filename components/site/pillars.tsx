@@ -21,7 +21,7 @@ const PILLARS = [
     color: "from-[#2ECC8A] to-[#25B077]",
     bgColor: "bg-[#2ECC8A]/10",
     textColor: "text-[#2ECC8A]",
-    image: "/images/nutrition-1.jfif",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fruit-AYEAzt5fgf12Gi5iG4HLGromD5TOUE.jpg",
   },
   {
     title: "Interconnectedness of Life",
@@ -30,7 +30,7 @@ const PILLARS = [
     color: "from-[#0E4FA8] to-[#0A3D85]",
     bgColor: "bg-[#0E4FA8]/10",
     textColor: "text-[#0E4FA8]",
-    image: "/images/hero-background.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5888793921578976886_121-8h0YxjuSbyFd7Z7rxkBpQMI7bQEdrR.jpg",
   },
   {
     title: "Commitment to Development & Sustainability",
@@ -87,7 +87,7 @@ export function Pillars() {
               <div className="p-6">
                 {/* Colored accent line */}
                 <div className={cn("h-1 w-16 rounded-full bg-gradient-to-r mb-4", color)} />
-                
+
                 <h3 className={cn("text-lg font-bold tracking-tight", textColor)}>
                   {title}
                 </h3>

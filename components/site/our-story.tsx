@@ -47,8 +47,8 @@ export function OurStory() {
               </div>
               <div className="relative aspect-square overflow-hidden rounded-2xl">
                 <Image
-                  src="/images/nutrition-2.jfif"
-                  alt="Nutrition counseling table with fresh foods and planning tools"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5886156255945421753_121-Ym80qVq24t8d4221z1V9M1Hj4qC9tE.jpg"
+                  alt="Nutrition education"
                   fill
                   className="object-cover"
                 />

@@ -16,6 +16,7 @@ const NUTRITION_DIET_THERAPY_SERVICES = [
   "Beauty Nutrition",
   "Child Growth Monitoring",
   "Hospital Catering & Dietetic services",
+  "Training and capacity building",
 ]
 
 interface ServiceDetailPageProps {
@@ -26,7 +27,8 @@ export async function generateStaticParams() {
     { slug: 'health' },
     { slug: 'nutrition' },
     { slug: 'management' },
-    { slug: 'tourism' },
+    { slug: 'social-affairs' },
+    { slug: 'hotel-tourism' },
   ];
 }
 
