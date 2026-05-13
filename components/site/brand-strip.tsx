@@ -10,26 +10,31 @@ const PARTNERS: Partner[] = [
     name: "Global Nutrition Report",
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Global%20nutrition%20report.jfif-tJ4MKMZMriDIklLEdeatDPNURgWE7d.jpeg",
     alt: "Global Nutrition Report logo",
+    circular: true,
   },
   {
     name: "Share-Net Netherlands",
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Share-Net%20Netherlands-pxFsuBfDHQpQ4qw6fhgquFJkCoKdge.png",
     alt: "Share-Net Netherlands logo",
+    circular: true,
   },
   {
     name: "SOS Children's Villages",
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SOS%20Children%27s%20Villages-IycE3nc36AkafhIUVcBuI4NFxtUJZQ.png",
     alt: "SOS Children's Villages logo",
+    circular: true,
   },
   {
     name: "Aleph Medical",
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aleph-A1IAacWN6UgDpoDa6ZdAnv6aopDYJE.png",
     alt: "Aleph Medical logo",
+    circular: true,
   },
   {
     name: "alignAfrica",
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/alignAfrica%20%28LNGO%29.jfif-iuM8G5RQPSRkyYkqdStp3Vbyop4Qfc.jpeg",
     alt: "alignAfrica logo",
+    circular: true,
   },
   {
     name: "Ethio Medical Training PLC",
@@ -41,21 +46,25 @@ const PARTNERS: Partner[] = [
     name: "Addis Ababa Health Bureau",
     logo: "/images/addis-ababa-health-bureau.jfif",
     alt: "Addis Ababa Health Bureau logo",
+    circular: true,
   },
   {
     name: "Family Guidance Association of Ethiopia",
     logo: "/images/fgae.jfif",
     alt: "Family Guidance Association of Ethiopia logo",
+    circular: true,
   },
   {
     name: "OIC Ethiopia",
     logo: "/images/oice.jpg",
     alt: "OIC Ethiopia logo",
+    circular: true,
   },
   {
     name: "Fetan Transport and Logistics",
     logo: "/images/fetan-logistics.jpg",
     alt: "Fetan Transport and Logistics logo",
+    circular: true,
   },
 ]
 

@@ -21,6 +21,14 @@ const NUTRITION_DIET_THERAPY_SERVICES = [
 interface ServiceDetailPageProps {
   params: Promise<{ slug: string }>
 }
+export async function generateStaticParams() {
+  return [
+    { slug: 'health' },
+    { slug: 'nutrition' },
+    { slug: 'management' },
+    { slug: 'tourism' },
+  ];
+}
 
 export default async function ServiceDetailPage({ params }: ServiceDetailPageProps) {
   const { slug } = await params
