@@ -38,6 +38,8 @@ export const SERVICES: Service[] = [
       "Adolescent, youth, and women's health",
       "Mental health and family wellness support",
       "Nursing homecare and palliative nursing care",
+      "Routine Data Quality Assurance",
+      "Quality Assurance auditing",
     ],
     expertise: [
       "Sexual & Reproductive Health (SRH)",
@@ -48,6 +50,8 @@ export const SERVICES: Service[] = [
       "Nursing Homecare",
       "Palliative Nursing Care",
       "Health service quality improvement and referral pathways",
+      "Routine Data Quality Assurance",
+      "Quality Assurance auditing",
     ],
     Icon: HeartPulse,
     color: "#0E4FA8",
