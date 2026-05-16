@@ -69,10 +69,10 @@ const HERO_SLIDES = [
   },
   {
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5884210066192713498_121-pxyl7UeyIsuiRJRfYm9aNcWXZ13kAw.jpg",
-    title: "Trusted by USAID, GNR & Share-Net",
+    title: "International Visibility and Partnerships",
     subtitle: "Strategic Partnerships",
     description:
-      "As a USAID-registered partner, Global Nutrition Report contributor and Share-Net Netherlands member, we collaborate with government bodies, NGOs and the private sector to scale impact across Ethiopia and beyond.",
+      "As an Internationl Organizations, we collaborate with government bodies, NGOs and the private sector to scale impact across Ethiopia and beyond.",
     accent: "#2ECC8A",
   },
 ]
