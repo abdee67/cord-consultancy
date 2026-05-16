@@ -334,23 +334,48 @@ export function Footer() {
         {/* Bottom bar */}
         <div
           className={cn(
-            "mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/15 pt-7 md:flex-row md:items-center transition-all duration-700 delay-500 md:mt-16",
+            "mt-14 flex flex-col items-start justify-between gap-5 border-t border-white/15 pt-7 transition-all duration-700 delay-500 md:mt-16 lg:flex-row lg:items-center",
             visible ? "opacity-100" : "opacity-0",
           )}
         >
-          <p className="text-[13px] font-medium text-white/80">
-            &copy; {new Date().getFullYear()}{" "}
-            <span className="font-bold text-white">CORD Nutrition and Health Trading PLC</span>. All rights reserved.
-          </p>
-          <p className="flex items-center gap-2 text-[13px] font-medium text-white/80">
-            <span
-              className="inline-block h-2 w-2 rounded-full animate-pulse"
-              style={{ backgroundColor: BRAND_GREEN }}
-            />
-            <span className="font-semibold text-white">Global Nutrition Report</span>
-            <span className="text-white/50">&middot;</span>
-            <span className="font-semibold text-white">Share-Net Netherlands</span>
-          </p>
+          <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-3">
+            <p className="text-[13px] font-medium leading-relaxed text-white/80">
+              &copy; {new Date().getFullYear()}{" "}
+              <span className="font-bold text-white">CORD Nutrition and Health Trading PLC</span>. All rights reserved.
+            </p>
+            <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] font-medium text-white/80">
+              <span
+                className="inline-block h-2 w-2 rounded-full animate-pulse"
+                style={{ backgroundColor: BRAND_GREEN }}
+              />
+              <span className="font-semibold text-white">Global Nutrition Report</span>
+              <span className="text-white/50">&middot;</span>
+              <span className="font-semibold text-white">Share-Net Netherlands</span>
+            </p>
+          </div>
+
+          <div className="inline-flex w-full flex-col items-start gap-1.5 rounded-xl border border-white/10 bg-white/[0.04] px-3.5 py-3 text-left sm:w-auto">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/55">
+              Powered by Website Developer
+            </span>
+            <span className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold text-white/80">
+              <a
+                href="tel:097764845"
+                className="inline-flex items-center gap-1.5 transition-colors hover:text-white"
+              >
+                <Phone className="h-3.5 w-3.5 text-[#2ECC8A]" strokeWidth={2.5} />
+                097 764 845
+              </a>
+              <span className="hidden text-white/30 sm:inline">/</span>
+              <a
+                href="tel:0901889188"
+                className="inline-flex items-center gap-1.5 transition-colors hover:text-white"
+              >
+                <Phone className="h-3.5 w-3.5 text-[#2ECC8A]" strokeWidth={2.5} />
+                090 188 9188
+              </a>
+            </span>
+          </div>
         </div>
       </div>
     </footer>
