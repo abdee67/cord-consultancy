@@ -16,7 +16,7 @@ export function ServicesPreview() {
           <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
             <SectionHeader
               eyebrow="What we do"
-              title="Five domains. One coalition."
+              title="Five Domains. One Coalition."
               description="An integrated, multi-disciplinary capability spanning health, nutrition, social affairs, management, and hospitality consultancy — delivered by senior practitioners."
             />
             <Link

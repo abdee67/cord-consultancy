@@ -23,7 +23,7 @@ export function FinalCTA() {
 
           <div className="relative mx-auto max-w-2xl text-center">
             <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-              Let&apos;s build a coalition for your next initiative.
+              Let&apos;s Build Coalition For Your Next Initiative.
             </h2>
             <p className="mt-4 text-pretty leading-relaxed text-muted-foreground md:text-lg">
               Tell us about your program, your community, or your venture. We

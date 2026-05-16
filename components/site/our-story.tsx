@@ -11,7 +11,7 @@ const TIMELINE = [
   },
   {
     year: "2025",
-    title: "Building the coalition",
+    title: "Building the Coalition",
     description:
       "Early engagements across SRH, AYH, ECD, and nutrition initiatives demonstrated the value of an integrated, evidence-based approach in real Ethiopian contexts.",
   },
@@ -93,7 +93,7 @@ export function OurStory() {
             Our story
           </div>
           <h2 className="text-balance text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
-            Building a Coalition for Professional Excellence
+            Building Coalition for Professional Excellence
           </h2>
           <div className="mt-5 space-y-4 text-pretty leading-relaxed text-muted-foreground md:text-lg">
             <p>
