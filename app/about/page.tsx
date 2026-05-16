@@ -20,7 +20,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="About"
-        title="A coalition for nutrition, health, and development."
+        title="Coalition For Nutrition, Health, and Development."
         description="CORD Consultancy is a private consultancy hub combining public health expertise with private agility — driving evidence-based impact across Ethiopia and beyond."
       />
 

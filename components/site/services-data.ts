@@ -48,7 +48,7 @@ export const SERVICES: Service[] = [
       "Pre-pregnancy, pregnancy, and post-pregnancy support",
       "Mental Health",
       "Nursing Homecare",
-      "Palliative Nursing Care",
+      "Palliative Care",
       "Health service quality improvement and referral pathways",
       "Routine Data Quality Assurance",
       "Quality Assurance auditing",

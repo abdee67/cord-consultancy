@@ -18,15 +18,17 @@ const geistMono = Geist_Mono({
   display: "swap",
 })
 
+const siteUrl = "https://cordconsultancy.com"
+const siteDescription =
+  "CORD Nutrition and Health Trading PLC delivers professional advisory services across health, nutrition, social affairs, management, and tourism in Ethiopia."
 
 export const metadata: Metadata = {
   title: {
     default: "CORD Consultancy — Health & Nutrition Advisory in Ethiopia",
     template: "%s | CORD Consultancy",
   },
-  description:
-    "CORD Nutrition and Health Trading PLC is a premier private consultancy hub in Ethiopia. We deliver professional advisory services across health, nutrition, social affairs, management, and tourism.",
-  metadataBase: new URL("https://cordconsultancy.com"), // Replace with your client's custom domain once live
+  description: siteDescription,
+  metadataBase: new URL(siteUrl),
   alternates: {
     canonical: "/",
   },
@@ -42,27 +44,25 @@ export const metadata: Metadata = {
   authors: [{ name: "CORD Nutrition and Health Trading PLC" }],
   openGraph: {
     title: "CORD Consultancy — Professional Excellence & Advisory Hub",
-    description:
-      "Expert health, nutrition, social affairs, management, and hotel & tourism advisory services across Ethiopia.",
-    url: "https://cordconsultancy.com", // Replace with custom domain once live
+    description: siteDescription,
+    url: siteUrl,
     siteName: "CORD Consultancy",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/og-image.png", // Ensure you save a 1200x630px preview image in your public/ folder
+        url: "/og-image.jpg",
         width: 1200,
-        height: 630,
-        alt: "CORD Consultancy Ethiopia",
+        height: 1289,
+        alt: "CORD Consultancy logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "CORD Consultancy — Health & Nutrition Advisory",
-    description:
-      "Expert consulting and professional advisory services across health, nutrition, and management sectors in Ethiopia.",
-    images: ["/og-image.png"],
+    description: siteDescription,
+    images: ["/og-image.jpg"],
   },
   icons: {
     icon: [
